@@ -1,28 +1,17 @@
-# Create T3 App
+# Sverok and MÄN project
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## Getting Started
 
-## What's next? How do I make an app with this?
+1. Clone the repository
+2. Navigate to the directory of the repository
+3. Checkout the develop branch: `git switch develop`
+4. Run: `npm install`
+5. Create your own feature branch (preferably with a name matching a Trello card): `git switch -c <new_branch>`
+6. Push your new branch to origin: `git push --set-upstream origin <new_branch>`
+7. Make your changes and push them to your branch like this: `git add .` -> `git commit -m "your message"` -> `git push`
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Merging your branch with develop
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
-
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
-
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+1. Run all of the following: `git switch develop` -> `git pull` -> `git switch <your-branch-name>` -> `git merge develop`. This keeps your branch up to date with develop
+2. Solve any conflicts and make sure your application runs perfectly with preferably no console warnings
+3. Run all of the following: `git switch develop` -> `git merge <your-branch-name>` -> `git push origin develop`. This pushes your branch to develop
