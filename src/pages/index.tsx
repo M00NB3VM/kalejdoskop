@@ -3,6 +3,8 @@ import Head from "next/head";
 
 import { api } from "~/utils/api";
 
+import OrganizationsInfo from "~/components/OrganizationInfo";
+
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
 
@@ -15,6 +17,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <h1>Hello world</h1>
+        <OrganizationsInfo />
       </main>
     </>
   );
