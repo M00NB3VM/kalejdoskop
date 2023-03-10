@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <EnterRoom />
         <OrganizationsInfo />
 
-        <div className="mt-10 flex flex-col items-center justify-center">
+        <div className="mx-4 mt-10 flex flex-col items-center justify-center">
           <h5 className="text-xl">Vill du läsa mer om projektet? </h5>
           <Link
             href="about"
