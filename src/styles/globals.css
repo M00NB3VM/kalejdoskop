@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "DocumanHeavy";
+  src: local("DocumanHeavy"),
+    url("../fonts/Documan-Heavy.otf") format("opentype");
+}
+
+/*COLORS
+  Lila [PRIMARY]: #451499
+  Ljuslila [SECONDARY]: #c8b2ff
+  Svart [BLACK]: #2d2d2d
+  Grå [GREY]: #d9dbda
+  Vit [WHITE]: #ffffff
+  Korall [ACCENT-COLOR]: #f7528b
+  
+  please use variables
+  ex. color: var(--primary-color)
+  */
+
+:root {
+  --primary-color: #451499;
+  --secondary-color: #c8b2ff;
+  --black: #2d2d2d;
+  --grey: #d9dbda;
+  --white: #ffffff;
+  --accent-color: #f7528b;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DocumanHeavy";
+}
