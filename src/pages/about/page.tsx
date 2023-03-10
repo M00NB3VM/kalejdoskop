@@ -1,7 +1,7 @@
+import React from "react";
 import Head from "next/head";
 import { BsChevronLeft } from "react-icons/bs";
 import Link from "next/link";
-
 import Button from "~/components/Button";
 
 function About() {
@@ -14,7 +14,6 @@ function About() {
         <Button text="Hem">
           <Link href="/">
             <BsChevronLeft />
-            Hem
           </Link>
         </Button>
         <div>Om</div>
