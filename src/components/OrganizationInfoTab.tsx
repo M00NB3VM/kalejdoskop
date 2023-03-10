@@ -60,7 +60,7 @@ function OrganizationInfoTab() {
 
   return (
     <motion.div
-      className="fixed top-[30%] m-0 p-0"
+      className="fixed top-[30%] right-0 m-0 p-0"
       initial={{ x: "calc(100% - 40px)" }}
       animate={showTab ? "open" : ""}
       variants={variants}
@@ -116,7 +116,7 @@ function OrganizationInfoTab() {
                   )}
                 </div>
                 <p className="py-2 text-sm">{organization.description}</p>
-                <ul className="mb-14">
+                <ul className="mb-14 lg:mb-20">
                   {organization.points.map((point) => {
                     return (
                       <li className="flex text-sm" key={point}>
@@ -129,7 +129,7 @@ function OrganizationInfoTab() {
 
                 <Link
                   href={organization.link}
-                  className="absolute bottom-4 left-8 right-8 block transform rounded-full bg-accent px-6 py-2 text-center text-lg text-white transition duration-500 hover:bg-accentHover"
+                  className="absolute bottom-4 left-8 right-8 block transform rounded-full bg-accent px-4 py-2 text-center text-lg text-white transition duration-500 hover:bg-accentHover lg:right-12 lg:left-12"
                 >
                   {organization.name}
                 </Link>
