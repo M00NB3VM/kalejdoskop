@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { api } from "~/utils/api";
 
+import CallToAction from "~/components/CallToAction";
 import EnterRoom from "~/components/EnterRoom";
 import OrganizationsInfo from "~/components/OrganizationInfo";
 
@@ -18,8 +19,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="" />
       </Head>
       <main>
-        <h1>Kalejdoskop</h1>
-
+        <CallToAction />
         <EnterRoom />
         <OrganizationsInfo />
 
