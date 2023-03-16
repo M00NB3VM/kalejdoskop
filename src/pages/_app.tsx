@@ -3,15 +3,19 @@ import { Open_Sans } from "next/font/google";
 
 import { api } from "~/utils/api";
 
+import { StoreProvider } from "~/context";
+
 import "~/styles/globals.css";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <div className={openSans.className}>
-      <Component {...pageProps} />
-    </div>
+    <StoreProvider>
+      <div className={openSans.className}>
+        <Component {...pageProps} />
+      </div>
+    </StoreProvider>
   );
 };
 

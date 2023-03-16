@@ -3,6 +3,8 @@ import Head from "next/head";
 import { BsChevronLeft } from "react-icons/bs";
 import Link from "next/link";
 
+import ThemeToggleButton from "~/components/ThemeToggleButton";
+
 function About() {
   return (
     <>
@@ -10,6 +12,7 @@ function About() {
         <title>Om Kalejdoskop</title>
       </Head>
       <main>
+        <ThemeToggleButton />
         <Link
           href="/"
           className="m-4 flex w-[130px] transform flex-row items-center justify-center rounded-full bg-accent px-6 py-2 text-lg text-white transition duration-500 hover:bg-accentHover"

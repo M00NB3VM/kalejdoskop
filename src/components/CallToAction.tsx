@@ -5,7 +5,7 @@ import { BsDownload } from "react-icons/bs";
 function CallToAction() {
   return (
     <>
-      <div className="flex justify-center">
+      <div className="mt-10 flex justify-center">
         <img src="" alt="Logotyp" />
         <h1 className="text-xl">Kalejdoskop</h1>
       </div>

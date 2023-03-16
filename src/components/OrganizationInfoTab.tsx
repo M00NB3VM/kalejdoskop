@@ -4,17 +4,21 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { useStoreContext } from "~/context";
 import { BsChevronUp, BsChevronDown, BsHash } from "react-icons/bs";
 
 interface OrganizationShort {
   name: string;
   img: string;
+  imgDark: string;
   link: string;
   description: string;
   points: string[];
 }
 
 function OrganizationInfoTab() {
+  const { darkTheme } = useStoreContext();
+
   const variants = {
     open: { x: "25%" },
   };
@@ -24,6 +28,7 @@ function OrganizationInfoTab() {
     {
       name: "Killar.se",
       img: "/Killar.se_liggande_lila.png",
+      imgDark: "/Killar.se_liggande_ljuslila.png",
       link: "https://killar.se/",
       description:
         "För alla som identifierar sig som kille eller ung man mellan 10-25 år.",
@@ -36,6 +41,7 @@ function OrganizationInfoTab() {
     {
       name: "MÄN",
       img: "/MAN_logotyp_lila.png",
+      imgDark: "/MAN_logotyp_ljuslila.png",
       link: "https://mfj.se/",
       description: "MÄN arbetar för jämställdhet och mot mäns våld.",
       points: [
@@ -47,6 +53,7 @@ function OrganizationInfoTab() {
     {
       name: "Sverok",
       img: "/Sverok_logotyp_gul.png",
+      imgDark: "/Sverok_logotyp_lila.png",
       link: "https://sverok.se/",
       description:
         "Sverok är en idéell organisation och ett av Sveriges största ungdomsförbund.",
@@ -94,23 +101,27 @@ function OrganizationInfoTab() {
             return (
               <li
                 key={organization.name}
-                className="relative mx-2 my-4 w-1/3 rounded bg-white px-4 py-4 shadow-lg"
+                className={`relative mx-2 my-4 w-1/3 rounded px-4 py-4 shadow-lg ${
+                  darkTheme ? "bg-black" : "bg-white"
+                }`}
               >
                 <div className="flex">
-                  <img
-                    className="max-h-10 max-w-[100%]"
-                    src={organization.img}
-                    alt={`${organization.name} Logotyp`}
-                  />
+                  {darkTheme ? (
+                    <img
+                      className="max-h-10 max-w-[100%]"
+                      src={organization.imgDark}
+                      alt={`${organization.name} Logotyp`}
+                    />
+                  ) : (
+                    <img
+                      className="max-h-10 max-w-[100%]"
+                      src={organization.img}
+                      alt={`${organization.name} Logotyp`}
+                    />
+                  )}
+
                   {organization.name === "Sverok" ? (
-                    <h6
-                      className="ml-4 text-2xl"
-                      style={{
-                        color: "var(--primary-color)",
-                      }}
-                    >
-                      {organization.name}
-                    </h6>
+                    <h6 className="ml-4 text-2xl">{organization.name}</h6>
                   ) : (
                     ""
                   )}
