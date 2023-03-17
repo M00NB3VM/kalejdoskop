@@ -13,8 +13,8 @@ function Roomone() {
 
       <div className="min-w-screen relative flex h-screen overflow-visible overflow-x-scroll md:hidden">
         <img src="/room.png" className=" h-full max-w-none" />
-        <div className="h-full min-w-[40px] bg-secondary md:hidden">
-          <p className="absolute top-[50%] inline-block w-2 -rotate-90 font-bold tracking-wider text-accent">
+        <div className="relative h-full min-w-[40px] bg-secondary md:hidden">
+          <p className="absolute top-[50%] left-[14px] inline-block w-2 -rotate-90 font-bold tracking-wider text-accent">
             Läs&nbsp;mig
           </p>
         </div>
