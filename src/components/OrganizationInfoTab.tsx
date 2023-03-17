@@ -23,6 +23,7 @@ function OrganizationInfoTab() {
     open: { x: "25%" },
   };
   const [showTab, setShowTab] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const organizations: OrganizationShort[] = [
     {
@@ -66,90 +67,176 @@ function OrganizationInfoTab() {
   ];
 
   return (
-    <motion.div
-      className="fixed top-[30%] right-0 m-0 p-0"
-      initial={{ x: "calc(100% - 40px)" }}
-      animate={showTab ? "open" : ""}
-      variants={variants}
-      transition={{ ease: "easeInOut", duration: 0.8 }}
-    >
-      <div className="flex hidden w-[75%] rounded-l-lg bg-secondary md:block">
-        <ul className="flex">
-          <li
-            onClick={() => {
-              setShowTab(!showTab);
-            }}
-            className="relative w-[40px] cursor-pointer"
-            key="tab"
-          >
-            <div className="absolute bottom-2 -left-2 flex -rotate-90 items-center justify-center font-bold text-accent">
-              {showTab ? (
-                <BsChevronDown
-                  className="ml-2 w-10 pl-2"
-                  style={{ strokeWidth: 2 }}
-                />
-              ) : (
-                <BsChevronUp
-                  className="ml-2 w-10 pl-2"
-                  style={{ strokeWidth: 2 }}
-                />
-              )}
-              <p className="w-2 pl-2 tracking-wider">Läs&nbsp;mig</p>
+    <div className="relative">
+      <motion.div
+        className="fixed top-[30%] right-0 z-50 m-0 p-0"
+        initial={{ x: "calc(100% - 40px)" }}
+        animate={showTab ? "open" : ""}
+        variants={variants}
+        transition={{ ease: "easeInOut", duration: 0.8 }}
+      >
+        <div className="hidden w-[75%] rounded-l-lg bg-secondary md:block">
+          <div className="flex">
+            <div
+              onClick={() => {
+                setShowTab(!showTab);
+              }}
+              className="relative min-w-[40px] cursor-pointer"
+              key="tab"
+            >
+              <div className="absolute bottom-2 -left-2 flex -rotate-90 items-center justify-center font-bold text-accent">
+                {showTab ? (
+                  <BsChevronDown
+                    className="ml-2 w-10 pl-2"
+                    style={{ strokeWidth: 2 }}
+                  />
+                ) : (
+                  <BsChevronUp
+                    className="ml-2 w-10 pl-2"
+                    style={{ strokeWidth: 2 }}
+                  />
+                )}
+                <p className="w-2 pl-2 tracking-wider">Läs&nbsp;mig</p>
+              </div>
             </div>
-          </li>
-          {organizations.map((organization) => {
-            return (
-              <li
-                key={organization.name}
-                className={`relative mx-2 my-4 w-1/3 rounded px-4 py-4 shadow-lg ${
-                  darkTheme ? "bg-black" : "bg-white"
-                }`}
+            <ul className="flex">
+              {organizations.map((organization) => {
+                return (
+                  <li
+                    key={organization.name}
+                    className={`relative my-4 mr-4 w-1/3 rounded px-4 py-4 shadow-lg ${
+                      darkTheme ? "bg-black" : "bg-white"
+                    }`}
+                  >
+                    <div className="flex">
+                      {darkTheme ? (
+                        <img
+                          className="max-h-10 max-w-[100%]"
+                          src={organization.imgDark}
+                          alt={`${organization.name} Logotyp`}
+                        />
+                      ) : (
+                        <img
+                          className="max-h-10 max-w-[100%]"
+                          src={organization.img}
+                          alt={`${organization.name} Logotyp`}
+                        />
+                      )}
+
+                      {organization.name === "Sverok" ? (
+                        <h6 className="ml-4 text-2xl">{organization.name}</h6>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                    <p className="py-2 text-sm">{organization.description}</p>
+                    <ul className="mb-14 lg:mb-20">
+                      {organization.points.map((point) => {
+                        return (
+                          <li className="flex text-sm" key={point}>
+                            <BsHash className="mr-1 mt-1" />
+                            {point}
+                          </li>
+                        );
+                      })}
+                    </ul>
+
+                    <Link
+                      href={organization.link}
+                      className="absolute bottom-4 left-8 right-8 block transform rounded-full bg-accent px-4 py-2 text-center text-lg text-white transition duration-500 hover:bg-accentHover lg:right-12 lg:left-12"
+                    >
+                      {organization.name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      </motion.div>
+
+      {showModal ? (
+        <div className="absolute left-0 top-0 right-0 z-50 min-h-screen bg-secondary md:hidden">
+          <div className="flex">
+            <div
+              onClick={() => {
+                setShowModal(!showModal);
+              }}
+              className="relative cursor-pointer"
+            >
+              <div
+                onClick={() => {
+                  setShowModal(true);
+                }}
+                className="fixed top-[4px] right-[10px] w-[40px] rounded-full bg-accent text-center font-bold"
               >
-                <div className="flex">
-                  {darkTheme ? (
-                    <img
-                      className="max-h-10 max-w-[100%]"
-                      src={organization.imgDark}
-                      alt={`${organization.name} Logotyp`}
-                    />
-                  ) : (
-                    <img
-                      className="max-h-10 max-w-[100%]"
-                      src={organization.img}
-                      alt={`${organization.name} Logotyp`}
-                    />
-                  )}
+                X
+              </div>
+            </div>
 
-                  {organization.name === "Sverok" ? (
-                    <h6 className="ml-4 text-2xl">{organization.name}</h6>
-                  ) : (
-                    ""
-                  )}
-                </div>
-                <p className="py-2 text-sm">{organization.description}</p>
-                <ul className="mb-14 lg:mb-20">
-                  {organization.points.map((point) => {
-                    return (
-                      <li className="flex text-sm" key={point}>
-                        <BsHash className="mr-1 mt-1" />
-                        {point}
-                      </li>
-                    );
-                  })}
-                </ul>
+            <ul className="mx-auto my-8 flex flex-col">
+              {organizations.map((organization) => {
+                return (
+                  <li
+                    key={organization.name}
+                    className={`relative my-4 mx-auto w-11/12 rounded px-4 py-4 shadow-lg ${
+                      darkTheme ? "bg-black" : "bg-white"
+                    }`}
+                  >
+                    <div className="flex">
+                      {darkTheme ? (
+                        <img
+                          className="max-h-10 max-w-[100%]"
+                          src={organization.imgDark}
+                          alt={`${organization.name} Logotyp`}
+                        />
+                      ) : (
+                        <img
+                          className="max-h-10 max-w-[100%]"
+                          src={organization.img}
+                          alt={`${organization.name} Logotyp`}
+                        />
+                      )}
 
-                <Link
-                  href={organization.link}
-                  className="absolute bottom-4 left-8 right-8 block transform rounded-full bg-accent px-4 py-2 text-center text-lg text-white transition duration-500 hover:bg-accentHover lg:right-12 lg:left-12"
-                >
-                  {organization.name}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </motion.div>
+                      {organization.name === "Sverok" ? (
+                        <h6 className="ml-4 text-2xl">{organization.name}</h6>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                    <p className="py-2 text-sm">{organization.description}</p>
+                    <ul className="mb-14 lg:mb-20">
+                      {organization.points.map((point) => {
+                        return (
+                          <li className="flex text-sm" key={point}>
+                            <BsHash className="mr-1 mt-1" />
+                            {point}
+                          </li>
+                        );
+                      })}
+                    </ul>
+
+                    <Link
+                      href={organization.link}
+                      className="absolute left-1/4 right-1/4 bottom-4 block transform rounded-full bg-accent px-4 py-2 text-center text-lg text-white transition duration-500 hover:bg-accentHover"
+                    >
+                      {organization.name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      ) : (
+        <div
+          className=" md:hidden"
+          onClick={() => {
+            setShowModal(true);
+          }}
+        ></div>
+      )}
+    </div>
   );
 }
 

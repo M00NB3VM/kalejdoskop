@@ -6,7 +6,7 @@ function RoomNav() {
   const router = useRouter();
 
   return (
-    <nav className="absolute bottom-0 left-0 flex w-full justify-center md:justify-start">
+    <nav className="absolute bottom-0 left-0 z-40 flex w-full justify-center md:justify-start">
       <Link
         href="/roomone"
         className="m-4"

@@ -6,7 +6,7 @@ import RoomNav from "~/components/RoomNav";
 
 function Roomthree() {
   return (
-    <div>
+    <div className="relative m-0 min-h-screen p-0">
       <h1>Rum tre</h1>
       <DoorBackButton />
       <OrganizationInfoTab />
