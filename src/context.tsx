@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 
 interface ProviderValue {
   darkTheme: boolean;
-  setDarkTheme: Funtion;
+  setDarkTheme: Function;
 }
 
 interface PropsChildren {
