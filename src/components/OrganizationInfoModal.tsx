@@ -2,10 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 import { useStoreContext } from "~/context";
-import { BsChevronUp, BsChevronDown, BsHash } from "react-icons/bs";
+import { BsHash } from "react-icons/bs";
 
 interface OrganizationShort {
   name: string;
@@ -16,14 +15,8 @@ interface OrganizationShort {
   points: string[];
 }
 
-function OrganizationInfoTab() {
+function OrganizationInfoModal() {
   const { darkTheme } = useStoreContext();
-
-  const variants = {
-    open: { x: "25%" },
-  };
-  const [showTab, setShowTab] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
   const organizations: OrganizationShort[] = [
     {
@@ -67,43 +60,16 @@ function OrganizationInfoTab() {
   ];
 
   return (
-      <motion.div
-        className="fixed top-[30%] right-0 z-50 m-0 p-0"
-        initial={{ x: "calc(100% - 40px)" }}
-        animate={showTab ? "open" : ""}
-        variants={variants}
-        transition={{ ease: "easeInOut", duration: 0.8 }}
-      >
-        <div className="hidden w-[75%] rounded-l-lg bg-secondary md:block">
+   
+        <div className="absolute left-0 top-0 right-0 z-50 min-h-screen bg-secondary md:hidden">
           <div className="flex">
-            <div
-              onClick={() => {
-                setShowTab(!showTab);
-              }}
-              className="relative min-w-[40px] cursor-pointer"
-              key="tab"
-            >
-              <div className="absolute bottom-2 -left-2 flex -rotate-90 items-center justify-center font-bold text-accent">
-                {showTab ? (
-                  <BsChevronDown
-                    className="ml-2 w-10 pl-2"
-                    style={{ strokeWidth: 2 }}
-                  />
-                ) : (
-                  <BsChevronUp
-                    className="ml-2 w-10 pl-2"
-                    style={{ strokeWidth: 2 }}
-                  />
-                )}
-                <p className="w-2 pl-2 tracking-wider">Läs&nbsp;mig</p>
-              </div>
-            </div>
-            <ul className="flex">
+
+            <ul className="mx-auto my-8 flex flex-col">
               {organizations.map((organization) => {
                 return (
                   <li
                     key={organization.name}
-                    className={`relative my-4 mr-4 w-1/3 rounded px-4 py-4 shadow-lg ${
+                    className={`relative my-4 mx-auto w-11/12 rounded px-4 py-4 shadow-lg ${
                       darkTheme ? "bg-black" : "bg-white"
                     }`}
                   >
@@ -142,7 +108,7 @@ function OrganizationInfoTab() {
 
                     <Link
                       href={organization.link}
-                      className="absolute bottom-4 left-8 right-8 block transform rounded-full bg-accent px-4 py-2 text-center text-lg text-white transition duration-500 hover:bg-accentHover lg:right-12 lg:left-12"
+                      className="absolute left-1/4 right-1/4 bottom-4 block transform rounded-full bg-accent px-4 py-2 text-center text-lg text-white transition duration-500 hover:bg-accentHover"
                     >
                       {organization.name}
                     </Link>
@@ -152,8 +118,9 @@ function OrganizationInfoTab() {
             </ul>
           </div>
         </div>
-      </motion.div>
+      
+ 
   );
 }
 
-export default OrganizationInfoTab;
+export default OrganizationInfoModal;
