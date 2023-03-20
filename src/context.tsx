@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 
 interface ProviderValue {
   darkTheme: boolean;
-  setDarkTheme: Function;
+  setDarkTheme: (arg0: boolean) => void;
 }
 
 interface PropsChildren {
@@ -19,7 +19,7 @@ export function StoreProvider({ children }: PropsChildren) {
   const [theme, setTheme] = useState<string>("");
 
   useEffect(() => {
-    const item = JSON.parse(localStorage.getItem("theme"));
+    const item = JSON.parse(localStorage.getItem("theme") as string) as string;
 
     if (item === "light") {
       setTheme("light");
@@ -44,7 +44,7 @@ export function StoreProvider({ children }: PropsChildren) {
   }, []);
 
   useEffect(() => {
-    const item = JSON.parse(localStorage.getItem("theme"));
+    const item = JSON.parse(localStorage.getItem("theme") as string) as string;
     if (theme === "") {
       return;
     }
