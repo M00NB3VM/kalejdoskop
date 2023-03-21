@@ -8,13 +8,17 @@ import RoomNav from "~/components/RoomNav";
 function Roomone() {
   const [showModal, setShowModal] = useState<boolean>(false);
 
+  function closeModal(): void {
+setShowModal(!showModal)
+  }
+
   return (
     <div className="relative m-0 min-h-screen p-0">
       <DoorBackButton />
       <OrganizationInfoTab />
       <RoomNav />
 
-      <div className="min-w-screen flex h-screen overflow-visible overflow-x-scroll md:hidden">
+      <div className="min-w-screen flex h-screen overflow-visible overflow-x-scroll">
         <img src="/room.png" className=" h-full max-w-none" />
 
         <div className="relative md:hidden h-full">
@@ -22,7 +26,7 @@ function Roomone() {
             Läs&nbsp;mig
           </p>
         </div>
-        {showModal ? (<OrganizationInfoModal />) : (<></>)}
+        {showModal ? (<OrganizationInfoModal closeModal={closeModal} />) : (<></>)}
       </div>
     </div>
   );

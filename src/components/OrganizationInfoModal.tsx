@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 import { useStoreContext } from "~/context";
@@ -15,7 +15,11 @@ interface OrganizationShort {
   points: string[];
 }
 
-function OrganizationInfoModal() {
+interface Props {
+  closeModal: () => void
+}
+
+function OrganizationInfoModal({closeModal}: Props) {
   const { darkTheme } = useStoreContext();
 
   const organizations: OrganizationShort[] = [
@@ -63,6 +67,9 @@ function OrganizationInfoModal() {
    
         <div className="absolute left-0 top-0 right-0 z-50 min-h-screen bg-secondary md:hidden">
           <div className="flex">
+            <div onClick={() => {closeModal()}} className="absolute top-1 right-2">
+              <p className="font-black text-accent px-2 text-2xl">X</p>
+            </div>
 
             <ul className="mx-auto my-8 flex flex-col">
               {organizations.map((organization) => {
