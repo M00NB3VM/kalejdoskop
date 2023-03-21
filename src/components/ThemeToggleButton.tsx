@@ -18,7 +18,7 @@ function ThemeToggleButton() {
       <button
         className="h-[22px] w-[42px] rounded-full bg-primary"
         onClick={() => {
-          setDarkTheme((darkTheme: boolean) => !darkTheme);
+          setDarkTheme(!darkTheme);
         }}
       >
         <div className="flex justify-between">
