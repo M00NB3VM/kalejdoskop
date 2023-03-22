@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 import DoorBackButton from "~/components/DoorBackButton";
 import OrganizationInfoTab from "~/components/OrganizationInfoTab";
@@ -13,7 +14,9 @@ setShowModal(!showModal)
   }
 
   return (
-    <div className="relative m-0 min-h-screen p-0">
+    <motion.div className="relative m-0 min-h-screen p-0" initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.3 }}>
       <DoorBackButton />
       <OrganizationInfoTab />
       <RoomNav />
@@ -28,7 +31,7 @@ setShowModal(!showModal)
         </div>
         {showModal ? (<OrganizationInfoModal closeModal={closeModal} />) : (<></>)}
       </div>
-    </div>
+    </motion.div>
   );
 }
 export default Roomthree;

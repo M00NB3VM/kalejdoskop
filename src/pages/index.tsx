@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { api } from "~/utils/api";
 
@@ -13,7 +14,10 @@ const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
 
   return (
-    <>
+    <motion.div initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.3 }}
+    >
       <Head>
         <title>Kalejdoskop</title>
         <meta name="description" content="" />
@@ -35,7 +39,7 @@ const Home: NextPage = () => {
           </Link>
         </div>
       </main>
-    </>
+    </motion.div>
   );
 };
 
