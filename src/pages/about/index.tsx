@@ -78,7 +78,7 @@ function About() {
           {partners.map((partner) => {
             return (
               <li
-                className="mr-4 max-w-[290px] rounded p-6 shadow-lg"
+                className="mr-0 max-w-[290px] rounded p-4 shadow-lg md:mr-4 md:p-6"
                 key={partner.name}
               >
                 <Link href={partner.url}>
