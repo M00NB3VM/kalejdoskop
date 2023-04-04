@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -9,9 +10,12 @@ import ThemeToggleButton from "~/components/ThemeToggleButton";
 import CallToAction from "~/components/CallToAction";
 import EnterRoom from "~/components/EnterRoom";
 import OrganizationsInfo from "~/components/OrganizationInfo";
+import ThankYouModal from "~/components/ThankYouModal";
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
+
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   return (
     <motion.div
@@ -27,6 +31,18 @@ const Home: NextPage = () => {
       <main>
         <ThemeToggleButton />
         <CallToAction />
+        {showModal ? (
+          <ThankYouModal showModal={showModal} setShowModal={setShowModal} />
+        ) : (
+          <button
+            onClick={() => {
+              setShowModal(true);
+            }}
+          >
+            Nerladdat!
+          </button>
+        )}
+
         <EnterRoom />
         <OrganizationsInfo />
 

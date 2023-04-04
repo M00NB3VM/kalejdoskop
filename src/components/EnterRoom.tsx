@@ -20,7 +20,7 @@ function EnterRoom() {
       hobbies: ["Gaming", "Musik"],
       room: "Room One",
       path: "/roomone",
-      img: "/character_one.png",
+      img: "/Ch1.png",
     },
     {
       name: "Namn Två",
