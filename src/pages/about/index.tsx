@@ -59,9 +59,9 @@ function About() {
         <ThemeToggleButton />
         <Link
           href="/"
-          className="m-4 flex w-[130px] transform flex-row items-center justify-center rounded-full bg-accent px-6 py-2 text-lg text-white transition duration-500 hover:bg-accentHover"
+          className="m-4 flex w-[140px] transform flex-row items-center justify-center rounded-full bg-accent px-6 py-2 text-lg text-white transition duration-500 hover:bg-accentHover"
         >
-          <BsChevronLeft />
+          <BsChevronLeft className="mr-1 stroke-[0.7]" />
           Tillbaka
         </Link>
 
@@ -73,7 +73,13 @@ function About() {
           molestias quidem sed.
         </p>
 
-        <h3 className="m-4 mx-auto mt-10 w-4/5 text-lg">Samarbetspartners</h3>
+        <img
+          src="/divider_two.png"
+          alt="dekoration"
+          className="my-10 h-auto max-w-full pl-2"
+        />
+        <h3 className="mx-auto mb-4 w-4/5 text-lg">Fler bra ställen</h3>
+
         <ul className="m-4 mx-auto mb-8 flex w-4/5 flex-wrap">
           {partners.map((partner) => {
             return (

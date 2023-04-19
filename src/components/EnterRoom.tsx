@@ -1,12 +1,10 @@
 import React from "react";
 import Link from "next/link";
 
-import { BsHash } from "react-icons/bs";
-
 interface Character {
   name: string;
   age: number;
-  hobbies: string[];
+  description: string;
   room: string;
   path: string;
   img: string;
@@ -15,25 +13,28 @@ interface Character {
 function EnterRoom() {
   const characters: Character[] = [
     {
-      name: "Namn Ett",
+      name: "Milou",
       age: 17,
-      hobbies: ["Gaming", "Musik"],
+      description:
+        "Milou älskar alla typer av spel och har startat en spelförening med sina vänner. Hans dröm vore att träffa en tjej med samma intressen men trots hans försök har han inte lyckats charma någon. Lika mycket energi lägger han inte på sitt skolarbete, vilket hans lärare och föräldrar ofta påpekar.",
       room: "Room One",
       path: "/roomone",
       img: "/Ch1.png",
     },
     {
-      name: "Namn Två",
-      age: 19,
-      hobbies: ["Att streama online", "Fotboll"],
+      name: "Liam",
+      age: 20,
+      description:
+        "Sedan Sebastian hoppade av gymnasiet har det varit svårt för honom att hamna rätt. Alla chefer han har haft är dumma i huvudet och att flytta hemifrån verkar vara omöjligt. Han har en flickvän men även hon har börjat vända sig emot honom.",
       room: "Room Two",
       path: "/roomtwo",
       img: "/character_two.png",
     },
     {
-      name: "Namn Tre",
+      name: "Polka",
       age: 18,
-      hobbies: ["Streama", "Smink"],
+      description:
+        "Stolt samlare av limited edition plushies och japanska rollspel. Hon har alltid gillat spelkultur och följer flera cosplayers på sociala medier. Hon hade gärna cosplayat själv men har aldrig haft några nära vänner och inte vågat åka på konvent ensam. Nu har hon dock bestämt sig för att börja våga mer och börja streama hennes favoritspel.",
       room: "Room Three",
       path: "/roomthree",
       img: "/character_three.png",
@@ -41,47 +42,36 @@ function EnterRoom() {
   ];
 
   return (
-    <div>
+    <div className="w-full">
       <ul className="m-4">
         {characters.map((character) => {
           return (
             <li
               key={character.name}
-              className={`mb-4 flex items-center ${
-                character.name === "Namn Två" ? "flex-row-reverse" : "flex-row"
+              className={`mb-4 flex flex-wrap items-center ${
+                character.name === "Sebastian" ? "flex-row-reverse" : "flex-row"
               } `}
             >
-              <ul className="min-h-[300px] min-w-[250px] rounded-2xl border-b-[6px] border-b-accent bg-secondary px-8 pt-8 text-primary">
+              <ul className="min-h-[300px] w-[100%] rounded-2xl border-b-[6px] border-b-accent bg-secondary px-8 pt-8 text-primary sm:max-w-[50%] md:min-w-[250px] md:max-w-[40%] xl:max-w-[30%]">
                 <li key={character.name}>
                   <div className="flex items-baseline">
                     <p>Namn: </p>
-                    <h2
-                      className="pl-1 text-xl"
-                      style={{ textShadow: "1px 2px var(--accent-color)" }}
-                    >
-                      {character.name}
-                    </h2>
+                    <h2 className="px-2 text-xl">{character.name}</h2>
                   </div>
                 </li>
                 <li key={character.age}>
                   <p>Ålder: {character.age}</p>
                 </li>
-                <li key={character.hobbies[0]}>
-                  <ul>
-                    Hobbies:{" "}
-                    {character.hobbies.map((h) => {
-                      return (
-                        <li key={h} className="flex items-center">
-                          <BsHash />
-                          <p>{h}</p>
-                        </li>
-                      );
-                    })}
-                  </ul>
+                <li key={`${character.name}description`} className="py-4">
+                  <p>{character.description}</p>
                 </li>
               </ul>
 
-              <img src={character.img} alt="Karaktär" className="m-4 mx-8" />
+              <img
+                src={character.img}
+                alt="Karaktär"
+                className="m-4 mx-8 max-w-full"
+              />
 
               <nav>
                 <Link
