@@ -6,8 +6,11 @@ function CallToAction() {
   return (
     <>
       <div className="mt-10 flex justify-center">
-        <img src="" alt="Logotyp" />
-        <h1 className="text-xl">Kalejdoskop</h1>
+        <img
+          src="Logotype.png"
+          alt="Logotyp"
+          className="max-h-[250px] max-w-full"
+        />
       </div>
 
       <div className="flex justify-center">

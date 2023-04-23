@@ -64,7 +64,7 @@ function OrganizationInfoModal({ closeModal }: Props) {
   ];
 
   return (
-    <div className="absolute left-0 top-0 right-0 z-50 min-h-screen bg-secondary md:hidden">
+    <div className="fixed left-0 top-0 right-0 z-50 min-h-screen bg-secondary md:hidden">
       <div className="flex">
         <div
           onClick={() => {
@@ -72,7 +72,9 @@ function OrganizationInfoModal({ closeModal }: Props) {
           }}
           className="absolute top-1 right-2"
         >
-          <p className="px-2 text-2xl font-black text-accent">X</p>
+          <p className="cursor-pointer px-2 text-2xl font-black text-accent">
+            X
+          </p>
         </div>
 
         <ul className="mx-auto my-8 flex flex-col">

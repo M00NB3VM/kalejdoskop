@@ -19,7 +19,7 @@ function EnterRoom() {
         "Milou älskar alla typer av spel och har startat en spelförening med sina vänner. Hans dröm vore att träffa en tjej med samma intressen men trots hans försök har han inte lyckats charma någon. Lika mycket energi lägger han inte på sitt skolarbete, vilket hans lärare och föräldrar ofta påpekar.",
       room: "Room One",
       path: "/roomone",
-      img: "/Ch1.png",
+      img: "/Char1_FBody.png",
     },
     {
       name: "Liam",
@@ -28,7 +28,7 @@ function EnterRoom() {
         "Sedan Sebastian hoppade av gymnasiet har det varit svårt för honom att hamna rätt. Alla chefer han har haft är dumma i huvudet och att flytta hemifrån verkar vara omöjligt. Han har en flickvän men även hon har börjat vända sig emot honom.",
       room: "Room Two",
       path: "/roomtwo",
-      img: "/character_two.png",
+      img: "/Char2_FBody.png",
     },
     {
       name: "Polka",
@@ -37,7 +37,7 @@ function EnterRoom() {
         "Stolt samlare av limited edition plushies och japanska rollspel. Hon har alltid gillat spelkultur och följer flera cosplayers på sociala medier. Hon hade gärna cosplayat själv men har aldrig haft några nära vänner och inte vågat åka på konvent ensam. Nu har hon dock bestämt sig för att börja våga mer och börja streama hennes favoritspel.",
       room: "Room Three",
       path: "/roomthree",
-      img: "/character_three.png",
+      img: "/Char3_FBody.png",
     },
   ];
 

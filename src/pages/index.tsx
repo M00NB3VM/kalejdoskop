@@ -4,8 +4,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { api } from "~/utils/api";
-
 import ThemeToggleButton from "~/components/ThemeToggleButton";
 import CallToAction from "~/components/CallToAction";
 import EnterRoom from "~/components/EnterRoom";
@@ -13,8 +11,6 @@ import OrganizationsInfo from "~/components/OrganizationInfo";
 import ThankYouModal from "~/components/ThankYouModal";
 
 const Home: NextPage = () => {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
-
   const [showModal, setShowModal] = useState<boolean>(false);
 
   return (
@@ -27,7 +23,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Kalejdoskop</title>
         <meta name="description" content="" />
-        <link rel="icon" href="" />
+        <link rel="icon" href="favicon.png" />
       </Head>
       <main>
         <ThemeToggleButton />

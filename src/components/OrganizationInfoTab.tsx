@@ -68,7 +68,7 @@ function OrganizationInfoTab() {
 
   return (
     <motion.div
-      className="fixed top-[30%] right-0 z-10 m-0 p-0"
+      className="fixed top-[30%] right-0 z-40 m-0 p-0"
       initial={{ x: "calc(100% - 40px)" }}
       animate={showTab ? "open" : ""}
       variants={variants}
