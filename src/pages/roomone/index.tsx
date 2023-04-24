@@ -41,12 +41,12 @@ function Roomone() {
       <RoomNav />
 
       <div className="min-w-screen relative flex h-screen overflow-visible overflow-x-auto bg-[#000]">
-        <div className="relative h-full min-w-min">
+        <div className="absolute top-0 left-0 h-full min-w-min">
           {showObjectOne ? (
             ""
           ) : (
             <div
-              className="absolute top-[30%] left-0 z-50 inline-block cursor-pointer bg-accent"
+              className="absolute top-[30%] left-[30%] z-50 inline-block cursor-pointer bg-accent"
               onClick={() => {
                 setShowObjectOne(!showObjectOne);
               }}
