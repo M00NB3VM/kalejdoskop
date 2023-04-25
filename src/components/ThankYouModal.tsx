@@ -17,7 +17,7 @@ function ThankYouModal({ showModal, setShowModal }: Props) {
   }, []);
 
   return (
-    <div className="fixed top-0 bottom-0 left-0 right-0 bg-primary">
+    <div className="fixed top-0 bottom-0 left-0 right-0 z-50 bg-primary">
       <button
         className="ml-auto mr-4 mt-4 block transform rounded-full bg-accent py-4 px-6 text-right font-['Documan_heavy'] text-lg text-white transition duration-500 hover:bg-accentHover"
         onClick={() => {
