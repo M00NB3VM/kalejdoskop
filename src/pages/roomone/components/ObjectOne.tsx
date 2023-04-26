@@ -54,10 +54,6 @@ function ObjectOne({ showObjectOne, setShowObjectOne }: Props) {
     }
   }
 
-  if (messages.length === 0) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <>
       {showObjectOne ? (

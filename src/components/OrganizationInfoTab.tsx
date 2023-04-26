@@ -68,13 +68,13 @@ function OrganizationInfoTab() {
 
   return (
     <motion.div
-      className="fixed top-[30%] right-0 z-40 m-0 p-0"
+      className="fixed top-[30%] right-0 z-50 m-0 p-0"
       initial={{ x: "calc(100% - 40px)" }}
       animate={showTab ? "open" : ""}
       variants={variants}
       transition={{ ease: "easeInOut", duration: 0.8 }}
     >
-      <div className="hidden w-[75%] rounded-l-lg bg-secondary md:block">
+      <div className="z-50 hidden w-[75%] rounded-l-lg bg-secondary md:block">
         <div className="flex">
           <div
             onClick={() => {
