@@ -46,7 +46,7 @@ function Roomone() {
             ""
           ) : (
             <div
-              className="absolute top-[30%] left-0 z-50 inline-block cursor-pointer bg-accent"
+              className="absolute top-[30%] left-0 z-40 inline-block cursor-pointer bg-accent"
               onClick={() => {
                 setShowObjectOne(!showObjectOne);
               }}
