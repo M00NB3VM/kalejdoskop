@@ -41,7 +41,7 @@ function Roomone() {
       <RoomNav />
 
       <div className="min-w-screen relative flex h-screen overflow-visible overflow-x-auto bg-[#000]">
-        <div className="relative h-full min-w-min">
+        <div className="absolute top-0 left-0 h-full min-w-min">
           {showObjectOne ? (
             ""
           ) : (

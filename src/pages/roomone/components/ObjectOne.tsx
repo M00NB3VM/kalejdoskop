@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-
+import axios from "axios";
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 
 interface Props {
@@ -9,58 +9,33 @@ interface Props {
   setShowObjectOne: (arg0: boolean) => void;
 }
 
+interface Message {
+  id: number;
+  timestamp: Date;
+  room: string;
+  object: string;
+  message: string;
+  status: string;
+}
+
 function ObjectOne({ showObjectOne, setShowObjectOne }: Props) {
-  const allMessages = [
-    {
-      id: 1,
-      text: "1. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde omnis sint non tempora voluptatibus quasi, aliquid quaerat alias veniam, autem fuga placeat sunt. Vero, culpa. Sint voluptates deleniti quam molestias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lor.",
-      status: "approved",
-    },
-    {
-      id: 2,
-      text: "2. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde omnis sint non tempora voluptatibus quasi, aliquid quaerat alias veniam, autem fuga placeat sunt. Vero, culpa. Sint voluptates deleniti quam molestias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lor.",
-      status: "approved",
-    },
-    {
-      id: 3,
-      text: "3. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde omnis sint non tempora voluptatibus quasi, aliquid quaerat alias veniam, autem fuga placeat sunt. Vero, culpa. Sint voluptates deleniti quam molestias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lor.",
-      status: "denied",
-    },
-    {
-      id: 4,
-      text: "4. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde omnis sint non tempora voluptatibus quasi, aliquid quaerat alias veniam, autem fuga placeat sunt. Vero, culpa. Sint voluptates deleniti quam molestias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lor.",
-      status: "approved",
-    },
-    {
-      id: 5,
-      text: "5. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde omnis sint non tempora voluptatibus quasi, aliquid quaerat alias veniam, autem fuga placeat sunt. Vero, culpa. Sint voluptates deleniti quam molestias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lor.",
-      status: "denied",
-    },
-    {
-      id: 6,
-      text: "6. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde omnis sint non tempora voluptatibus quasi, aliquid quaerat alias veniam, autem fuga placeat sunt. Vero, culpa. Sint voluptates deleniti quam molestias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lor.",
-      status: "approved",
-    },
-  ];
-
-  const approvedMessages = allMessages.filter((m) => m.status === "approved");
-
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [currentMessage, setCurrentMessage] = useState(0);
   const [charMax, setCharMax] = useState(280);
 
-  function getRandomMessages(array) {
-    for (let i = approvedMessages.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    setMessages(array);
-  }
-
   useEffect(() => {
-    getRandomMessages(approvedMessages);
+    async function fetchMessages() {
+      try {
+        const response = await axios.get(
+          "http://localhost:4000/messages/three-random-messages"
+        );
+        setMessages(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchMessages();
   }, []);
 
   // Carousel buttons
@@ -94,7 +69,6 @@ function ObjectOne({ showObjectOne, setShowObjectOne }: Props) {
                 STÄNG
               </button>
             </li>
-
             <li className="mx-auto flex max-w-max flex-col">
               <label>Dela dina tankar!</label>
               <textarea
@@ -118,7 +92,6 @@ function ObjectOne({ showObjectOne, setShowObjectOne }: Props) {
                 Skicka
               </button>
             </li>
-
             <li className="mx-auto mt-4 max-w-[80%]">
               <h6>Meddelanden från andra</h6>
             </li>
@@ -127,28 +100,27 @@ function ObjectOne({ showObjectOne, setShowObjectOne }: Props) {
               <div className="my-6">
                 {currentMessage === 0 ? (
                   <p className="rounded bg-white p-6 shadow-lg">
-                    {messages[0].text}
+                    {messages[0]?.message ?? ""}
                   </p>
                 ) : (
                   ""
                 )}
                 {currentMessage === 1 ? (
                   <p className="rounded bg-white p-6 shadow-lg">
-                    {messages[1].text}
+                    {messages[1]?.message ?? ""}
                   </p>
                 ) : (
                   ""
                 )}
                 {currentMessage === 2 ? (
                   <p className="rounded bg-white p-6 shadow-lg">
-                    {messages[2].text}
+                    {messages[2]?.message ?? ""}
                   </p>
                 ) : (
                   ""
                 )}
               </div>
             </li>
-
             <li className="mx-auto my-8 flex w-full max-w-[90%] items-center justify-between">
               <BsFillCaretLeftFill
                 className="h-auto w-[30px] cursor-pointer"
