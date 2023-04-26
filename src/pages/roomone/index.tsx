@@ -20,7 +20,7 @@ function Roomone() {
 
   return (
     <motion.div
-      className="relative m-0 min-h-screen p-0"
+      className="relative m-0 h-screen p-0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
@@ -40,13 +40,13 @@ function Roomone() {
       <OrganizationInfoTab />
       <RoomNav />
 
-      <div className="min-w-screen relative flex h-screen overflow-visible overflow-x-auto bg-[#000]">
-        <div className="absolute top-0 left-0 h-full min-w-min">
+      <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#ccc]">
+        <div className="absolute h-full min-w-min">
           {showObjectOne ? (
             ""
           ) : (
             <div
-              className="absolute top-[30%] left-0 z-40 inline-block cursor-pointer bg-accent"
+              className="absolute top-[34%] left-[36%] z-40 inline-block cursor-pointer bg-accent"
               onClick={() => {
                 setShowObjectOne(!showObjectOne);
               }}
@@ -63,18 +63,19 @@ function Roomone() {
               setShowObjectOne={setShowObjectOne}
             />
           </RoomGrid>
+
+          <div className="absolute right-0 top-[45%] z-50 md:hidden">
+            <p
+              onClick={() => {
+                setShowModal(true);
+              }}
+              className="inline-block origin-bottom-right -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
+            >
+              Läs&nbsp;mig
+            </p>
+          </div>
         </div>
 
-        <div className="relative z-50 h-full md:hidden">
-          <p
-            onClick={() => {
-              setShowModal(true);
-            }}
-            className="absolute top-[50%] -right-[43px] inline-block -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
-          >
-            Läs&nbsp;mig
-          </p>
-        </div>
         {showModal ? <OrganizationInfoModal closeModal={closeModal} /> : <></>}
       </div>
     </motion.div>
