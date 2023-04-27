@@ -1,6 +1,10 @@
+"use client";
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+
+import { FiMonitor } from "react-icons/fi";
 
 import OrganizationInfoTab from "~/components/OrganizationInfoTab";
 import OrganizationInfoModal from "~/components/OrganizationInfoModal";
@@ -20,7 +24,7 @@ function Roomone() {
 
   return (
     <motion.div
-      className="relative m-0 h-screen p-0"
+      className="relative m-0 min-h-screen p-0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
@@ -40,22 +44,30 @@ function Roomone() {
       <OrganizationInfoTab />
       <RoomNav />
 
-      <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#ccc]">
-        <div className="absolute h-full min-w-min">
+      <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#000]">
+        <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">
           {showObjectOne ? (
             ""
           ) : (
             <div
-              className="absolute top-[34%] left-[36%] z-40 inline-block cursor-pointer bg-accent"
+              className="absolute top-[31%] left-[38%] z-40 inline-block cursor-pointer"
               onClick={() => {
                 setShowObjectOne(!showObjectOne);
               }}
             >
-              Objekt nummer 1
+              <FiMonitor
+                color="var(--accent-color)"
+                size={60}
+                strokeWidth={2}
+                className="drop-shadow-[2px_-2px_4px_#00ffc8]"
+              />
             </div>
           )}
 
-          <img src="/Char1_Room.png" className="-z-50 max-h-full max-w-none" />
+          <img
+            src="/Char1_Room.png"
+            className="-z-50 mx-auto max-h-full max-w-none"
+          />
 
           <RoomGrid>
             <ObjectOne

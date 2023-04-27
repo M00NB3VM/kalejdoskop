@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -10,9 +12,12 @@ import RoomGrid from "~/components/RoomGrid";
 function Roomtwo() {
   const [showModal, setShowModal] = useState<boolean>(false);
 
+  const [showObjectOne, setShowObjectOne] = useState<boolean>(false);
+
   function closeModal(): void {
     setShowModal(!showModal);
   }
+
   return (
     <motion.div
       className="relative m-0 min-h-screen p-0"
@@ -35,24 +40,42 @@ function Roomtwo() {
       <OrganizationInfoTab />
       <RoomNav />
 
-      <div className="min-w-screen relative flex h-screen overflow-visible overflow-x-auto bg-[#000]">
-        <div className="relative h-full min-w-min">
-          <img src="/Char2_Room.png" className="-z-50 max-h-full max-w-none" />
+      <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#000]">
+        <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">
+          {showObjectOne ? (
+            ""
+          ) : (
+            <div
+              className="absolute top-[25%] left-[65%] z-40 inline-block cursor-pointer bg-accent"
+              onClick={() => {
+                setShowObjectOne(!showObjectOne);
+              }}
+            >
+              Objekt nummer 1
+            </div>
+          )}
+
+          <img
+            src="/Char2_Room.png"
+            className="-z-50 mx-auto max-h-full max-w-none"
+          />
+
           <RoomGrid>
             <div></div>
           </RoomGrid>
+
+          <div className="absolute right-0 top-[45%] z-50 md:hidden">
+            <p
+              onClick={() => {
+                setShowModal(true);
+              }}
+              className="inline-block origin-bottom-right -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
+            >
+              Läs&nbsp;mig
+            </p>
+          </div>
         </div>
 
-        <div className="relative z-50 h-full md:hidden">
-          <p
-            onClick={() => {
-              setShowModal(true);
-            }}
-            className="absolute top-[50%] -right-[43px] inline-block -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
-          >
-            Läs&nbsp;mig
-          </p>
-        </div>
         {showModal ? <OrganizationInfoModal closeModal={closeModal} /> : <></>}
       </div>
     </motion.div>
