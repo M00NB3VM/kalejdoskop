@@ -5,8 +5,8 @@ import axios from "axios";
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 
 interface Props {
-  showObjectOne: boolean;
-  setShowObjectOne: (arg0: boolean) => void;
+  showObject: boolean;
+  setShowObject: (arg0: boolean) => void;
 }
 
 interface Message {
@@ -18,7 +18,7 @@ interface Message {
   status: string;
 }
 
-function ObjectOne({ showObjectOne, setShowObjectOne }: Props) {
+function ObjectOne({ showObject, setShowObject }: Props) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [currentMessage, setCurrentMessage] = useState(0);
   const [charMax, setCharMax] = useState(280);
@@ -56,19 +56,20 @@ function ObjectOne({ showObjectOne, setShowObjectOne }: Props) {
 
   return (
     <>
-      {showObjectOne ? (
-        <div className="fixed top-0 left-0 right-0 bottom-0 z-40 overflow-auto md:relative md:col-span-2 md:col-start-2 md:min-h-0">
-          <ul className="min-h-full bg-secondary p-4 md:mt-4 md:h-auto md:min-h-0 md:rounded-2xl md:border-b-[6px] md:border-b-accent">
+      {showObject ? (
+        <div className="fixed top-0 left-0 right-0 bottom-0 z-40 z-50 overflow-auto md:absolute md:top-[10%] md:left-[18%] md:min-h-0 md:max-w-[290px]">
+          <ul className="min-h-full bg-secondary p-4 md:h-auto md:min-h-0 md:rounded-2xl md:border-b-[6px] md:border-b-accent">
             <li>
               <button
                 className="mt-1 ml-auto mr-1 block rounded-full bg-accent py-2 px-4 font-['Documan_heavy'] text-white"
                 onClick={() => {
-                  setShowObjectOne(!showObjectOne);
+                  setShowObject(!showObject);
                 }}
               >
                 STÄNG
               </button>
             </li>
+
             <li className="mx-auto flex max-w-max flex-col">
               <label>Dela dina tankar!</label>
               <textarea

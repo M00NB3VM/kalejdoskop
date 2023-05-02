@@ -26,7 +26,7 @@ function EnterRoom() {
       img: "/Char1_FBody.png",
       imgWalking: "/Char1_FBody_Walk.png",
       door: "/Char1_Door.png",
-      openDoor: "/Char1_Door_Open.png",
+      openDoor: "/Char1_Door_Open2.png",
     },
     {
       name: "Liam",
@@ -235,7 +235,7 @@ function EnterRoom() {
                         className="absolute left-0 bottom-0 z-10 max-h-[90%]"
                       />
                       <img
-                        className="absolute left-[90px] top-0 h-full w-full"
+                        className="absolute left-[90px] top-0 -z-10 h-full w-full"
                         src={character.door}
                         alt="Dörr till karaktärs rum"
                       />
@@ -248,7 +248,7 @@ function EnterRoom() {
                         className="absolute left-0 bottom-0 z-10 max-h-[90%]"
                       />
                       <img
-                        className="absolute left-[90px] top-0 h-full w-full"
+                        className="absolute left-[90px] top-0 -z-10 h-full w-full"
                         src={character.openDoor}
                         alt="Öppen dörr till karaktärs rum"
                       />
