@@ -5,11 +5,11 @@ interface Props {
   setShowObject: (arg0: boolean) => void;
 }
 
-function ObjectSix({ showObject, setShowObject }: Props) {
+function MilouBook({ showObject, setShowObject }: Props) {
   return (
     <>
       {showObject ? (
-        <div className="fixed top-0 left-0 right-0 bottom-0 z-40 overflow-auto md:absolute md:top-[30%] md:left-[70%] md:min-h-0 md:max-w-[290px]">
+        <div className="fixed top-0 left-0 right-0 bottom-0 z-40 overflow-auto md:absolute md:top-[40%] md:left-[43%] md:min-h-0 md:max-w-[290px]">
           <ul className="min-h-full bg-secondary p-4 md:h-auto md:min-h-0 md:rounded-2xl md:border-b-[6px] md:border-b-accent">
             <li>
               <button
@@ -22,7 +22,7 @@ function ObjectSix({ showObject, setShowObject }: Props) {
               </button>
             </li>
             <li>
-              <p>Hello from object 6</p>
+              <p>Hello from object 3</p>
             </li>
           </ul>
         </div>
@@ -33,4 +33,4 @@ function ObjectSix({ showObject, setShowObject }: Props) {
   );
 }
 
-export default ObjectSix;
+export default MilouBook;

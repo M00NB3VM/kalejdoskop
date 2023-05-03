@@ -1,15 +1,16 @@
 import React from "react";
+import Link from "next/link";
 
 interface Props {
   showObject: boolean;
   setShowObject: (arg0: boolean) => void;
 }
 
-function ObjectThree({ showObject, setShowObject }: Props) {
+function MilouComputer({ showObject, setShowObject }: Props) {
   return (
     <>
       {showObject ? (
-        <div className="fixed top-0 left-0 right-0 bottom-0 z-40 overflow-auto md:absolute md:top-[40%] md:left-[43%] md:min-h-0 md:max-w-[290px]">
+        <div className="fixed top-0 left-0 right-0 bottom-0 z-40 overflow-auto md:absolute md:top-[40%] md:left-[38%] md:min-h-0 md:max-w-[290px]">
           <ul className="min-h-full bg-secondary p-4 md:h-auto md:min-h-0 md:rounded-2xl md:border-b-[6px] md:border-b-accent">
             <li>
               <button
@@ -22,7 +23,13 @@ function ObjectThree({ showObject, setShowObject }: Props) {
               </button>
             </li>
             <li>
-              <p>Hello from object 3</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Consectetur corrupti quos impedit a, repellendus quam nemo
+                nesciunt sunt. Veritatis magni illo, unde delectus soluta
+                quaerat tempora nemo molestias quidem sed.
+              </p>
+              <Link href="#">Länk till organisation</Link>
             </li>
           </ul>
         </div>
@@ -33,4 +40,4 @@ function ObjectThree({ showObject, setShowObject }: Props) {
   );
 }
 
-export default ObjectThree;
+export default MilouComputer;

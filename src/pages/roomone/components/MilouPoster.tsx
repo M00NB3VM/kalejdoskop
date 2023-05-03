@@ -1,11 +1,12 @@
 import React from "react";
+import Link from "next/link";
 
 interface Props {
   showObject: boolean;
   setShowObject: (arg0: boolean) => void;
 }
 
-function ObjectFive({ showObject, setShowObject }: Props) {
+function MilouPoster({ showObject, setShowObject }: Props) {
   return (
     <>
       {showObject ? (
@@ -22,7 +23,13 @@ function ObjectFive({ showObject, setShowObject }: Props) {
               </button>
             </li>
             <li>
-              <p>Hello from object 5</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Consectetur corrupti quos impedit a, repellendus quam nemo
+                nesciunt sunt. Veritatis magni illo, unde delectus soluta
+                quaerat tempora nemo molestias quidem sed.
+              </p>
+              <Link href="#">Länk till organisation</Link>
             </li>
           </ul>
         </div>
@@ -33,4 +40,4 @@ function ObjectFive({ showObject, setShowObject }: Props) {
   );
 }
 
-export default ObjectFive;
+export default MilouPoster;

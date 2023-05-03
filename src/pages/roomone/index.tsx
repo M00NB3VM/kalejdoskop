@@ -13,23 +13,23 @@ import OrganizationInfoTab from "~/components/OrganizationInfoTab";
 import OrganizationInfoModal from "~/components/OrganizationInfoModal";
 import RoomNav from "~/components/RoomNav";
 
-import ObjectOne from "./components/ObjectOne";
-import ObjectTwo from "./components/ObjectTwo";
-import ObjectThree from "./components/ObjectThree";
-import ObjectFour from "./components/ObjectFour";
-import ObjectFive from "./components/ObjectFive";
-import ObjectSix from "./components/ObjectSix";
+import MilouGift from "./components/MilouGift";
+import MilouConsole from "./components/MilouConsole";
+import MilouBook from "./components/MilouBook";
+import MilouBed from "./components/MilouBed";
+import MilouPoster from "./components/MilouPoster";
+import MilouComputer from "./components/MilouComputer";
 
 function Roomone() {
   const [showOrganizationModal, setShowOrganizationModal] =
     useState<boolean>(false);
 
-  const [showObjectOne, setShowObjectOne] = useState<boolean>(false);
-  const [showObjectTwo, setShowObjectTwo] = useState<boolean>(false);
-  const [showObjectThree, setShowObjectThree] = useState<boolean>(false);
-  const [showObjectFour, setShowObjectFour] = useState<boolean>(false);
-  const [showObjectFive, setShowObjectFive] = useState<boolean>(false);
-  const [showObjectSix, setShowObjectSix] = useState<boolean>(false);
+  const [showGiftModal, setShowGiftModal] = useState<boolean>(false);
+  const [showConsoleModal, setShowConsoleModal] = useState<boolean>(false);
+  const [showBookModal, setShowBookModal] = useState<boolean>(false);
+  const [showBedModal, setShowBedModal] = useState<boolean>(false);
+  const [showPosterModal, setShowPosterModal] = useState<boolean>(false);
+  const [showComputerModal, setShowComputerModal] = useState<boolean>(false);
 
   function closeOrganizationModal(): void {
     setShowOrganizationModal(!showOrganizationModal);
@@ -62,7 +62,7 @@ function Roomone() {
           <div
             className="absolute top-[31%] left-[38%] z-40 inline-block cursor-pointer"
             onClick={() => {
-              setShowObjectOne(!showObjectOne);
+              setShowComputerModal(!showComputerModal);
             }}
           >
             <FiMonitor
@@ -75,7 +75,7 @@ function Roomone() {
           <div
             className="absolute top-[50%] left-[30%] z-40 inline-block cursor-pointer"
             onClick={() => {
-              setShowObjectTwo(!showObjectTwo);
+              setShowConsoleModal(!showConsoleModal);
             }}
           >
             <SlGameController
@@ -88,7 +88,7 @@ function Roomone() {
           <div
             className="absolute top-[27%] left-[47%] z-40 inline-block cursor-pointer"
             onClick={() => {
-              setShowObjectThree(!showObjectThree);
+              setShowBookModal(!showBookModal);
             }}
           >
             <FaBook
@@ -101,7 +101,7 @@ function Roomone() {
           <div
             className="absolute top-[28%] left-[56%] z-40 inline-block cursor-pointer"
             onClick={() => {
-              setShowObjectFour(!showObjectFour);
+              setShowBedModal(!showBedModal);
             }}
           >
             <BiBed
@@ -114,7 +114,7 @@ function Roomone() {
           <div
             className="absolute top-[12%] left-[58%] z-40 inline-block cursor-pointer"
             onClick={() => {
-              setShowObjectFive(!showObjectFive);
+              setShowPosterModal(!showPosterModal);
             }}
           >
             <FiImage
@@ -127,7 +127,7 @@ function Roomone() {
           <div
             className="absolute top-[19%] left-[70%] z-40 inline-block cursor-pointer"
             onClick={() => {
-              setShowObjectSix(!showObjectSix);
+              setShowGiftModal(!showGiftModal);
             }}
           >
             <FiGift
@@ -143,29 +143,26 @@ function Roomone() {
             className="-z-50 mx-auto max-h-full max-w-none"
           />
 
-          <ObjectOne
-            showObject={showObjectOne}
-            setShowObject={setShowObjectOne}
+          <MilouGift
+            showObject={showGiftModal}
+            setShowObject={setShowGiftModal}
           />
-          <ObjectTwo
-            showObject={showObjectTwo}
-            setShowObject={setShowObjectTwo}
+          <MilouConsole
+            showObject={showConsoleModal}
+            setShowObject={setShowConsoleModal}
           />
-          <ObjectThree
-            showObject={showObjectThree}
-            setShowObject={setShowObjectThree}
+          <MilouBook
+            showObject={showBookModal}
+            setShowObject={setShowBookModal}
           />
-          <ObjectFour
-            showObject={showObjectFour}
-            setShowObject={setShowObjectFour}
+          <MilouBed showObject={showBedModal} setShowObject={setShowBedModal} />
+          <MilouPoster
+            showObject={showPosterModal}
+            setShowObject={setShowPosterModal}
           />
-          <ObjectFive
-            showObject={showObjectFive}
-            setShowObject={setShowObjectFive}
-          />
-          <ObjectSix
-            showObject={showObjectSix}
-            setShowObject={setShowObjectSix}
+          <MilouComputer
+            showObject={showComputerModal}
+            setShowObject={setShowComputerModal}
           />
 
           <div className="absolute right-0 top-[45%] z-50 md:hidden">
