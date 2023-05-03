@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
+import Image from "next/image";
 import OrganizationInfoTab from "~/components/OrganizationInfoTab";
 import OrganizationInfoModal from "~/components/OrganizationInfoModal";
 import RoomNav from "~/components/RoomNav";
@@ -25,7 +25,7 @@ function Roomthree() {
         href="/"
         className="absolute top-0 left-0 z-30 mt-2 ml-4 h-[80px] w-[40px] cursor-pointer text-center text-white"
       >
-        <img
+        <Image
           src="/Char3_Door_mini.png"
           alt="Hem"
           className="max-h-full max-w-full"
@@ -38,7 +38,7 @@ function Roomthree() {
 
       <div className="min-w-screen relative flex h-screen overflow-visible overflow-x-auto bg-[#000]">
         <div className="relative h-full min-w-min">
-          <img src="/Char3_Room.png" className="-z-50 max-h-full max-w-none" />
+          <Image alt="Room" src="/Char3_Room.png" className="-z-50 max-h-full max-w-none" />
           <RoomGrid>
             <div></div>
           </RoomGrid>

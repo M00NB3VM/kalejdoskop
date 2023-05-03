@@ -29,13 +29,13 @@ function ObjectOne({ showObjectOne, setShowObjectOne }: Props) {
         const response = await axios.get(
           "http://localhost:4000/messages/three-random-messages"
         );
-        setMessages(response.data);
+        setMessages(response.data as Message[]);
       } catch (error) {
         console.log(error);
       }
     }
 
-    fetchMessages();
+    void fetchMessages();
   }, []);
 
   // Carousel buttons

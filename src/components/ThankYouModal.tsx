@@ -8,7 +8,7 @@ interface Props {
 
 function ThankYouModal({ showModal, setShowModal }: Props) {
   useEffect(() => {
-    confetti({
+    void confetti({
       particleCount: 40,
       spread: 360,
       startVelocity: 35,

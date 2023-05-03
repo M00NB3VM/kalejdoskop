@@ -3,7 +3,7 @@ import Head from "next/head";
 import { BsChevronLeft } from "react-icons/bs";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
+import Image from "next/image";
 import ThemeToggleButton from "~/components/ThemeToggleButton";
 
 interface Partner {
@@ -73,7 +73,7 @@ function About() {
           molestias quidem sed.
         </p>
 
-        <img
+        <Image
           src="/divider_two.png"
           alt="dekoration"
           className="my-10 h-auto max-w-full pl-2"

@@ -28,6 +28,7 @@
     "zod": "^3.20.6"
   },
   "devDependencies": {
+    "@types/canvas-confetti": "^1.6.0",
     "@types/eslint": "^8.21.1",
     "@types/node": "^18.14.0",
     "@types/prettier": "^2.7.2",
@@ -42,7 +43,7 @@
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",
     "prisma": "^4.13.0",
-    "tailwindcss": "^3.2.0",
+    "tailwindcss": "^3.3.2",
     "typescript": "^4.9.5"
   },
   "ct3aMetadata": {

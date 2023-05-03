@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 import { useStoreContext } from "~/context";
 
 interface Organization {
@@ -51,13 +51,13 @@ function OrganizationsInfo() {
           >
             <div className="flex items-center">
               {darkTheme ? (
-                <img
+                <Image
                   className="max-h-16 max-w-[100%]"
                   src={organization.imgDark}
                   alt={`${organization.name} Logotyp`}
                 />
               ) : (
-                <img
+                <Image
                   className="max-h-16 max-w-[100%]"
                   src={organization.img}
                   alt={`${organization.name} Logotyp`}

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
+import Image from "next/image";
 import { BsArrowRight } from "react-icons/bs";
 
 interface Character {
@@ -100,7 +100,7 @@ function EnterRoom() {
                               delay: 0.5,
                             }}
                           >
-                            <img
+                            <Image
                               alt="Musiknot"
                               src="/note2.png"
                               className="ml-auto h-[30px] max-w-[20px]"
@@ -115,7 +115,7 @@ function EnterRoom() {
                               repeat: Infinity,
                             }}
                           >
-                            <img
+                            <Image
                               alt="Musiknot"
                               src="/note1.png"
                               className="h-[30px] max-w-[20px]"
@@ -126,7 +126,7 @@ function EnterRoom() {
                             animate={{ y: [0, 6, 0], rotate: [0, -15, 0] }}
                             transition={{ duration: 2.8, repeat: Infinity }}
                           >
-                            <img
+                            <Image
                               alt="Musiknot"
                               src="/note3.png"
                               className="ml-[30px] h-[30px] max-w-[20px]"
@@ -149,7 +149,7 @@ function EnterRoom() {
                             repeat: Infinity,
                           }}
                         >
-                          <img
+                          <Image
                             alt="Pratbubbla"
                             src="/bubble.png"
                             className="h-[130px] w-[130px]"
@@ -171,7 +171,7 @@ function EnterRoom() {
                             repeat: Infinity,
                           }}
                         >
-                          <img
+                          <Image
                             alt="Körsbärsblomma"
                             src="/sakura.png"
                             className="h-[30px] w-[30px]"
@@ -186,7 +186,7 @@ function EnterRoom() {
                             repeat: Infinity,
                           }}
                         >
-                          <img
+                          <Image
                             alt="Körsbärsblomma"
                             src="/sakura.png"
                             className="h-[30px] w-[30px]"
@@ -201,7 +201,7 @@ function EnterRoom() {
                             repeat: Infinity,
                           }}
                         >
-                          <img
+                          <Image
                             alt="Körsbärsblomma"
                             src="/sakura.png"
                             className="h-[30px] w-[30px]"
@@ -212,7 +212,7 @@ function EnterRoom() {
                           animate={{ rotate: [0, 10, 0] }}
                           transition={{ duration: 4, repeat: Infinity }}
                         >
-                          <img
+                          <Image
                             alt="Nallebjörn"
                             src="/teddy.png"
                             className="h-[70px] w-[70px]"
@@ -229,12 +229,12 @@ function EnterRoom() {
                       transition={{ duration: 0.3 }}
                       className="relative h-full w-full"
                     >
-                      <img
+                      <Image
                         src={character.img}
                         alt="Karaktär"
                         className="absolute left-0 bottom-0 z-10 max-h-[90%]"
                       />
-                      <img
+                      <Image
                         className="absolute left-[90px] top-0 h-full w-full"
                         src={character.door}
                         alt="Dörr till karaktärs rum"
@@ -242,12 +242,12 @@ function EnterRoom() {
                     </motion.div>
 
                     <div className="absolute top-0 left-0 -z-50 h-full w-full">
-                      <img
+                      <Image
                         src={character.img}
                         alt="Karaktär som går"
                         className="absolute left-0 bottom-0 z-10 max-h-[90%]"
                       />
-                      <img
+                      <Image
                         className="absolute left-[90px] top-0 h-full w-full"
                         src={character.openDoor}
                         alt="Öppen dörr till karaktärs rum"

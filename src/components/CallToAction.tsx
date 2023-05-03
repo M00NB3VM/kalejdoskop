@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import { BsDownload } from "react-icons/bs";
 
@@ -6,8 +7,8 @@ function CallToAction() {
   return (
     <>
       <div className="mt-10 flex justify-center">
-        <img
-          src="Logotype.png"
+        <Image
+          src="/Logotype.png"
           alt="Logotyp"
           className="max-h-[250px] max-w-full"
         />

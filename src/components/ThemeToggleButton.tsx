@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-
+import Image from "next/image";
 import { useStoreContext } from "~/context";
 
 function ThemeToggleButton() {
@@ -22,12 +22,12 @@ function ThemeToggleButton() {
         }}
       >
         <div className="flex justify-between">
-          <img
+          <Image
             src="/moon_icon.png"
             className="ml-1 h-[15px] w-[15px]"
             alt="moon"
           />
-          <img
+          <Image
             src="/sun_icon.png"
             className="mr-1 h-[15px] w-[15px]"
             alt="sun"

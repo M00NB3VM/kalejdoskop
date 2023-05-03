@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 import { useStoreContext } from "~/context";
 import { BsHash } from "react-icons/bs";
 
@@ -88,13 +88,13 @@ function OrganizationInfoModal({ closeModal }: Props) {
               >
                 <div className="flex">
                   {darkTheme ? (
-                    <img
+                    <Image
                       className="max-h-10 max-w-[100%]"
                       src={organization.imgDark}
                       alt={`${organization.name} Logotyp`}
                     />
                   ) : (
-                    <img
+                    <Image
                       className="max-h-10 max-w-[100%]"
                       src={organization.img}
                       alt={`${organization.name} Logotyp`}

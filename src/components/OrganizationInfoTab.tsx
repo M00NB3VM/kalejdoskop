@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
+import Image from "next/image";
 import { useStoreContext } from "~/context";
 import { BsChevronUp, BsChevronDown, BsHash } from "react-icons/bs";
 
@@ -23,7 +23,6 @@ function OrganizationInfoTab() {
     open: { x: "25%" },
   };
   const [showTab, setShowTab] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
   const organizations: OrganizationShort[] = [
     {
@@ -109,13 +108,13 @@ function OrganizationInfoTab() {
                 >
                   <div className="flex">
                     {darkTheme ? (
-                      <img
+                      <Image
                         className="max-h-10 max-w-[100%]"
                         src={organization.imgDark}
                         alt={`${organization.name} Logotyp`}
                       />
                     ) : (
-                      <img
+                      <Image
                         className="max-h-10 max-w-[100%]"
                         src={organization.img}
                         alt={`${organization.name} Logotyp`}
