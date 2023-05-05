@@ -66,6 +66,7 @@ export function StoreProvider({ children }: PropsChildren) {
         document.querySelector("body")?.classList.remove("dark-theme");
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [darkTheme]);
 
   const providerValue = {
