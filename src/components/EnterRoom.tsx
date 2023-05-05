@@ -6,7 +6,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 interface Character {
   name: string;
-  age: number;
+  nameImg: string;
   description: string;
   path: string;
   img: string;
@@ -19,9 +19,9 @@ function EnterRoom() {
   const characters: Character[] = [
     {
       name: "Milou",
-      age: 17,
+      nameImg: "/milou.png",
       description:
-        "Milou älskar alla typer av spel och har startat en spelförening med sina vänner. Hans dröm vore att träffa en tjej med samma intressen men trots hans försök har han inte lyckats charma någon. Lika mycket energi lägger han inte på sitt skolarbete, vilket hans lärare och föräldrar ofta påpekar.",
+        "Milou, 17 år, älskar alla typer av spel och har startat en spelförening med sina vänner. Hans dröm vore att träffa en tjej med samma intressen men trots hans försök har han inte lyckats charma någon. Lika mycket energi lägger han inte på sitt skolarbete, vilket hans lärare och föräldrar ofta påpekar.",
       path: "/roomone",
       img: "/Char1_FBody.png",
       imgWalking: "/Char1_FBody_Walk.png",
@@ -30,9 +30,9 @@ function EnterRoom() {
     },
     {
       name: "Liam",
-      age: 20,
+      nameImg: "/liam.png",
       description:
-        "Sedan Sebastian hoppade av gymnasiet har det varit svårt för honom att hamna rätt. Alla chefer han har haft är dumma i huvudet och att flytta hemifrån verkar vara omöjligt. Han har en flickvän men även hon har börjat vända sig emot honom.",
+        "Sedan Liam, 20 år, hoppade av gymnasiet har det varit svårt för honom att hamna rätt. Alla chefer han har haft är dumma i huvudet och att flytta hemifrån verkar vara omöjligt. Han har en flickvän men även hon har börjat vända sig emot honom.",
       path: "/roomtwo",
       img: "/Char2_FBody.png",
       imgWalking: "/Char2_FBody_Walk.png",
@@ -41,9 +41,9 @@ function EnterRoom() {
     },
     {
       name: "Polka",
-      age: 18,
+      nameImg: "/polka.png",
       description:
-        "Stolt samlare av limited edition plushies och japanska rollspel. Hon har alltid gillat spelkultur och följer flera cosplayers på sociala medier. Hon hade gärna cosplayat själv men har aldrig haft några nära vänner och inte vågat åka på konvent ensam. Nu har hon dock bestämt sig för att börja våga mer och börja streama hennes favoritspel.",
+        "Polka, 18 år, är stolt samlare av limited edition plushies och japanska rollspel. Hon har alltid gillat spelkultur och följer flera cosplayers på sociala medier. Hon hade gärna cosplayat själv men har aldrig haft några nära vänner och inte vågat åka på konvent ensam. Nu har hon dock bestämt sig för att börja våga mer och börja streama hennes favoritspel.",
       path: "/roomthree",
       img: "/Char3_FBody.png",
       imgWalking: "/Char3_FBody_Walk.png",
@@ -59,28 +59,41 @@ function EnterRoom() {
           return (
             <li
               key={character.name}
-              className={`mb-14 flex flex-wrap items-center justify-around lg:justify-center ${
-                character.name === "Liam" ? "flex-row-reverse" : "flex-row"
+              className={`mb-14 flex flex-col flex-wrap  items-center justify-center ${
+                character.name === "Liam"
+                  ? "md:flex-row-reverse"
+                  : "md:flex-row"
               } `}
             >
-              <ul
+              <div
                 className={`${
-                  character.name === "Liam" ? "ml-[90px]" : ""
-                } mr-12 min-h-[300px] w-[100%] rounded-2xl border-b-[6px] border-b-accent bg-secondary px-8 pt-8 text-primary sm:max-w-[50%] md:min-w-[250px] md:max-w-[40%] xl:max-w-[30%]`}
+                  character.name === "Liam" ? "md:ml-[100px]" : "md:mr-10"
+                }  mt-8 sm:max-w-[80%] md:max-w-[40%] xl:max-w-[30%]`}
               >
-                <li key={character.name}>
-                  <div className="flex items-baseline">
-                    <p>Namn: </p>
-                    <h2 className="px-2 text-xl">{character.name}</h2>
-                  </div>
-                </li>
-                <li key={character.age}>
-                  <p>Ålder: {character.age}</p>
-                </li>
-                <li key={`${character.name}description`} className="py-4">
-                  <p>{character.description}</p>
-                </li>
-              </ul>
+                <img
+                  className="h-auto max-w-full"
+                  src={character.nameImg}
+                  alt={character.name}
+                />
+                <div className="flex h-[25px] max-w-full justify-between bg-gradient-to-t from-primary to-primary bg-[length:100%_2px] bg-center bg-no-repeat">
+                  <img
+                    src="/sparkle.png"
+                    alt="stjäna"
+                    className="mx-2 max-h-full w-auto"
+                  />
+                  <img
+                    src="/sparkle.png"
+                    alt="stjäna"
+                    className="mx-2 max-h-full w-auto"
+                  />
+                </div>
+
+                <div className="mt-4 w-full rounded-2xl border-b-[6px] border-b-accent bg-secondary px-6 py-4 text-primary ">
+                  <p key={`${character.name}description`} className="py-4">
+                    {character.description}
+                  </p>
+                </div>
+              </div>
 
               <nav>
                 <Link
@@ -255,21 +268,9 @@ function EnterRoom() {
                     </div>
                   </div>
 
-                  <div className="relative">
-                    <div
-                      className="absolute top-0 left-0 h-full w-full bg-primary"
-                      style={{
-                        clipPath:
-                          "polygon(18% 10%, 100% 35%, 85% 100%, 0% 75%)",
-                      }}
-                    ></div>
-                    <div
-                      className="m-4 flex min-w-[250px] items-center justify-center bg-accent px-14 py-4"
-                      style={{
-                        clipPath: "polygon(15% 20%, 100% 0%, 85% 100%, 0% 80%)",
-                      }}
-                    >
-                      <p className="mr-2 text-lg font-bold text-white">
+                  <div className="relative mx-auto mt-4 min-h-[40px] min-w-[245px] rounded-full outline outline-1 outline-offset-[1px] outline-black">
+                    <div className="absolute -top-[6px] right-[4px] -z-10 flex min-w-[250px] max-w-[275px] items-center justify-center rounded-full bg-accent px-2 py-2">
+                      <p className="mr-2 text-lg font-bold text-white ">
                         Gå till {character.name}s rum
                       </p>
                       <motion.div
