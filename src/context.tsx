@@ -66,7 +66,7 @@ export function StoreProvider({ children }: PropsChildren) {
         document.querySelector("body")?.classList.remove("dark-theme");
       }
     }
-  }, [darkTheme, theme]);
+  }, [darkTheme]);
 
   const providerValue = {
     darkTheme: darkTheme,
