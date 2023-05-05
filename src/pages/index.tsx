@@ -3,7 +3,6 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import ThemeToggleButton from "~/components/ThemeToggleButton";
 import CallToAction from "~/components/CallToAction";
 import EnterRoom from "~/components/EnterRoom";
@@ -42,7 +41,7 @@ const Home: NextPage = () => {
 
         <EnterRoom />
 
-        <Image
+        <img
           src="/divider_one.png"
           alt="dekoration"
           className="my-10 h-auto max-w-full pl-2"
@@ -50,7 +49,7 @@ const Home: NextPage = () => {
 
         <OrganizationsInfo />
 
-        <Image
+        <img
           src="/divider_three.png"
           alt="dekoration"
           className="my-10 h-auto max-w-full pl-2"

@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useStoreContext } from "~/context";
 import { BsHash } from "react-icons/bs";
 
@@ -64,13 +63,13 @@ function OrganizationInfoModal({ closeModal }: Props) {
   ];
 
   return (
-    <div className="fixed left-0 top-0 right-0 z-50 min-h-screen bg-secondary md:hidden">
+    <div className="fixed left-0 right-0 top-0 z-50 min-h-screen bg-secondary md:hidden">
       <div className="flex">
         <div
           onClick={() => {
             closeModal();
           }}
-          className="absolute top-1 right-2"
+          className="absolute right-2 top-1"
         >
           <p className="cursor-pointer px-2 text-2xl font-black text-accent">
             X
@@ -82,19 +81,19 @@ function OrganizationInfoModal({ closeModal }: Props) {
             return (
               <li
                 key={organization.name}
-                className={`relative my-4 mx-auto w-11/12 rounded px-4 py-4 shadow-lg ${
+                className={`relative mx-auto my-4 w-11/12 rounded px-4 py-4 shadow-lg ${
                   darkTheme ? "bg-black" : "bg-white"
                 }`}
               >
                 <div className="flex">
                   {darkTheme ? (
-                    <Image
+                    <img
                       className="max-h-10 max-w-[100%]"
                       src={organization.imgDark}
                       alt={`${organization.name} Logotyp`}
                     />
                   ) : (
-                    <Image
+                    <img
                       className="max-h-10 max-w-[100%]"
                       src={organization.img}
                       alt={`${organization.name} Logotyp`}
@@ -121,7 +120,7 @@ function OrganizationInfoModal({ closeModal }: Props) {
 
                 <Link
                   href={organization.link}
-                  className="absolute left-1/4 right-1/4 bottom-4 block transform rounded-full bg-accent px-4 py-2 text-center text-lg text-white transition duration-500 hover:bg-accentHover"
+                  className="absolute bottom-4 left-1/4 right-1/4 block transform rounded-full bg-accent px-4 py-2 text-center text-lg text-white transition duration-500 hover:bg-accentHover"
                 >
                   {organization.name}
                 </Link>

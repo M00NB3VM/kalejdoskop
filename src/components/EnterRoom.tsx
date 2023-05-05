@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { BsArrowRight } from "react-icons/bs";
 
 interface Character {
@@ -66,7 +65,7 @@ function EnterRoom() {
               <ul
                 className={`${
                   character.name === "Liam" ? "ml-[90px]" : ""
-                } mr-12 min-h-[300px] w-[100%] rounded-2xl border-b-[6px] border-b-accent bg-secondary px-8 pt-8 text-primary sm:max-w-[50%] md:min-w-[250px] md:max-w-[40%] xl:max-w-[30%]`}
+                } sm:max-w-[50%] md:min-w-[250px] md:max-w-[40%] xl:max-w-[30%] mr-12 min-h-[300px] w-[100%] rounded-2xl border-b-[6px] border-b-accent bg-secondary px-8 pt-8 text-primary`}
               >
                 <li key={character.name}>
                   <div className="flex items-baseline">
@@ -89,7 +88,7 @@ function EnterRoom() {
                 >
                   <div className="relative h-[500px] w-[250px]">
                     {character.name === "Milou" ? (
-                      <div className="absolute top-[50px] left-[20px] w-[50px]">
+                      <div className="absolute left-[20px] top-[50px] w-[50px]">
                         <ul className="flex flex-col bg-[url('/swirl.png')] bg-cover bg-no-repeat">
                           <motion.li
                             initial={{ y: 0 }}
@@ -100,7 +99,7 @@ function EnterRoom() {
                               delay: 0.5,
                             }}
                           >
-                            <Image
+                            <img
                               alt="Musiknot"
                               src="/note2.png"
                               className="ml-auto h-[30px] max-w-[20px]"
@@ -115,7 +114,7 @@ function EnterRoom() {
                               repeat: Infinity,
                             }}
                           >
-                            <Image
+                            <img
                               alt="Musiknot"
                               src="/note1.png"
                               className="h-[30px] max-w-[20px]"
@@ -126,7 +125,7 @@ function EnterRoom() {
                             animate={{ y: [0, 6, 0], rotate: [0, -15, 0] }}
                             transition={{ duration: 2.8, repeat: Infinity }}
                           >
-                            <Image
+                            <img
                               alt="Musiknot"
                               src="/note3.png"
                               className="ml-[30px] h-[30px] max-w-[20px]"
@@ -139,7 +138,7 @@ function EnterRoom() {
                     )}
 
                     {character.name === "Liam" ? (
-                      <div className="absolute top-0 left-0 w-full">
+                      <div className="absolute left-0 top-0 w-full">
                         <motion.div
                           className="relative -top-[10px] right-[50px]"
                           initial={{ scale: 1 }}
@@ -149,7 +148,7 @@ function EnterRoom() {
                             repeat: Infinity,
                           }}
                         >
-                          <Image
+                          <img
                             alt="Pratbubbla"
                             src="/bubble.png"
                             className="h-[130px] w-[130px]"
@@ -161,9 +160,9 @@ function EnterRoom() {
                     )}
 
                     {character.name === "Polka" ? (
-                      <div className="absolute right-0 bottom-0 top-0 left-0 ">
+                      <div className="absolute bottom-0 left-0 right-0 top-0 ">
                         <motion.div
-                          className="relative top-0 left-0 inline-block"
+                          className="relative left-0 top-0 inline-block"
                           initial={{ y: 0 }}
                           animate={{ y: [0, 10, 0], rotate: [0, 15, 0] }}
                           transition={{
@@ -171,14 +170,14 @@ function EnterRoom() {
                             repeat: Infinity,
                           }}
                         >
-                          <Image
+                          <img
                             alt="Körsbärsblomma"
                             src="/sakura.png"
                             className="h-[30px] w-[30px]"
                           />
                         </motion.div>
                         <motion.div
-                          className="relative top-[60px] left-[15px] inline-block"
+                          className="relative left-[15px] top-[60px] inline-block"
                           initial={{ y: 0 }}
                           animate={{ y: [0, 5, 0], rotate: [0, -15, 0] }}
                           transition={{
@@ -186,7 +185,7 @@ function EnterRoom() {
                             repeat: Infinity,
                           }}
                         >
-                          <Image
+                          <img
                             alt="Körsbärsblomma"
                             src="/sakura.png"
                             className="h-[30px] w-[30px]"
@@ -201,18 +200,18 @@ function EnterRoom() {
                             repeat: Infinity,
                           }}
                         >
-                          <Image
+                          <img
                             alt="Körsbärsblomma"
                             src="/sakura.png"
                             className="h-[30px] w-[30px]"
                           />
                         </motion.div>
                         <motion.div
-                          className="relative top-[410px] left-[240px] inline-block"
+                          className="relative left-[240px] top-[410px] inline-block"
                           animate={{ rotate: [0, 10, 0] }}
                           transition={{ duration: 4, repeat: Infinity }}
                         >
-                          <Image
+                          <img
                             alt="Nallebjörn"
                             src="/teddy.png"
                             className="h-[70px] w-[70px]"
@@ -229,25 +228,25 @@ function EnterRoom() {
                       transition={{ duration: 0.3 }}
                       className="relative h-full w-full"
                     >
-                      <Image
+                      <img
                         src={character.img}
                         alt="Karaktär"
-                        className="absolute left-0 bottom-0 z-10 max-h-[90%]"
+                        className="absolute bottom-0 left-0 z-10 max-h-[90%]"
                       />
-                      <Image
+                      <img
                         className="absolute left-[90px] top-0 h-full w-full"
                         src={character.door}
                         alt="Dörr till karaktärs rum"
                       />
                     </motion.div>
 
-                    <div className="absolute top-0 left-0 -z-50 h-full w-full">
-                      <Image
+                    <div className="absolute left-0 top-0 -z-50 h-full w-full">
+                      <img
                         src={character.img}
                         alt="Karaktär som går"
-                        className="absolute left-0 bottom-0 z-10 max-h-[90%]"
+                        className="absolute bottom-0 left-0 z-10 max-h-[90%]"
                       />
-                      <Image
+                      <img
                         className="absolute left-[90px] top-0 h-full w-full"
                         src={character.openDoor}
                         alt="Öppen dörr till karaktärs rum"
@@ -257,7 +256,7 @@ function EnterRoom() {
 
                   <div className="relative">
                     <div
-                      className="absolute top-0 left-0 h-full w-full bg-primary"
+                      className="absolute left-0 top-0 h-full w-full bg-primary"
                       style={{
                         clipPath:
                           "polygon(18% 10%, 100% 35%, 85% 100%, 0% 75%)",
@@ -276,7 +275,7 @@ function EnterRoom() {
                         initial={{ x: 0 }}
                         animate={{ x: [0, 15, 0] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
-                        className="pr-[15px] pl-[5px]"
+                        className="pl-[5px] pr-[15px]"
                       >
                         <BsArrowRight className="stroke-[2] text-white" />
                       </motion.div>

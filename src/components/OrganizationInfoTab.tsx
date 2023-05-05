@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useStoreContext } from "~/context";
 import { BsChevronUp, BsChevronDown, BsHash } from "react-icons/bs";
 
@@ -67,7 +66,7 @@ function OrganizationInfoTab() {
 
   return (
     <motion.div
-      className="fixed top-[30%] right-0 z-50 m-0 p-0"
+      className="fixed right-0 top-[30%] z-50 m-0 p-0"
       initial={{ x: "calc(100% - 40px)" }}
       animate={showTab ? "open" : ""}
       variants={variants}
@@ -82,7 +81,7 @@ function OrganizationInfoTab() {
             className="relative min-w-[40px] cursor-pointer"
             key="tab"
           >
-            <div className="absolute bottom-2 -left-2 flex -rotate-90 items-center justify-center font-bold text-accent">
+            <div className="absolute -left-2 bottom-2 flex -rotate-90 items-center justify-center font-bold text-accent">
               {showTab ? (
                 <BsChevronDown
                   className="ml-2 w-10 pl-2"
@@ -108,13 +107,13 @@ function OrganizationInfoTab() {
                 >
                   <div className="flex">
                     {darkTheme ? (
-                      <Image
+                      <img
                         className="max-h-10 max-w-[100%]"
                         src={organization.imgDark}
                         alt={`${organization.name} Logotyp`}
                       />
                     ) : (
-                      <Image
+                      <img
                         className="max-h-10 max-w-[100%]"
                         src={organization.img}
                         alt={`${organization.name} Logotyp`}
@@ -141,7 +140,7 @@ function OrganizationInfoTab() {
 
                   <Link
                     href={organization.link}
-                    className="absolute bottom-4 left-8 right-8 block transform rounded-full bg-accent px-4 py-2 text-center text-lg text-white transition duration-500 hover:bg-accentHover lg:right-12 lg:left-12"
+                    className="absolute bottom-4 left-8 right-8 block transform rounded-full bg-accent px-4 py-2 text-center text-lg text-white transition duration-500 hover:bg-accentHover lg:left-12 lg:right-12"
                   >
                     {organization.name}
                   </Link>

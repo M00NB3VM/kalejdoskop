@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useStoreContext } from "~/context";
 
 function ThemeToggleButton() {
@@ -14,7 +13,7 @@ function ThemeToggleButton() {
   };
 
   return (
-    <div className="absolute top-[15px] right-[15px]">
+    <div className="absolute right-[15px] top-[15px]">
       <button
         className="h-[22px] w-[42px] rounded-full bg-primary"
         onClick={() => {
@@ -22,12 +21,12 @@ function ThemeToggleButton() {
         }}
       >
         <div className="flex justify-between">
-          <Image
+          <img
             src="/moon_icon.png"
             className="ml-1 h-[15px] w-[15px]"
             alt="moon"
           />
-          <Image
+          <img
             src="/sun_icon.png"
             className="mr-1 h-[15px] w-[15px]"
             alt="sun"
@@ -38,7 +37,7 @@ function ThemeToggleButton() {
           animate={darkTheme ? "dark" : "light"}
           variants={variants}
           transition={{ ease: "easeOut", duration: 0.6 }}
-          className="absolute top-[2px] left-0"
+          className="absolute left-0 top-[2px]"
         >
           <div className="mx-[2px] h-[18px] w-[18px] rounded-full bg-secondary"></div>
         </motion.div>
