@@ -98,7 +98,7 @@ function EnterRoom() {
               <nav>
                 <Link
                   href={character.path}
-                  className="mt-8 flex flex-col justify-center"
+                  className="maw-w-full mt-8 flex flex-col justify-center"
                 >
                   <div className="relative h-[500px] w-[250px]">
                     {character.name === "Milou" ? (
