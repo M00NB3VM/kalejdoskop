@@ -13,7 +13,7 @@ function ChartOne() {
     ];
 
     const context: HTMLCanvasElement = document.getElementById(
-      "bar-chart"
+      "milou-gift-chart"
     ) as HTMLCanvasElement;
 
     const giftChart = new Chart(context, {
@@ -41,7 +41,7 @@ function ChartOne() {
 
   return (
     <div className="chart-div">
-      <canvas id="bar-chart"></canvas>
+      <canvas id="milou-gift-chart"></canvas>
     </div>
   );
 }
