@@ -7,7 +7,6 @@ import Link from "next/link";
 import OrganizationInfoTab from "~/components/OrganizationInfoTab";
 import OrganizationInfoModal from "~/components/OrganizationInfoModal";
 import RoomNav from "~/components/RoomNav";
-import RoomGrid from "~/components/RoomGrid";
 
 function Roomtwo() {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -59,10 +58,6 @@ function Roomtwo() {
             src="/Char2_Room.png"
             className="-z-50 mx-auto max-h-full max-w-none"
           />
-
-          <RoomGrid>
-            <div></div>
-          </RoomGrid>
 
           <div className="absolute right-0 top-[45%] z-50 md:hidden">
             <p
