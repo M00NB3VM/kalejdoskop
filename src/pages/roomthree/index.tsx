@@ -11,7 +11,7 @@ import RoomNav from "~/components/RoomNav";
 import { SlGameController } from "react-icons/sl";
 import { GiMirrorMirror } from "react-icons/Gi";
 import { RiBearSmileLine } from "react-icons/Ri";
-import { BsDoorClosed } from "react-icons/Bs"
+import { GiDoor } from "react-icons/Gi";
 import { FiMonitor } from "react-icons/fi";
 
 import PolkaComputer from "./components/PolkaComputer";
@@ -124,7 +124,7 @@ function Roomthree() {
               setShowWardrobeModal(!showWardrobeModal);
             }}
           >
-            <BsDoorClosed
+            <GiDoor
               color="yellow"
               size={60}
               strokeWidth={2}
@@ -132,11 +132,10 @@ function Roomthree() {
             />
           </div>
 
-
           <div
             className="absolute top-[32%] right-[30%] z-40 inline-block cursor-pointer"
             onClick={() => {
-              setShowWardrobeModal(!showWardrobeModal);
+              setShowComputerModal(!showComputerModal);
             }}
           >
             <FiMonitor
@@ -146,7 +145,6 @@ function Roomthree() {
               className="drop-shadow-[2px_-2px_4px_#00ffc8]"
             />
           </div>
-
 
           <img
             src="/Char3_Room.png"
@@ -173,7 +171,6 @@ function Roomthree() {
             showObject={showWardrobeModal}
             setShowObject={setShowWardrobeModal}
           />
-         
 
           <div className="absolute right-0 top-[45%] z-50 md:hidden">
             <p
