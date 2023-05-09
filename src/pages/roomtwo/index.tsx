@@ -10,7 +10,6 @@ import RoomNav from "~/components/RoomNav";
 
 import { SlPicture } from "react-icons/sl";
 import { CiDumbbell } from "react-icons/Ci";
-import { RiBearSmileLine } from "react-icons/Ri";
 import { RxEnvelopeClosed } from "react-icons/Rx";
 import { FiMonitor } from "react-icons/fi";
 
@@ -132,11 +131,6 @@ function Roomtwo() {
           <LiamPicture
             showObject={showPictureModal}
             setShowObject={setShowPictureModal}
-          />
-
-          <img
-            src="/Char2_Room.png"
-            className="-z-50 mx-auto max-h-full max-w-none"
           />
 
           <div className="absolute right-0 top-[45%] z-50 md:hidden">
