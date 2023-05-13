@@ -145,7 +145,7 @@ function EnterRoom() {
                   />
                 </div>
 
-                <div className="mt-4 w-full rounded-2xl border-b-[6px] border-b-accent bg-secondary px-6 py-4 text-primary ">
+                <div className="mt-4 w-full rounded-2xl border-b-[6px] border-b-accent bg-secondary px-6 py-4 text-primary">
                   <p key={`${character.name}description`} className="py-4">
                     {character.description}
                   </p>

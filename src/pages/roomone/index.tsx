@@ -37,7 +37,7 @@ function Roomone() {
 
   return (
     <motion.div
-      className="relative m-0 min-h-screen p-0"
+      className="relative m-0 min-h-screen p-0 text-primary"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
