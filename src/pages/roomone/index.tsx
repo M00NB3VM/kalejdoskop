@@ -35,6 +35,13 @@ function Roomone() {
     setShowOrganizationModal(!showOrganizationModal);
   }
 
+  function closeObjectModal(
+    objectModal: boolean,
+    setObjectModal: (arg0: boolean) => void
+  ) {
+    setObjectModal(!objectModal);
+  }
+
   return (
     <motion.div
       className="relative m-0 min-h-screen p-0 text-primary"
@@ -62,7 +69,7 @@ function Roomone() {
           <div
             className="absolute top-[31%] left-[38%] z-40 inline-block cursor-pointer"
             onClick={() => {
-              setShowComputerModal(!showComputerModal);
+              closeObjectModal(showComputerModal, setShowComputerModal);
             }}
           >
             <FiMonitor
@@ -75,7 +82,7 @@ function Roomone() {
           <div
             className="absolute top-[50%] left-[30%] z-40 inline-block cursor-pointer"
             onClick={() => {
-              setShowConsoleModal(!showConsoleModal);
+              closeObjectModal(showConsoleModal, setShowConsoleModal);
             }}
           >
             <SlGameController
