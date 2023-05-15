@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import Link from "next/link";
 
 interface Props {
@@ -7,10 +9,22 @@ interface Props {
 }
 
 function LiamComputer({ showObject, setShowObject }: Props) {
+  useEffect(() => {
+    const element = document.getElementById("liam-computer");
+
+    if (showObject === true) {
+      element?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      return;
+    }
+  }, [showObject]);
   return (
     <>
       {showObject ? (
-        <div className="fixed top-0 left-0 right-0 bottom-0 z-40 overflow-auto md:absolute md:top-[50%] md:left-[10%] md:min-h-0 md:max-w-[290px]">
+        <div
+          id="liam-computer"
+          className="fixed top-0 left-0 right-0 bottom-0 z-50 overflow-auto md:absolute md:top-[50%] md:left-[10%] md:min-h-0 md:max-w-[290px]"
+        >
           <ul className="min-h-full bg-secondary p-4 md:h-auto md:min-h-0 md:rounded-2xl md:border-b-[6px] md:border-b-accent">
             <li>
               <button

@@ -21,6 +21,16 @@ interface Message {
 }
 
 function LiamEnvelope({ showObject, setShowObject }: Props) {
+  useEffect(() => {
+    const element = document.getElementById("liam-envelope");
+
+    if (showObject === true) {
+      element?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      return;
+    }
+  }, [showObject]);
+
   const [messages, setMessages] = useState<Message[]>([]);
   const [currentMessage, setCurrentMessage] = useState(0);
   const [charMax, setCharMax] = useState(280);
@@ -59,7 +69,10 @@ function LiamEnvelope({ showObject, setShowObject }: Props) {
   return (
     <>
       {showObject ? (
-        <div className="fixed top-0 left-0 right-0 bottom-0 z-40 z-50 overflow-auto md:absolute md:top-[25%] md:left-[70%] md:min-h-0 md:max-w-fit">
+        <div
+          id="liam-envelope"
+          className="fixed top-0 left-0 right-0 bottom-0 z-50 overflow-auto md:absolute md:top-[25%] md:left-[70%] md:min-h-0 md:max-w-fit"
+        >
           <ul className="min-h-full bg-secondary p-4 md:h-auto md:min-h-0 md:rounded-2xl md:border-b-[6px] md:border-b-accent">
             <li>
               <button
