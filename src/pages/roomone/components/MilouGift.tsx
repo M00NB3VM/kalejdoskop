@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 
-import ChartOne from "./ChartOne";
+import ChartOneMilou from "./ChartOneMilou";
 
 interface Props {
   showObject: boolean;
@@ -86,7 +86,7 @@ function MilouGift({ showObject, setShowObject }: Props) {
             </li>
 
             <li>
-              <ChartOne />
+              <ChartOneMilou />
             </li>
 
             <li className="mx-auto flex max-w-max flex-col">
