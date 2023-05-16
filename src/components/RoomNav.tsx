@@ -1,33 +1,21 @@
 import React from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 function RoomNav() {
-  const router = useRouter();
-
   return (
-    <nav className="absolute bottom-0 left-0 z-20 flex w-full justify-center md:justify-start">
+    <nav className="absolute bottom-[10px] left-0 z-20 flex w-full items-end justify-start">
       <Link
         href="/roomone"
-        className="m-4"
-        style={{ color: router.pathname === "/roomone" ? "red" : "white" }}
-      >
-        Rum 1
-      </Link>
+        className="mr-4 h-[100px] w-[100px] bg-[url('/milou_room_nav_active.png')] bg-contain bg-no-repeat"
+      ></Link>
       <Link
         href="/roomtwo"
-        className="m-4"
-        style={{ color: router.pathname === "/roomtwo" ? "red" : "white" }}
-      >
-        Rum 2
-      </Link>
+        className="mr-4 h-[80px] w-[80px] bg-[url('/liam_room_nav_mini.png')] bg-contain bg-no-repeat"
+      ></Link>
       <Link
         href="/roomthree"
-        className="m-4"
-        style={{ color: router.pathname === "/roomthree" ? "red" : "white" }}
-      >
-        Rum 3
-      </Link>
+        className="mr-4 h-[80px] w-[80px] bg-[url('/polka_room_nav_mini.png')] bg-contain bg-no-repeat"
+      ></Link>
     </nav>
   );
 }

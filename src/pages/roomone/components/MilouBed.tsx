@@ -71,7 +71,7 @@ function MilouBed({ showObject, setShowObject }: Props) {
       {showObject ? (
         <div
           id="milou-bed"
-          className="fixed top-0 left-0 right-0 bottom-0 z-50 overflow-auto md:absolute md:top-[55%] md:left-[53%] md:min-h-0 md:w-[340px]"
+          className="object-modal fixed top-0 left-0 right-0 bottom-0 z-50 overflow-auto md:absolute md:top-[55%] md:left-[53%] md:min-h-0 md:w-[340px]"
         >
           <ul className="min-h-full bg-secondary p-4 md:h-auto md:min-h-0 md:w-[320px] md:rounded-2xl md:border-b-[6px] md:border-b-accent">
             <li>

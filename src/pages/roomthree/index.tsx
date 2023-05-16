@@ -6,7 +6,6 @@ import Link from "next/link";
 
 import OrganizationInfoTab from "~/components/OrganizationInfoTab";
 import OrganizationInfoModal from "~/components/OrganizationInfoModal";
-import RoomNav from "~/components/RoomNav";
 
 import { SlGameController } from "react-icons/sl";
 import { GiMirrorMirror } from "react-icons/Gi";
@@ -73,7 +72,7 @@ function Roomthree() {
       </Link>
 
       <OrganizationInfoTab />
-      <RoomNav />
+
       <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#000]">
         <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">
           <div
@@ -189,6 +188,25 @@ function Roomthree() {
         ) : (
           <></>
         )}
+      </div>
+
+      <div className="max-w-screen fixed bottom-[20px] left-0 min-w-min">
+        <div className="absolute bottom-[25px] left-0 -z-30 h-[15px] w-[42%] bg-[url('/divider_mini.png')] bg-cover bg-right bg-no-repeat sm:w-[50%] md:w-[58%]"></div>
+        <nav className="flex items-end">
+          <Link
+            href="/roomthree"
+            className="mr-3 h-[100px] w-[100px] bg-[url('/polka_room_nav_active.png')] bg-contain bg-no-repeat md:h-[150px] md:w-[150px]"
+          ></Link>
+          <Link
+            href="/roomone"
+            className="mr-3 ml-3 h-[72px] w-[72px] bg-[url('/milou_room_nav_mini.png')] bg-contain bg-no-repeat sm:ml-12 md:ml-24 md:h-[80px] md:w-[80px]"
+          ></Link>
+          <Link
+            href="/roomtwo"
+            className="mr-1 h-[72px] w-[72px] bg-[url('/liam_room_nav_mini.png')] bg-contain bg-no-repeat md:h-[80px] md:w-[80px]"
+          ></Link>
+        </nav>
+        <div className="absolute bottom-0 left-0 -z-30 h-[15px] w-full rounded-tr-lg bg-primary"></div>
       </div>
     </motion.div>
   );
