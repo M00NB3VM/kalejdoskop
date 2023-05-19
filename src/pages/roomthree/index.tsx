@@ -171,7 +171,7 @@ function Roomthree() {
             setShowObject={setShowWardrobeModal}
           />
 
-          <div className="absolute right-0 top-[45%] z-50 md:hidden">
+          <div className="absolute right-0 top-[45%] z-40 md:hidden">
             <p
               onClick={() => {
                 setShowOrganizationModal(true);
