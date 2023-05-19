@@ -150,6 +150,50 @@ function Roomtwo() {
         )}
       </div>
 
+      <div className="fixed left-0 bottom-[50%] ml-4 flex h-fit lg:hidden">
+        <motion.img
+          alt="pil"
+          src="/arrow_icon.png"
+          className="mr-2 h-8 w-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1, 0] }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+        />
+        <motion.img
+          alt="pil"
+          src="/arrow_icon.png"
+          className="mr-2 h-8 w-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1, 0] }}
+          transition={{ duration: 0.7, delay: 0.7 }}
+        />
+        <motion.img
+          alt="pil"
+          src="/arrow_icon.png"
+          className="h-8 w-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1, 0] }}
+          transition={{ duration: 0.7, delay: 0.9 }}
+        />
+      </div>
+
+      <motion.div
+        className="fixed left-[90px] bottom-[120px] md:bottom-[160px] md:left-[150px]"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
+        transition={{ duration: 0.7, delay: 2.2 }}
+      >
+        <div className="h-[80px] w-[120px] rounded-lg bg-accent">
+          <p className="p-2 text-center text-white">
+            Välkommen att kolla runt!
+          </p>
+        </div>
+        <div
+          className="ml-4 h-4 w-6 bg-accent"
+          style={{ clipPath: "polygon(0 0, 0 100%, 100% 0)" }}
+        ></div>
+      </motion.div>
+
       <div className="max-w-screen fixed bottom-[20px] left-0 min-w-min">
         <div className="absolute bottom-[25px] left-0 -z-30 h-[15px] w-[42%] bg-[url('/divider_mini.png')] bg-cover bg-right bg-no-repeat sm:w-[50%] md:w-[58%]"></div>
         <nav className="flex items-end">
