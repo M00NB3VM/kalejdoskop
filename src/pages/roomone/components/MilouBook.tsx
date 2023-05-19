@@ -27,28 +27,30 @@ function MilouBook({ showObject, setShowObject }: Props) {
       {showObject ? (
         <div
           id="milou-book"
-          className="object-modal fixed top-0 left-0 right-0 bottom-0 z-50 overflow-auto md:absolute md:top-[40%] md:left-[43%] md:min-h-0  md:w-[320px]"
+          className=" fixed top-0 left-0 right-0 bottom-0 z-50 overflow-auto md:absolute md:top-[35%] md:left-[43%] md:mb-[170px] md:min-h-0 md:w-[340px]"
         >
-          <ul className="min-h-full bg-secondary p-4 md:h-auto md:min-h-0 md:w-[300px] md:rounded-2xl md:border-b-[6px]  md:border-b-accent">
-            <li>
-              <button
-                className="mt-1 ml-auto mr-1 block rounded-full bg-accent py-2 px-4 font-['Documan_heavy'] text-white"
-                onClick={() => {
-                  setShowObject(!showObject);
-                }}
-              >
-                STÄNG
-              </button>
-            </li>
-            <li>
-              <p>Spelarna valde att:</p>
-              <ChartTwoMilou />
-              <p>Spelarna valde att:</p>
-              <ChartThreeMilou />
+          <div className=" h-full w-[320px] bg-secondary p-4 md:rounded-2xl md:border-b-[6px] md:border-b-accent">
+            <ul className="object-modal max-h-full overflow-auto pr-4">
+              <li>
+                <button
+                  className="mt-1 ml-auto mr-2 block rounded-full bg-accent py-2 px-4 font-['Documan_heavy'] text-white"
+                  onClick={() => {
+                    setShowObject(!showObject);
+                  }}
+                >
+                  STÄNG
+                </button>
+              </li>
+              <li>
+                <p>Spelarna valde att:</p>
+                <ChartTwoMilou />
+                <p>Spelarna valde att:</p>
+                <ChartThreeMilou />
 
-              <ChartFourMilou />
-            </li>
-          </ul>
+                <ChartFourMilou />
+              </li>
+            </ul>
+          </div>
         </div>
       ) : (
         ""
