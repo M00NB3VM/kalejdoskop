@@ -10,12 +10,14 @@ function Error() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
+      className="mt-24 flex flex-col items-center"
     >
       <Head>
         <title>Sidan hittades inte!</title>
       </Head>
-      <h1>Oops!</h1>
-      <p className="mb-10">Ett fel uppstod. Försök igen.</p>
+
+      <img alt="404" src="/404_image.png" className="max-w-screen mb-12" />
+      <h1 className="text-lg">Oops! Sidan hittades inte.</h1>
 
       <Link
         href="/"
