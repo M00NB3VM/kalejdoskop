@@ -59,11 +59,24 @@ h6 {
 
 ::-webkit-scrollbar-track {
   background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+
+.object-modal::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.object-modal::-webkit-scrollbar-track {
+  background: var(--secondary-color);
   border-radius: 10px;
   background-clip: padding-box;
 }
 
-::-webkit-scrollbar-thumb {
+.object-modal::-webkit-scrollbar-thumb {
   background: var(--primary-color);
   border-radius: 10px;
 }

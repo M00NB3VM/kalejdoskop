@@ -96,7 +96,7 @@ function PolkaGameConsole({ showObject, setShowObject }: Props) {
           <ul className="min-h-full bg-secondary p-4 md:h-auto md:min-h-0 md:rounded-2xl md:border-b-[6px] md:border-b-accent">
             <li>
               <button
-                className="my-1 ml-auto mr-1 block rounded-full bg-accent py-2 px-4 font-['Documan_heavy'] text-sm text-white"
+                className="mt-1 ml-auto mr-1 mb-1 block rounded-full bg-accent py-2 px-4 font-['Documan_heavy'] text-sm text-white"
                 onClick={() => {
                   setShowObject(!showObject);
                 }}

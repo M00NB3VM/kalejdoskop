@@ -3,31 +3,30 @@
 import React, { useEffect } from "react";
 import { Chart } from "chart.js/auto";
 
-function ChartOne() {
+function ChartFourMilou() {
   useEffect(() => {
-    const data: number[] = [10, 15, 5];
+    const data: number[] = [30, 40, 10];
     const labels: string[] = [
-      "En blomma 🌹",
-      "Ett gosedjur 🧸",
-      "Ett handskrivet brev ✉️",
+      "Träffa en kompis",
+      "Spela ett spel",
+      "Chatta anonymt online",
     ];
 
     const context: HTMLCanvasElement = document.getElementById(
-      "milou-gift-chart"
+      "milou-book-chart-three"
     ) as HTMLCanvasElement;
 
-    const giftChart = new Chart(context, {
+    const BookChartThree = new Chart(context, {
       type: "bar",
       options: {
         maintainAspectRatio: false,
-        indexAxis: "y",
       },
       data: {
         labels: labels,
         datasets: [
           {
-            backgroundColor: "#451499",
-            label: "Spelarna valde att ge Polka:",
+            backgroundColor: ["#451499"],
+            label: "Spelarna valde att:",
             data: data,
           },
         ],
@@ -35,15 +34,15 @@ function ChartOne() {
     });
 
     return () => {
-      giftChart.destroy();
+      BookChartThree.destroy();
     };
   }, []);
 
   return (
     <div className="chart-div">
-      <canvas id="milou-gift-chart"></canvas>
+      <canvas id="milou-book-chart-three"></canvas>
     </div>
   );
 }
 
-export default ChartOne;
+export default ChartFourMilou;
