@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -22,6 +22,18 @@ import MilouComputer from "./components/MilouComputer";
 function Roomone() {
   const [showOrganizationModal, setShowOrganizationModal] =
     useState<boolean>(false);
+
+  const welcomeMessages: string[] = [
+    "Välkommen att kolla runt!",
+    "Hej!",
+    "Jag driver spelföreningen Digitala Drakar!",
+  ];
+  const [welcomeMessage, setWelcomeMessage] = useState<string | undefined>("");
+
+  useEffect(() => {
+    const message = welcomeMessages.sort(() => 0.5 - Math.random())[0];
+    setWelcomeMessage(message);
+  }, []);
 
   const [showGiftModal, setShowGiftModal] = useState<boolean>(false);
   const [showConsoleModal, setShowConsoleModal] = useState<boolean>(false);
@@ -222,10 +234,8 @@ function Roomone() {
         animate={{ opacity: 0 }}
         transition={{ duration: 0.7, delay: 2.2 }}
       >
-        <div className="h-[80px] w-[120px] rounded-lg bg-accent">
-          <p className="p-2 text-center text-white">
-            Välkommen att kolla runt!
-          </p>
+        <div className="min-h-[80px] min-w-[120px] max-w-[150px] rounded-lg bg-accent">
+          <p className="p-2 text-center text-white">{welcomeMessage}</p>
         </div>
         <div
           className="ml-4 h-4 w-6 bg-accent"
