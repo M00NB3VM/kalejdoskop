@@ -31,15 +31,50 @@ function Roomone() {
   const [showPosterModal, setShowPosterModal] = useState<boolean>(false);
   const [showComputerModal, setShowComputerModal] = useState<boolean>(false);
 
-  function closeOrganizationModal(): void {
-    setShowOrganizationModal(!showOrganizationModal);
+  function openModal(modalName: string): void {
+    closeModal();
+    setShowGiftModal(false);
+    setShowConsoleModal(false);
+    setShowBookModal(false);
+    setShowBedModal(false);
+    setShowPosterModal(false);
+    setShowComputerModal(false);
+    setShowOrganizationModal(false);
+    switch (modalName) {
+      case "gift":
+        setShowGiftModal(true);
+        break;
+      case "console":
+        setShowConsoleModal(true);
+        break;
+      case "book":
+        setShowBookModal(true);
+        break;
+      case "bed":
+        setShowBedModal(true);
+        break;
+      case "poster":
+        setShowPosterModal(true);
+        break;
+      case "computer":
+        setShowComputerModal(true);
+        break;
+      case "organization":
+        setShowOrganizationModal(true);
+        break;
+      default:
+        break;
+    }
   }
 
-  function closeObjectModal(
-    objectModal: boolean,
-    setObjectModal: (arg0: boolean) => void
-  ) {
-    setObjectModal(!objectModal);
+  function closeModal(): void {
+    setShowGiftModal(false);
+    setShowConsoleModal(false);
+    setShowBookModal(false);
+    setShowBedModal(false);
+    setShowPosterModal(false);
+    setShowComputerModal(false);
+    setShowOrganizationModal(false);
   }
 
   return (
@@ -68,9 +103,7 @@ function Roomone() {
         <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">
           <div
             className="absolute top-[31%] left-[38%] z-40 inline-block cursor-pointer"
-            onClick={() => {
-              closeObjectModal(showComputerModal, setShowComputerModal);
-            }}
+            onClick={() => openModal("computer")}
           >
             <FiMonitor
               color="yellow"
@@ -81,9 +114,7 @@ function Roomone() {
           </div>
           <div
             className="absolute top-[50%] left-[30%] z-40 inline-block cursor-pointer"
-            onClick={() => {
-              closeObjectModal(showConsoleModal, setShowConsoleModal);
-            }}
+            onClick={() => openModal("console")}
           >
             <SlGameController
               color="yellow"
@@ -94,9 +125,7 @@ function Roomone() {
           </div>
           <div
             className="absolute top-[27%] left-[47%] z-40 inline-block cursor-pointer"
-            onClick={() => {
-              setShowBookModal(!showBookModal);
-            }}
+            onClick={() => openModal("book")}
           >
             <FaBook
               color="yellow"
@@ -107,9 +136,7 @@ function Roomone() {
           </div>
           <div
             className="absolute top-[28%] left-[56%] z-40 inline-block cursor-pointer"
-            onClick={() => {
-              setShowBedModal(!showBedModal);
-            }}
+            onClick={() => openModal("bed")}
           >
             <BiBed
               color="yellow"
@@ -120,9 +147,7 @@ function Roomone() {
           </div>
           <div
             className="absolute top-[12%] left-[58%] z-40 inline-block cursor-pointer"
-            onClick={() => {
-              setShowPosterModal(!showPosterModal);
-            }}
+            onClick={() => openModal("poster")}
           >
             <FiImage
               color="yellow"
@@ -133,9 +158,7 @@ function Roomone() {
           </div>
           <div
             className="absolute top-[19%] left-[70%] z-40 inline-block cursor-pointer"
-            onClick={() => {
-              setShowGiftModal(!showGiftModal);
-            }}
+            onClick={() => openModal("gift")}
           >
             <FiGift
               color="yellow"
@@ -175,7 +198,7 @@ function Roomone() {
           <div className="absolute right-0 top-[45%] z-50 md:hidden">
             <p
               onClick={() => {
-                setShowOrganizationModal(true);
+                openModal("organization");
               }}
               className="inline-block origin-bottom-right -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
             >
@@ -185,7 +208,7 @@ function Roomone() {
         </div>
 
         {showOrganizationModal ? (
-          <OrganizationInfoModal closeModal={closeOrganizationModal} />
+          <OrganizationInfoModal closeModal={closeModal} />
         ) : (
           <></>
         )}

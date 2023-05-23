@@ -21,20 +21,9 @@ import PolkaPlushy from "./components/PolkaPlushy";
 import PolkaWardrobe from "./components/PolkaWardrobe";
 
 function Roomthree() {
-  /*const [showModal, setShowModal] = useState<boolean>(false);
-
-  const [showObjectOne, setShowObjectOne] = useState<boolean>(false);
-
-  function closeModal(): void {
-    setShowModal(!showModal);
-  }
-*/
-  const [showObjectOne, setShowObjectOne] = useState<boolean>(false);
-
   const [showOrganizationModal, setShowOrganizationModal] =
     useState<boolean>(false);
 
-  const [showGiftModal, setShowGiftModal] = useState<boolean>(false);
   const [showGameConsoleModal, setShowGameConsoleModal] =
     useState<boolean>(false);
   const [showMirrorModal, setShowMirrorModal] = useState<boolean>(false);
@@ -42,17 +31,45 @@ function Roomthree() {
   const [showWardrobeModal, setShowWardrobeModal] = useState<boolean>(false);
   const [showComputerModal, setShowComputerModal] = useState<boolean>(false);
 
-  function closeOrganizationModal(): void {
-    setShowOrganizationModal(!showOrganizationModal);
+  function openModal(modalName: string): void {
+    setShowGameConsoleModal(false);
+    setShowMirrorModal(false);
+    setShowPlushyModal(false);
+    setShowWardrobeModal(false);
+    setShowComputerModal(false);
+    setShowOrganizationModal(false);
+    switch (modalName) {
+      case "gameconsole":
+        setShowGameConsoleModal(true);
+        break;
+      case "mirror":
+        setShowMirrorModal(true);
+        break;
+      case "plushy":
+        setShowPlushyModal(true);
+        break;
+      case "wardrobe":
+        setShowWardrobeModal(true);
+        break;
+      case "organization":
+        setShowOrganizationModal(true);
+        break;
+      case "computer":
+        setShowComputerModal(true);
+        break;
+      default:
+        break;
+    }
   }
-  /*
-  <SlGameController
-  color="yellow"
-  size={60}
-  strokeWidth={2}
-  className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-/>*/
 
+  function closeModal(): void {
+    setShowGameConsoleModal(false);
+    setShowMirrorModal(false);
+    setShowPlushyModal(false);
+    setShowWardrobeModal(false);
+    setShowComputerModal(false);
+    setShowOrganizationModal(false);
+  }
   return (
     <motion.div
       className="relative m-0 min-h-screen p-0"
@@ -78,9 +95,7 @@ function Roomthree() {
         <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">
           <div
             className="absolute top-[28%] left-[35%] z-40 inline-block cursor-pointer"
-            onClick={() => {
-              setShowMirrorModal(!showMirrorModal);
-            }}
+            onClick={() => openModal("mirror")}
           >
             <GiMirrorMirror
               color="yellow"
@@ -92,9 +107,7 @@ function Roomthree() {
 
           <div
             className="absolute top-[48%] left-[32%] z-40 inline-block cursor-pointer"
-            onClick={() => {
-              setShowGameConsoleModal(!showGameConsoleModal);
-            }}
+            onClick={() => openModal("gameconsole")}
           >
             <SlGameController
               color="yellow"
@@ -106,9 +119,7 @@ function Roomthree() {
 
           <div
             className="absolute bottom-[22%] left-[44%] z-40 inline-block cursor-pointer"
-            onClick={() => {
-              setShowPlushyModal(!showPlushyModal);
-            }}
+            onClick={() => openModal("plushy")}
           >
             <RiBearSmileLine
               color="yellow"
@@ -120,9 +131,7 @@ function Roomthree() {
 
           <div
             className="absolute top-[22%] right-[50%] z-40 inline-block cursor-pointer"
-            onClick={() => {
-              setShowWardrobeModal(!showWardrobeModal);
-            }}
+            onClick={() => openModal("wardrobe")}
           >
             <GiDoor
               color="yellow"
@@ -134,9 +143,7 @@ function Roomthree() {
 
           <div
             className="absolute top-[32%] right-[30%] z-40 inline-block cursor-pointer"
-            onClick={() => {
-              setShowComputerModal(!showComputerModal);
-            }}
+            onClick={() => openModal("computer")}
           >
             <FiMonitor
               color="yellow"
@@ -175,7 +182,7 @@ function Roomthree() {
           <div className="absolute right-0 top-[45%] z-50 md:hidden">
             <p
               onClick={() => {
-                setShowOrganizationModal(true);
+                openModal("organization");
               }}
               className="inline-block origin-bottom-right -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
             >
@@ -185,7 +192,7 @@ function Roomthree() {
         </div>
 
         {showOrganizationModal ? (
-          <OrganizationInfoModal closeModal={closeOrganizationModal} />
+          <OrganizationInfoModal closeModal={closeModal} />
         ) : (
           <></>
         )}
