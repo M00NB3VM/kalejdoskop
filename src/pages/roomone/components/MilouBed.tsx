@@ -32,9 +32,13 @@ function MilouBed({ showObject, setShowObject }: Props) {
   }, [showObject]);
 
   const [messages, setMessages] = useState<Message[]>([]);
+  const [showMessageResponse, setShowMessageResponse] =
+    useState<boolean>(false);
+  const [userMessage, setUserMessage] = useState<string>("");
   const [currentMessage, setCurrentMessage] = useState(0);
   const [charMax, setCharMax] = useState(280);
 
+  // axios
   useEffect(() => {
     async function fetchMessages() {
       try {
@@ -49,6 +53,23 @@ function MilouBed({ showObject, setShowObject }: Props) {
 
     fetchMessages();
   }, []);
+
+  async function postMessage() {
+    try {
+      const newMessage = {
+        room: "milou",
+        object: "bed",
+        message: userMessage,
+      };
+      const response = await axios.post(
+        "http://localhost:4000/messages",
+        newMessage
+      );
+      setShowMessageResponse(true);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   // Carousel buttons
   function nextMessage() {
@@ -94,29 +115,39 @@ function MilouBed({ showObject, setShowObject }: Props) {
               </p>
               <Link href="#">Länk till organisation</Link>
             </li>
-            <li>
-              <label>Dela dina tankar!</label>
-              <textarea
-                className="max-w-[270px] resize-none border-2 bg-secondary"
-                placeholder="Skriv här..."
-                rows={4}
-                cols={56}
-                maxLength={280}
-                onChange={(e) => {
-                  setCharMax(280 - e.target.value.length);
-                }}
-              />
-              <p className="pt-1 text-xs">{charMax} / 280</p>
+            {!showMessageResponse ? (
+              <li>
+                <label>Dela dina tankar!</label>
+                <textarea
+                  className="max-w-[270px] resize-none border-2 bg-secondary"
+                  placeholder="Skriv här..."
+                  rows={4}
+                  cols={56}
+                  maxLength={280}
+                  value={userMessage}
+                  onChange={(e) => {
+                    setUserMessage(e.target.value);
+                    setCharMax(280 - e.target.value.length);
+                  }}
+                />
+                <p className="pt-1 text-xs">{charMax} / 280</p>
 
-              <button
-                className="mx-auto my-4 block w-3/6 transform rounded-full bg-accent px-6 py-2 text-lg text-white transition duration-500 hover:bg-accentHover"
-                onClick={() => {
-                  console.log("Sent");
-                }}
-              >
-                Skicka
-              </button>
-            </li>
+                <button
+                  className="mx-auto my-4 block w-3/6 transform rounded-full bg-accent px-6 py-2 text-lg text-white transition duration-500 hover:bg-accentHover"
+                  onClick={() => {
+                    postMessage();
+                  }}
+                >
+                  Skicka
+                </button>
+              </li>
+            ) : (
+              <li>
+                <p className="my-6 text-xl">
+                  Tack för att du delade dina tankar!
+                </p>
+              </li>
+            )}
 
             <li>
               <h6>Meddelanden från andra</h6>
