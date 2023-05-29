@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -19,20 +19,54 @@ import MilouBed from "./components/MilouBed";
 import MilouPoster from "./components/MilouPoster";
 import MilouComputer from "./components/MilouComputer";
 
+interface WelcomeMessage {
+  icon: string;
+  text: string;
+}
+
 function Roomone() {
   const [showOrganizationModal, setShowOrganizationModal] =
     useState<boolean>(false);
 
-  const welcomeMessages: string[] = [
-    "Välkommen att kolla runt!",
-    "Hej!",
-    "Jag driver spelföreningen Digitala Drakar!",
+  const welcomeMessages: WelcomeMessage[] = [
+    { icon: "milou-console-icon", text: "Välkommen att kolla runt!" },
+    {
+      icon: "milou-gift-icon",
+      text: "Jag har förberett en present till Polka.",
+    },
+    {
+      icon: "milou-poster-icon",
+      text: "Jag driver spelföreningen Digitala Drakar, kolla in vår poster!",
+    },
   ];
-  const [welcomeMessage, setWelcomeMessage] = useState<string | undefined>("");
+  const message = welcomeMessages.sort(
+    () => 0.5 - Math.random()
+  )[0] as WelcomeMessage;
+
+  const [welcomeMessage, setWelcomeMessage] = useState<WelcomeMessage>(message);
+  const consoleIconRef = useRef<HTMLDivElement>();
+  const giftIconRef = useRef<HTMLDivElement>();
+  const posterIconRef = useRef<HTMLDivElement>();
 
   useEffect(() => {
-    const message = welcomeMessages.sort(() => 0.5 - Math.random())[0];
-    setWelcomeMessage(message);
+    if (welcomeMessage.icon === "milou-console-icon") {
+      consoleIconRef.current.scrollIntoView({
+        inline: "center",
+        behavior: "smooth",
+      });
+    }
+    if (welcomeMessage.icon === "milou-gift-icon") {
+      giftIconRef.current.scrollIntoView({
+        inline: "center",
+        behavior: "smooth",
+      });
+    }
+    if (welcomeMessage.icon === "milou-poster-icon") {
+      posterIconRef.current.scrollIntoView({
+        inline: "center",
+        behavior: "smooth",
+      });
+    }
   }, []);
 
   const [showGiftModal, setShowGiftModal] = useState<boolean>(false);
@@ -44,13 +78,7 @@ function Roomone() {
 
   function openModal(modalName: string): void {
     closeModal();
-    setShowGiftModal(false);
-    setShowConsoleModal(false);
-    setShowBookModal(false);
-    setShowBedModal(false);
-    setShowPosterModal(false);
-    setShowComputerModal(false);
-    setShowOrganizationModal(false);
+
     switch (modalName) {
       case "gift":
         setShowGiftModal(true);
@@ -126,12 +154,14 @@ function Roomone() {
             className="absolute top-[50%] left-[30%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("console")}
           >
-            <SlGameController
-              color="yellow"
-              size={60}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div ref={consoleIconRef}>
+              <SlGameController
+                color="yellow"
+                size={60}
+                strokeWidth={2}
+                className="drop-shadow-[2px_-2px_4px_#00ffc8]"
+              />
+            </div>
           </div>
           <div
             className="absolute top-[27%] left-[47%] z-40 inline-block cursor-pointer"
@@ -159,23 +189,27 @@ function Roomone() {
             className="absolute top-[12%] left-[58%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("poster")}
           >
-            <FiImage
-              color="yellow"
-              size={70}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div ref={posterIconRef}>
+              <FiImage
+                color="yellow"
+                size={70}
+                strokeWidth={2}
+                className="drop-shadow-[2px_-2px_4px_#00ffc8]"
+              />
+            </div>
           </div>
           <div
             className="absolute top-[19%] left-[70%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("gift")}
           >
-            <FiGift
-              color="yellow"
-              size={50}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div ref={giftIconRef}>
+              <FiGift
+                color="yellow"
+                size={50}
+                strokeWidth={2}
+                className="drop-shadow-[2px_-2px_4px_#00ffc8]"
+              />
+            </div>
           </div>
 
           <img
@@ -255,10 +289,12 @@ function Roomone() {
         className="fixed left-[90px] bottom-[120px] md:bottom-[160px] md:left-[150px]"
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
-        transition={{ duration: 0.7, delay: 2.2 }}
+        transition={{ duration: 0.7, delay: 3 }}
       >
-        <div className="min-h-[80px] min-w-[120px] max-w-[150px] rounded-lg bg-accent">
-          <p className="p-2 text-center text-white">{welcomeMessage}</p>
+        <div className="min-h-[60px] min-w-[110px] max-w-[150px] rounded-lg bg-accent">
+          <p className="p-2 text-center text-sm text-white">
+            {!welcomeMessage ? "" : welcomeMessage.text}
+          </p>
         </div>
         <div
           className="ml-4 h-4 w-6 bg-accent"

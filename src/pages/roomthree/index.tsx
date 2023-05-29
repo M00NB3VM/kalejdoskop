@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -19,9 +19,43 @@ import PolkaMirror from "./components/PolkaMirror";
 import PolkaPlushy from "./components/PolkaPlushy";
 import PolkaWardrobe from "./components/PolkaWardrobe";
 
+interface WelcomeMessage {
+  icon: string;
+  text: string;
+}
+
 function Roomthree() {
   const [showOrganizationModal, setShowOrganizationModal] =
     useState<boolean>(false);
+
+  const welcomeMessages: WelcomeMessage[] = [
+    { icon: "polka-mirror-icon", text: "Välkommen att kolla runt!" },
+    {
+      icon: "polka-monitor-icon",
+      text: "Jag streamar mina favoritspel.",
+    },
+    {
+      icon: "polka-plushy-icon",
+      text: "Jag samlar på plushys, kan du hitta en?",
+    },
+  ];
+  const [welcomeMessage, setWelcomeMessage] = useState<WelcomeMessage>({
+    icon: "",
+    text: "",
+  });
+  const elementRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (welcomeMessage.icon === "") {
+      const message = welcomeMessages.sort(
+        () => 0.5 - Math.random()
+      )[0] as WelcomeMessage;
+
+      setWelcomeMessage(message);
+    } else {
+      elementRef.current?.scrollIntoView({ inline: "center" });
+    }
+  }, [welcomeMessage]);
 
   const [showGameConsoleModal, setShowGameConsoleModal] =
     useState<boolean>(false);
@@ -31,12 +65,8 @@ function Roomthree() {
   const [showComputerModal, setShowComputerModal] = useState<boolean>(false);
 
   function openModal(modalName: string): void {
-    setShowGameConsoleModal(false);
-    setShowMirrorModal(false);
-    setShowPlushyModal(false);
-    setShowWardrobeModal(false);
-    setShowComputerModal(false);
-    setShowOrganizationModal(false);
+    closeModal();
+
     switch (modalName) {
       case "gameconsole":
         setShowGameConsoleModal(true);
@@ -93,6 +123,9 @@ function Roomthree() {
       <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#000]">
         <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">
           <div
+            ref={
+              welcomeMessage.icon === "polka-mirror-icon" ? elementRef : null
+            }
             className="absolute top-[28%] left-[35%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("mirror")}
           >
@@ -117,6 +150,9 @@ function Roomthree() {
           </div>
 
           <div
+            ref={
+              welcomeMessage.icon === "polka-plushy-icon" ? elementRef : null
+            }
             className="absolute bottom-[22%] left-[44%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("plushy")}
           >
@@ -141,6 +177,9 @@ function Roomthree() {
           </div>
 
           <div
+            ref={
+              welcomeMessage.icon === "polka-monitor-icon" ? elementRef : null
+            }
             className="absolute top-[32%] right-[30%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("computer")}
           >
@@ -228,11 +267,11 @@ function Roomthree() {
         className="fixed left-[90px] bottom-[120px] md:bottom-[160px] md:left-[150px]"
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
-        transition={{ duration: 0.7, delay: 2.2 }}
+        transition={{ duration: 0.7, delay: 2.5 }}
       >
-        <div className="h-[80px] w-[120px] rounded-lg bg-accent">
-          <p className="p-2 text-center text-white">
-            Välkommen att kolla runt!
+        <div className="min-h-[60px] min-w-[110px] max-w-[150px] rounded-lg bg-accent">
+          <p className="p-2 text-center text-sm text-white">
+            {!welcomeMessage ? "" : welcomeMessage.text}
           </p>
         </div>
         <div
