@@ -43,7 +43,7 @@ function MilouBed({ showObject, setShowObject }: Props) {
     async function fetchMessages() {
       try {
         const response = await axios.get(
-          "http://localhost:4000/messages/three-random/Milou/Säng"
+          "http://localhost:4000/messages/three-random/Milous/Säng"
         );
         console.log(response.data);
         setMessages(response.data);

@@ -42,7 +42,7 @@ function LiamEnvelope({ showObject, setShowObject }: Props) {
     async function fetchMessages() {
       try {
         const response = await axios.get(
-          "http://localhost:4000/messages/three-random-messages"
+          "http://localhost:4000/messages/three-random/Liams/Brev"
         );
         setMessages(response.data);
       } catch (error) {

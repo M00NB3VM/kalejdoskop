@@ -42,7 +42,7 @@ function LiamDumbbells({ showObject, setShowObject }: Props) {
     async function fetchMessages() {
       try {
         const response = await axios.get(
-          "http://localhost:4000/messages/three-random/Liam/Hantlar"
+          "http://localhost:4000/messages/three-random/Liams/Hantlar"
         );
         setMessages(response.data);
       } catch (error) {
