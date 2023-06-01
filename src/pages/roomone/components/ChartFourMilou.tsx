@@ -2,8 +2,11 @@
 
 import React, { useEffect } from "react";
 import { Chart } from "chart.js/auto";
+import { useStoreContext } from "~/context";
 
 function ChartFourMilou() {
+  const { statistics } = useStoreContext();
+  
   useEffect(() => {
     const data: number[] = [30, 40, 10];
     const labels: string[] = [

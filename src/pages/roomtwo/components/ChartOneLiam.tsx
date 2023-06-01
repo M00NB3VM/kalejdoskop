@@ -2,8 +2,11 @@
 
 import React, { useEffect } from "react";
 import { Chart } from "chart.js/auto";
+import { useStoreContext } from "~/context";
 
 function ChartOneLiam() {
+  const { statistics } = useStoreContext();
+  
   useEffect(() => {
     const data: number[] = [10, 15, 5];
     const labels: string[] = [

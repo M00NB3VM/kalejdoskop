@@ -42,7 +42,7 @@ function PolkaComputer({ showObject, setShowObject }: Props) {
     async function fetchMessages() {
       try {
         const response = await axios.get(
-          "http://localhost:4000/messages/three-random-messages"
+          "http://localhost:4000/messages/three-random/Polka/Dator"
         );
         setMessages(response.data);
       } catch (error) {
@@ -56,8 +56,8 @@ function PolkaComputer({ showObject, setShowObject }: Props) {
   async function postMessage() {
     try {
       const newMessage = {
-        room: "polka",
-        object: "computer",
+        room: "Polka",
+        object: "Dator",
         message: userMessage,
       };
       const response = await axios.post(

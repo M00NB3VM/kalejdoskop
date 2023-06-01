@@ -43,8 +43,9 @@ function MilouBed({ showObject, setShowObject }: Props) {
     async function fetchMessages() {
       try {
         const response = await axios.get(
-          "http://localhost:4000/messages/three-random-messages"
+          "http://localhost:4000/messages/three-random/Milou/Säng"
         );
+        console.log(response.data);
         setMessages(response.data);
       } catch (error) {
         console.log(error);
@@ -57,8 +58,8 @@ function MilouBed({ showObject, setShowObject }: Props) {
   async function postMessage() {
     try {
       const newMessage = {
-        room: "milou",
-        object: "bed",
+        room: "Milou",
+        object: "Säng",
         message: userMessage,
       };
       const response = await axios.post(

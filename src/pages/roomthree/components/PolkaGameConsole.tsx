@@ -42,7 +42,7 @@ function PolkaGameConsole({ showObject, setShowObject }: Props) {
     async function fetchMessages() {
       try {
         const response = await axios.get(
-          "http://localhost:4000/messages/three-random-messages"
+          "http://localhost:4000/messages/three-random/Polka/Spelkonsol"
         );
         setMessages(response.data);
       } catch (error) {
@@ -56,8 +56,8 @@ function PolkaGameConsole({ showObject, setShowObject }: Props) {
   async function postMessage() {
     try {
       const newMessage = {
-        room: "polka",
-        object: "console",
+        room: "Polka",
+        object: "Spelkonsol",
         message: userMessage,
       };
       const response = await axios.post(
