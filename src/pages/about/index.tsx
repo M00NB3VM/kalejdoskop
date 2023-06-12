@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import ThemeToggleButton from "~/components/ThemeToggleButton";
+import Footer from "~/components/Footer";
 
 interface Partner {
   name: string;
@@ -65,8 +66,10 @@ function About() {
           Tillbaka
         </Link>
 
-        <h1 className="mx-auto mt-10 w-4/5 text-xl">Om detta projekt</h1>
-        <p className="mx-auto w-4/5">
+        <h1 className="mx-2 mt-10 w-[full] text-xl md:mx-auto md:w-4/5">
+          Om detta projekt
+        </h1>
+        <p className="w-sfull mx-2 text-sm md:mx-auto md:w-4/5 md:text-base">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
           corrupti quos impedit a, repellendus quam nemo nesciunt sunt.
           Veritatis magni illo, unde delectus soluta quaerat tempora nemo
@@ -80,11 +83,11 @@ function About() {
         />
         <h3 className="mx-auto mb-4 w-4/5 text-lg">Fler bra ställen</h3>
 
-        <ul className="m-4 mx-auto mb-8 flex w-4/5 flex-wrap">
+        <ul className="mx-2 mb-8 flex w-screen flex-wrap md:m-4 md:mx-auto md:w-4/5">
           {partners.map((partner) => {
             return (
               <li
-                className="mr-0 max-w-[290px] rounded p-4 shadow-lg md:mr-4 md:p-6"
+                className="max-w-[250px] rounded p-4 shadow-lg md:mr-4 md:max-w-[290px] md:p-6"
                 key={partner.name}
               >
                 <Link href={partner.url}>
@@ -94,12 +97,14 @@ function About() {
                   >
                     {partner.name}
                   </h6>
-                  <p>{partner.about}</p>
+                  <p className="text-sm md:text-base">{partner.about}</p>
                 </Link>
               </li>
             );
           })}
         </ul>
+
+        <Footer />
       </main>
     </motion.div>
   );
