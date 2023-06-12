@@ -32,8 +32,8 @@ function OrganizationsInfo() {
     },
     {
       name: "Sverok",
-      img: "/Sverok_logotyp_gul.png",
-      imgDark: "/Sverok_logotyp_lila.png",
+      img: "/Sverok_logo_blk.png",
+      imgDark: "/Sverok_logo_white.png",
       link: "https://sverok.se/",
       description:
         "Sverok är en idéell organisation och ett av Sveriges största ungdomsförbund. 44 000 medlemmar i 1 700 föreningar över hela landet samlar, utvecklar och sprider spelkultur. Där inkluderas brädspel, samlarkortspel, rollspel, e-sport, lajv och mycket mer. I Sverok startar och driver ungdomar sina egna föreningar på egna villkor och skapar verksamhet tillsammans. Sverok är också medlemsorganisation i Studiefrämjandet.",
@@ -63,14 +63,10 @@ function OrganizationsInfo() {
                   alt={`${organization.name} Logotyp`}
                 />
               )}
-
-              {organization.name === "Sverok" ? (
-                <h3 className="ml-4 text-4xl">{organization.name}</h3>
-              ) : (
-                ""
-              )}
             </div>
-            <p className="mt-4">{organization.description}</p>
+            <p className="mt-4 text-sm md:text-base">
+              {organization.description}
+            </p>
           </Link>
         );
       })}

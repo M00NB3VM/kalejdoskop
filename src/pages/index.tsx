@@ -9,6 +9,7 @@ import CallToAction from "~/components/CallToAction";
 import EnterRoom from "~/components/EnterRoom";
 import OrganizationsInfo from "~/components/OrganizationInfo";
 import ThankYouModal from "~/components/ThankYouModal";
+import Footer from "~/components/Footer";
 
 const Home: NextPage = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -18,7 +19,6 @@ const Home: NextPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="mb-10"
     >
       <Head>
         <title>Kalejdoskop</title>
@@ -56,17 +56,19 @@ const Home: NextPage = () => {
           className="my-10 h-auto max-w-full pl-2"
         />
 
-        <div className="mt-10 flex flex-col items-center justify-center">
+        <div className="mt-10 mb-10 flex flex-col items-center justify-center">
           <h5 className="text-center text-xl">
-            Vill du läsa mer om projektet?{" "}
+            Vill du läsa mer om projektet?
           </h5>
           <Link
             href="about"
-            className="m-4 transform rounded-full bg-accent px-6 py-2 text-lg text-white shadow-md transition duration-500 hover:scale-110 hover:bg-accentHover"
+            className="mt-4 transform rounded-full bg-accent px-6 py-2 text-lg text-white shadow-md transition duration-500 hover:scale-110 hover:bg-accentHover"
           >
             Tryck här!
           </Link>
         </div>
+
+        <Footer />
       </main>
     </motion.div>
   );
