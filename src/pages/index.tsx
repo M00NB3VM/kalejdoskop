@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="" />
       </Head>
       <main>
-        <h1>Hello world</h1>
+        <h1>Kommer snart</h1>
       </main>
     </>
   );
