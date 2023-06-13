@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { useStoreContext } from "~/context";
 
@@ -40,37 +41,64 @@ function OrganizationsInfo() {
     },
   ];
 
+  const box = {
+    animate: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const card = {
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "ease-out",
+        duration: 0.8,
+      },
+    },
+  };
+
   return (
-    <div className="flex flex-wrap">
+    <motion.div
+      className="flex flex-wrap"
+      variants={box}
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
       {organizations.map((organization) => {
         return (
-          <Link
-            href={organization.link}
-            className="m-4 grow rounded p-6 shadow-lg xs:w-full sm:w-1/3 sm:max-w-[40%] lg:w-1/4 lg:max-w-[30%]"
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            variants={card}
             key={organization.name}
+            className="m-4 grow rounded p-6 shadow-lg xs:w-full sm:w-1/3 sm:max-w-[40%] lg:w-1/4 lg:max-w-[30%]"
           >
-            <div className="flex items-center">
-              {darkTheme ? (
-                <img
-                  className="max-h-16 max-w-[100%]"
-                  src={organization.imgDark}
-                  alt={`${organization.name} Logotyp`}
-                />
-              ) : (
-                <img
-                  className="max-h-16 max-w-[100%]"
-                  src={organization.img}
-                  alt={`${organization.name} Logotyp`}
-                />
-              )}
-            </div>
-            <p className="mt-4 text-sm md:text-base">
-              {organization.description}
-            </p>
-          </Link>
+            <Link href={organization.link}>
+              <div className="flex items-center">
+                {darkTheme ? (
+                  <img
+                    className="max-h-16 max-w-[100%]"
+                    src={organization.imgDark}
+                    alt={`${organization.name} Logotyp`}
+                  />
+                ) : (
+                  <img
+                    className="max-h-16 max-w-[100%]"
+                    src={organization.img}
+                    alt={`${organization.name} Logotyp`}
+                  />
+                )}
+              </div>
+              <p className="mt-4 text-sm md:text-base">
+                {organization.description}
+              </p>
+            </Link>
+          </motion.div>
         );
       })}
-    </div>
+    </motion.div>
   );
 }
 

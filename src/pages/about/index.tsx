@@ -49,6 +49,40 @@ function About() {
     },
   ];
 
+  // Animations
+  const box = {
+    animate: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const card = {
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "ease-out",
+        duration: 0.8,
+      },
+    },
+  };
+
+  const links = {
+    opacity: 1,
+  };
+
+  const arrow = {
+    hover: {
+      x: [0, 4, 0],
+      transition: {
+        duration: 1,
+        repeat: Infinity,
+      },
+    },
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -100,9 +134,58 @@ function About() {
             </p>
           </div>
 
-          <div className="mx-2 mt-10 w-fit text-base md:text-lg lg:w-[39%] xl:w-[29%] 2xl:w-[25%]">
-            <h2 className="text-center text-xl">Länkar</h2>
-
+          <div className="mx-2 mt-10 w-fit self-center text-base md:text-lg lg:w-[39%] lg:self-start xl:w-[29%] 2xl:w-[25%]">
+            <div className="relative">
+              <motion.div
+                className="absolute left-[50px] top-3 h-[18px] w-[13px]"
+                initial={{ opacity: 1 }}
+                transition={{ duration: 1.5, delay: 0.2 }}
+                animate={{ opacity: [0, 1, 0] }}
+              >
+                <img
+                  src="/sparkle_pink.png"
+                  alt="Stjärna"
+                  className="max-h-[100%] max-w-[100%]"
+                />
+              </motion.div>
+              <motion.div
+                className="absolute -top-2 left-[75px] h-[25px] w-[20px]"
+                initial={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                animate={{ opacity: [0, 1, 0] }}
+              >
+                <img
+                  src="/sparkle_pink.png"
+                  alt="Stjärna"
+                  className="max-h-[100%] max-w-[100%]"
+                />
+              </motion.div>
+              <motion.div
+                className="absolute -top-5 right-[100px] h-[20px] w-[15px]"
+                initial={{ opacity: 1 }}
+                transition={{ duration: 1.2, delay: 0.5 }}
+                animate={{ opacity: [0, 1, 0] }}
+              >
+                <img
+                  src="/sparkle_pink.png"
+                  alt="Stjärna"
+                  className="max-h-[100%] max-w-[100%]"
+                />
+              </motion.div>
+              <motion.div
+                className="absolute top-2 right-[70px] h-[20px] w-[15px]"
+                initial={{ opacity: 1 }}
+                transition={{ duration: 1.3 }}
+                animate={{ opacity: [0, 1, 0] }}
+              >
+                <img
+                  src="/sparkle_pink.png"
+                  alt="Stjärna"
+                  className="max-h-[100%] max-w-[100%]"
+                />
+              </motion.div>
+              <h2 className="text-center text-xl">Länkar</h2>
+            </div>
             <div className="flex h-[25px] max-w-full justify-between bg-gradient-to-t from-primary to-primary bg-[length:100%_2px] bg-center bg-no-repeat">
               <img
                 src="/sparkle.png"
@@ -117,42 +200,52 @@ function About() {
             </div>
 
             <ul className="mt-2 w-full rounded-2xl border-b-[6px] border-b-accent bg-secondary px-6 py-4 text-primary">
-              <li className="my-4">
+              <motion.li className="my-4" whileHover="hover" animate={links}>
                 <Link href="https://killar.se/" className="flex items-center">
-                  <BsArrowRight className="mr-2 stroke-[1]" />
+                  <motion.div variants={arrow}>
+                    <BsArrowRight className="mr-2 stroke-[1]" />
+                  </motion.div>
                   <p>Killar.se</p>
                 </Link>
-              </li>
-              <li className="my-4">
+              </motion.li>
+              <motion.li className="my-4" whileHover="hover" animate={links}>
                 <Link href="https://mfj.se/" className="flex items-center">
-                  <BsArrowRight className="mr-2 stroke-[1]" />
+                  <motion.div variants={arrow}>
+                    <BsArrowRight className="mr-2 stroke-[1]" />
+                  </motion.div>
                   <p>MÄN</p>
                 </Link>
-              </li>
-              <li className="my-4">
+              </motion.li>
+              <motion.li className="my-4" whileHover="hover" animate={links}>
                 <Link href="https://sverok.se/" className="flex items-center">
-                  <BsArrowRight className="mr-2 stroke-[1]" />
+                  <motion.div variants={arrow}>
+                    <BsArrowRight className="mr-2 stroke-[1]" />
+                  </motion.div>
                   <p>Sverok</p>
                 </Link>
-              </li>
-              <li className="my-4">
+              </motion.li>
+              <motion.li className="my-4" whileHover="hover" animate={links}>
                 <Link
                   href="https://cmeducations.se/"
                   className="flex items-center"
                 >
-                  <BsArrowRight className="mr-2 stroke-[1]" />
+                  <motion.div variants={arrow}>
+                    <BsArrowRight className="mr-2 stroke-[1]" />
+                  </motion.div>
                   <p>Changemaker Educations</p>
                 </Link>
-              </li>
-              <li className="my-4">
+              </motion.li>
+              <motion.li className="my-4" whileHover="hover" animate={links}>
                 <Link
                   href="https://futuregames.se/"
                   className="flex items-center"
                 >
-                  <BsArrowRight className="mr-2 stroke-[1]" />
+                  <motion.div variants={arrow}>
+                    <BsArrowRight className="mr-2 stroke-[1]" />
+                  </motion.div>
                   <p>Futuregames</p>
                 </Link>
-              </li>
+              </motion.li>
             </ul>
           </div>
         </div>
@@ -165,10 +258,17 @@ function About() {
           Fler bra ställen
         </h3>
 
-        <ul className="mx-2 mb-10 flex flex-wrap md:mx-auto md:w-4/5">
+        <motion.ul
+          className="mx-2 mb-10 flex flex-wrap md:mx-auto md:w-4/5"
+          variants={box}
+          whileInView="animate"
+          viewport={{ once: true }}
+        >
           {partners.map((partner) => {
             return (
-              <li
+              <motion.li
+                initial={{ opacity: 0, x: 30 }}
+                variants={card}
                 className="max-w-[250px] rounded p-4 shadow-lg md:mr-4 md:max-w-[280px] md:p-6"
                 key={partner.name}
               >
@@ -181,10 +281,10 @@ function About() {
                   </h6>
                   <p className="text-sm md:text-base">{partner.about}</p>
                 </Link>
-              </li>
+              </motion.li>
             );
           })}
-        </ul>
+        </motion.ul>
 
         <Footer />
       </main>
