@@ -5,9 +5,9 @@ function CallToAction() {
     <>
       <div className="mt-10 flex justify-center">
         <img
-          src="Logotype.png"
+          src="logo_layout_v5_no_text.png"
           alt="Logotyp"
-          className="max-h-[250px] max-w-full"
+          className="max-w-screen h-auto"
         />
       </div>
 

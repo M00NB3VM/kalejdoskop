@@ -17,7 +17,7 @@ function EnterRoom() {
       description:
         "Milou, 17 år, älskar alla typer av spel och har startat en spelförening med sina vänner. Hans dröm vore att träffa en tjej med samma intressen men trots hans försök har han inte lyckats charma någon. Lika mycket energi lägger han inte på sitt skolarbete, vilket hans lärare och föräldrar ofta påpekar.",
       img: "/Char1_FBody.png",
-      door: "/char1_w_door.png",
+      door: "/miluo_fb_v1.png",
     },
     {
       name: "Liam",
@@ -25,7 +25,7 @@ function EnterRoom() {
       description:
         "Sedan Liam, 20 år, hoppade av gymnasiet har det varit svårt för honom att hamna rätt. Alla chefer han har haft är dumma i huvudet och att flytta hemifrån verkar vara omöjligt. Han har en flickvän men även hon har börjat vända sig emot honom.",
       img: "/Char2_FBody.png",
-      door: "/char2_w_door.png",
+      door: "/liam_fb_v1.png",
     },
     {
       name: "Polka",
@@ -33,7 +33,7 @@ function EnterRoom() {
       description:
         "Polka, 18 år, är stolt samlare av limited edition plushies och japanska rollspel. Hon har alltid gillat spelkultur och följer flera cosplayers på sociala medier. Hon hade gärna cosplayat själv men har aldrig haft några nära vänner och inte vågat åka på konvent ensam. Nu har hon dock bestämt sig för att börja våga mer och börja streama hennes favoritspel.",
       img: "/Char3_FBody.png",
-      door: "/char3_w_door.png",
+      door: "/polka_fb_v1.png",
     },
   ];
 
@@ -144,7 +144,7 @@ function EnterRoom() {
                 </div>
               </div>
 
-              <div className="relative flex h-[400px] w-[270px] flex-col items-end sm:h-[500px] sm:w-[300px]  md:h-[600px] md:w-[370px]">
+              <div className="relative flex h-[400px] w-[300px] flex-col items-end sm:h-[500px] sm:w-[300px]  md:h-[600px] md:w-[370px]">
                 <motion.div
                   className="relative h-full w-full"
                   initial={{ opacity: 0, y: 30 }}
@@ -243,7 +243,7 @@ function EnterRoom() {
 
                   <div className="relative h-full w-full">
                     <img
-                      className="absolute top-0 max-w-full"
+                      className="absolute left-0 bottom-0 max-w-full"
                       src={character.door}
                       alt={`Dörr till ${character.name}s rum`}
                     />
