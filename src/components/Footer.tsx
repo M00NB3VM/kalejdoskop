@@ -11,7 +11,7 @@ function Footer() {
         <div className="ml-4 mr-4 flex min-h-[80px] flex-wrap items-center justify-around">
           <img
             className="mb-2 mt-2 max-h-[40px] max-w-[100%] md:max-h-[55px]"
-            src="/Logotype.png"
+            src="/kalejdoskop_logo_big_white.png"
             alt="Kalejdoskops logga"
           />
           <img
@@ -24,7 +24,7 @@ function Footer() {
         <div className="ml-4 mr-4 flex min-h-[80px] flex-wrap items-center justify-around">
           <img
             className="mb-2 mt-2 max-h-[40px] max-w-[100%] md:max-h-[55px]"
-            src="/Logotype.png"
+            src="/kalejdoskop_logo_big_black.png"
             alt="Kalejdoskops logga"
           />
           <img

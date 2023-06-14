@@ -140,7 +140,7 @@ function About() {
                 className="absolute left-[50px] top-3 h-[18px] w-[13px]"
                 initial={{ opacity: 1 }}
                 transition={{ duration: 1.5, delay: 0.2 }}
-                animate={{ opacity: [0, 1, 0] }}
+                whileInView={{ opacity: [0, 1, 0] }}
               >
                 <img
                   src="/sparkle_pink.png"
@@ -152,7 +152,7 @@ function About() {
                 className="absolute -top-2 left-[75px] h-[25px] w-[20px]"
                 initial={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                animate={{ opacity: [0, 1, 0] }}
+                whileInView={{ opacity: [0, 1, 0] }}
               >
                 <img
                   src="/sparkle_pink.png"
@@ -164,7 +164,7 @@ function About() {
                 className="absolute -top-5 right-[100px] h-[20px] w-[15px]"
                 initial={{ opacity: 1 }}
                 transition={{ duration: 1.2, delay: 0.5 }}
-                animate={{ opacity: [0, 1, 0] }}
+                whileInView={{ opacity: [0, 1, 0] }}
               >
                 <img
                   src="/sparkle_pink.png"
@@ -176,7 +176,7 @@ function About() {
                 className="absolute top-2 right-[70px] h-[20px] w-[15px]"
                 initial={{ opacity: 1 }}
                 transition={{ duration: 1.3 }}
-                animate={{ opacity: [0, 1, 0] }}
+                whileInView={{ opacity: [0, 1, 0] }}
               >
                 <img
                   src="/sparkle_pink.png"
