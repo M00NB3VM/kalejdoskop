@@ -1,14 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
-const defaultTheme = require("tailwindcss/defaultTheme");
-
 const config = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    screens: {
-      xs: "280px",
-      ...defaultTheme.screens,
-    },
     fontFamily: {
       header: ["DocumanHeavy", "sans-serif"],
       body: ["Open sans", "sans-serif"],
@@ -23,7 +17,11 @@ const config = {
       accent: "#f7528b",
       accentHover: "#F41A65",
     },
-    extend: {},
+    extend: {
+      screens: {
+        xs: "280px",
+      },
+    },
   },
   plugins: [],
 };
