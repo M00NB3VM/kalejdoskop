@@ -17,7 +17,7 @@ function EnterRoom() {
       description:
         "Milou, 17 år, älskar alla typer av spel och har startat en spelförening med sina vänner. Hans dröm vore att träffa en tjej med samma intressen men trots hans försök har han inte lyckats charma någon. Lika mycket energi lägger han inte på sitt skolarbete, vilket hans lärare och föräldrar ofta påpekar.",
       img: "/miluo_fb_v1.png",
-      door: "/milou_door.png",
+      door: "/milou_door_v1.png",
     },
     {
       name: "Liam",
@@ -25,7 +25,7 @@ function EnterRoom() {
       description:
         "Sedan Liam, 20 år, hoppade av gymnasiet har det varit svårt för honom att hamna rätt. Alla chefer han har haft är dumma i huvudet och att flytta hemifrån verkar vara omöjligt. Han har en flickvän men även hon har börjat vända sig emot honom.",
       img: "/liam_fb_v1.png",
-      door: "/liam_door.png",
+      door: "/liam_door_v1.png",
     },
     {
       name: "Polka",
@@ -33,7 +33,7 @@ function EnterRoom() {
       description:
         "Polka, 18 år, är stolt samlare av limited edition plushies och japanska rollspel. Hon har alltid gillat spelkultur och följer flera cosplayers på sociala medier. Hon hade gärna cosplayat själv men har aldrig haft några nära vänner och inte vågat åka på konvent ensam. Nu har hon dock bestämt sig för att börja våga mer och börja streama hennes favoritspel.",
       img: "/polka_fb_v1.png",
-      door: "/polka_door.png",
+      door: "/polka_door_v1.png",
     },
   ];
 
@@ -226,7 +226,7 @@ function EnterRoom() {
                   {character.name === "Polka" ? (
                     <div className="absolute top-0 left-0 h-full w-full overflow-hidden sm:overflow-visible">
                       <motion.div
-                        className="relative top-[345px] left-[210px] z-10 inline-block sm:top-[440px] sm:left-[240px] md:top-[500px] md:left-[80%]"
+                        className="relative top-[330px] left-[220px] z-10 inline-block sm:top-[420px] sm:left-[265px] md:top-[470px] md:left-[84%]"
                         animate={{ rotate: [0, 10, 0] }}
                         transition={{ duration: 4, repeat: Infinity }}
                       >
@@ -248,7 +248,7 @@ function EnterRoom() {
                       alt={`${character.name}`}
                     />
                     <img
-                      className="absolute top-0 right-0 -z-10 mx-auto mt-6 max-h-[90%] max-w-full"
+                      className="absolute bottom-6 right-4 -z-10 mx-auto mt-6 max-h-[83%] max-w-full sm:-right-2 md:bottom-10 md:right-2 lg:right-6"
                       src={character.door}
                       alt={`Dörr till ${character.name}s rum`}
                     />

@@ -62,7 +62,7 @@ function OrganizationsInfo() {
 
   return (
     <motion.div
-      className="flex flex-wrap"
+      className="max-w-screen flex flex-wrap justify-between overflow-hidden xl:justify-around"
       variants={box}
       whileInView="animate"
       viewport={{ once: true }}
@@ -73,7 +73,7 @@ function OrganizationsInfo() {
             initial={{ opacity: 0, x: 30 }}
             variants={card}
             key={organization.name}
-            className="m-4 grow rounded p-6 shadow-lg xs:w-full sm:w-1/3 sm:max-w-[40%] lg:w-1/4 lg:max-w-[30%]"
+            className="m-4 grow rounded p-6 shadow-lg xs:w-full sm:max-w-[40%] lg:max-w-[30%] xl:max-w-[25%]"
           >
             <Link href={organization.link}>
               <div className="flex items-center">

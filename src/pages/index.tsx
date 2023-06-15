@@ -19,7 +19,7 @@ const Home: NextPage = () => {
     >
       <Head>
         <title>Kalejdoskop</title>
-        <meta name="description" content="" />
+        <meta name="description" content="Information om spelet Kalejdoskop" />
         <link rel="icon" href="favicon.png" />
       </Head>
       <main>
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
         <img
           src="/divider_one.png"
           alt="dekoration"
-          className="my-10 h-auto max-w-full pl-2"
+          className="my-10 h-auto w-full pl-2"
         />
 
         <OrganizationsInfo />
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
         <img
           src="/divider_three.png"
           alt="dekoration"
-          className="my-10 h-auto max-w-full pl-2"
+          className="my-10 h-auto w-full pl-2"
         />
 
         <div className="mt-10 mb-10 flex flex-col items-center justify-center">
@@ -53,9 +53,8 @@ const Home: NextPage = () => {
             Tryck här!
           </Link>
         </div>
-
-        <Footer />
       </main>
+      <Footer />
     </motion.div>
   );
 };

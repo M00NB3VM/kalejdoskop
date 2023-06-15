@@ -12,7 +12,7 @@ function CallToAction() {
         <img
           src="/logo_layout_v5_no_text.png"
           alt="Kalejdoskops tre karaktärer"
-          className="-z-10 h-[100%] max-w-[100%]"
+          className="-z-10 h-[100%] w-[100%]"
         />
         <motion.div
           className="absolute bottom-4 left-[50%] hidden 2xl:inline-block"

@@ -88,11 +88,13 @@ function About() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
+      className="flex min-h-screen flex-col justify-between"
     >
       <Head>
         <title>Om Kalejdoskop</title>
       </Head>
       <main>
+        <div></div>
         <ThemeToggleButton />
         <Link
           href="/"
@@ -135,12 +137,16 @@ function About() {
           </div>
 
           <div className="mx-2 mt-10 w-fit self-center text-base md:text-lg lg:w-[39%] lg:self-start xl:w-[29%] 2xl:w-[25%]">
-            <div className="relative">
+            <motion.div
+              className="relative "
+              whileInView={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 2 }}
+            >
               <motion.div
                 className="absolute left-[50px] top-3 h-[18px] w-[13px]"
                 initial={{ opacity: 1 }}
                 transition={{ duration: 1.5, delay: 0.2 }}
-                whileInView={{ opacity: [0, 1, 0] }}
+                animate={{ opacity: [0, 1, 0] }}
               >
                 <img
                   src="/sparkle_pink.png"
@@ -152,7 +158,7 @@ function About() {
                 className="absolute -top-2 left-[75px] h-[25px] w-[20px]"
                 initial={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                whileInView={{ opacity: [0, 1, 0] }}
+                animate={{ opacity: [0, 1, 0] }}
               >
                 <img
                   src="/sparkle_pink.png"
@@ -164,7 +170,7 @@ function About() {
                 className="absolute -top-5 right-[100px] h-[20px] w-[15px]"
                 initial={{ opacity: 1 }}
                 transition={{ duration: 1.2, delay: 0.5 }}
-                whileInView={{ opacity: [0, 1, 0] }}
+                animate={{ opacity: [0, 1, 0] }}
               >
                 <img
                   src="/sparkle_pink.png"
@@ -176,7 +182,7 @@ function About() {
                 className="absolute top-2 right-[70px] h-[20px] w-[15px]"
                 initial={{ opacity: 1 }}
                 transition={{ duration: 1.3 }}
-                whileInView={{ opacity: [0, 1, 0] }}
+                animate={{ opacity: [0, 1, 0] }}
               >
                 <img
                   src="/sparkle_pink.png"
@@ -184,8 +190,9 @@ function About() {
                   className="max-h-[100%] max-w-[100%]"
                 />
               </motion.div>
-              <h2 className="text-center text-xl">Länkar</h2>
-            </div>
+            </motion.div>
+            <h2 className="text-center text-xl">Länkar</h2>
+
             <div className="flex h-[25px] max-w-full justify-between bg-gradient-to-t from-primary to-primary bg-[length:100%_2px] bg-center bg-no-repeat">
               <img
                 src="/sparkle.png"
@@ -252,14 +259,14 @@ function About() {
         <img
           src="/divider_two.png"
           alt="dekoration"
-          className="my-10 h-auto max-w-full pl-2"
+          className="my-10 h-auto w-full pl-2"
         />
         <h3 className="mx-2 mb-4 text-lg md:mx-auto md:w-4/5">
           Fler bra ställen
         </h3>
 
         <motion.ul
-          className="mx-2 mb-10 flex flex-wrap md:mx-auto md:w-4/5"
+          className="mx-2 mx-auto mb-10 flex w-auto flex-wrap justify-center sm:justify-start md:w-4/5"
           variants={box}
           whileInView="animate"
           viewport={{ once: true }}
@@ -269,7 +276,7 @@ function About() {
               <motion.li
                 initial={{ opacity: 0, x: 30 }}
                 variants={card}
-                className="max-w-[250px] rounded p-4 shadow-lg md:mr-4 md:max-w-[280px] md:p-6"
+                className="mx-8 max-w-[250px] rounded p-4 shadow-lg sm:mx-4 md:mx-1 md:max-w-[280px] md:p-6"
                 key={partner.name}
               >
                 <Link href={partner.url}>
@@ -285,9 +292,8 @@ function About() {
             );
           })}
         </motion.ul>
-
-        <Footer />
       </main>
+      <Footer />
     </motion.div>
   );
 }
