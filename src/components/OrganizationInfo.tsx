@@ -17,16 +17,16 @@ function OrganizationsInfo() {
   const organizations: Organization[] = [
     {
       name: "Killar.se",
-      img: "/Killar.se_liggande_lila.png",
-      imgDark: "/Killar.se_liggande_ljuslila.png",
+      img: "/Killar.se_liggande_svart.png",
+      imgDark: "/Killar.se_liggande_vit.png",
       link: "https://killar.se/",
       description:
         "Killar.se erbjuder stöd till alla som identifierar sig som kille eller ung man mellan 10-25 år. Du hittar information och berättelser om hur det är att vara kille och ung man. I vår stödchatt kan du skriva om vilka tankar, funderingar eller frågor som helst, helt anonymt. Vi har en samtalsmottagning för killar och unga män mellan 15-25 år som har problem i nära relationer, där du kan prata med kurator helt gratis.",
     },
     {
       name: "MÄN",
-      img: "/MAN_logotyp_lila.png",
-      imgDark: "/MAN_logotyp_ljuslila.png",
+      img: "/MAN_logotyp_svart.png",
+      imgDark: "/MAN_logotyp_vit.png",
       link: "https://mfj.se/",
       description:
         "MÄN arbetar för jämställdhet och mot mäns våld. Vi utgår från en feministisk syn på världen och tanken att vi behöver förändra destruktiva manlighetsnormer för att stoppa våldet. Vi vill att fler män och killar ska engagera sig för jämställdhet och att fler män och killar tar ett större ansvar för omsorgen. Vår vision är en jämställd värld utan våld.",
@@ -61,7 +61,7 @@ function OrganizationsInfo() {
   };
 
   return (
-    <motion.div
+    <motion.ul
       className="max-w-screen flex flex-wrap justify-between overflow-hidden xl:justify-around"
       variants={box}
       whileInView="animate"
@@ -69,17 +69,13 @@ function OrganizationsInfo() {
     >
       {organizations.map((organization) => {
         return (
-          <motion.div
+          <motion.li
             initial={{ opacity: 0, x: 30 }}
             variants={card}
             key={organization.name}
             className="m-4 grow rounded p-6 shadow-lg xs:w-full sm:max-w-[40%] lg:max-w-[30%] xl:max-w-[25%]"
           >
-            <Link
-              href={organization.link}
-              className="m-4 grow rounded p-6 shadow-lg xs:w-full sm:w-1/3 sm:max-w-[40%] lg:w-1/4 lg:max-w-[30%]"
-              key={organization.name}
-            >
+            <Link href={organization.link}>
               <div className="flex items-center">
                 {darkTheme ? (
                   <img
@@ -99,10 +95,10 @@ function OrganizationsInfo() {
                 {organization.description}
               </p>
             </Link>
-          </motion.div>
+          </motion.li>
         );
       })}
-    </motion.div>
+    </motion.ul>
   );
 }
 

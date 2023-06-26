@@ -266,14 +266,14 @@ function EnterRoom() {
                         <img
                           className="absolute bottom-0 max-w-full"
                           src={character.door}
-                          alt={`Gå till ${character}s rum`}
+                          alt={`Gå till ${character.name}s rum`}
                         />
                       </motion.div>
 
                       <img
                         className="absolute bottom-0 -z-50 max-w-full"
                         src={character.openDoor}
-                        alt={`Gå till ${character}s rum`}
+                        alt={`Gå till ${character.name}s rum`}
                       />
                     </div>
 
