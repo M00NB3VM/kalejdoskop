@@ -22,7 +22,7 @@ const Home: NextPage = () => {
     >
       <Head>
         <title>Kalejdoskop</title>
-        <meta name="description" content="" />
+        <meta name="description" content="Information om spelet Kalejdoskop" />
         <link rel="icon" href="favicon.png" />
       </Head>
       <main>

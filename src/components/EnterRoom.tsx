@@ -50,6 +50,9 @@ function EnterRoom() {
 
   return (
     <div className="w-full">
+      <h2 className="mx-4 mt-4 mb-0 max-w-[1000px] text-lg md:mt-10 md:text-3xl lg:mx-auto">
+        Möt våra karaktärer:
+      </h2>
       <ul className="m-4 mx-auto">
         {characters.map((character) => {
           return (
@@ -152,137 +155,145 @@ function EnterRoom() {
                 </div>
               </div>
 
-              <nav>
-                <Link
-                  href={character.path}
-                  className="relative flex h-[450px] w-[270px] flex-col items-end sm:h-[500px] sm:w-[300px]  md:h-[600px] md:w-[370px]"
+              <nav className="relative flex h-[400px] w-[270px] flex-col items-end sm:h-[500px] sm:w-[300px] md:h-[580px] md:w-[380px]">
+                <motion.div
+                  className="relative h-full w-full"
+                  initial={{ opacity: 0, y: 50 }}
+                  viewport={{ once: true }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ type: "ease-out", bounce: 0.4, duration: 0.8 }}
                 >
-                  <div className="relative h-full w-full">
-                    {character.name === "Milou" ? (
-                      <div className="absolute top-[100px] left-[15px] w-[25px] md:top-[120px] md:left-0 md:w-[50px]">
-                        <ul className="flex flex-col bg-[url('/swirl.png')] bg-cover bg-no-repeat">
-                          <motion.li
-                            initial={{ y: 0 }}
-                            animate={{ y: [0, 6, 0], rotate: [0, 10, 0] }}
+                  <Link
+                    href={character.path}
+                    className="relative flex h-[450px] w-[270px] flex-col items-end sm:h-[500px] sm:w-[300px]  md:h-[600px] md:w-[370px]"
+                  >
+                    <div className="relative h-full w-full">
+                      {character.name === "Milou" ? (
+                        <div className="absolute top-[100px] left-[15px] w-[25px] md:top-[120px] md:left-0 md:w-[50px]">
+                          <ul className="flex flex-col bg-[url('/swirl.png')] bg-cover bg-no-repeat">
+                            <motion.li
+                              initial={{ y: 0 }}
+                              animate={{ y: [0, 6, 0], rotate: [0, 10, 0] }}
+                              transition={{
+                                duration: 3.2,
+                                repeat: Infinity,
+                                delay: 0.5,
+                              }}
+                            >
+                              <img
+                                alt="Musiknot"
+                                src="/note2.png"
+                                className="ml-auto h-[15px] max-w-[10px] md:h-[30px] md:max-w-[20px]"
+                              />
+                            </motion.li>
+                            <motion.li
+                              initial={{ y: 0 }}
+                              animate={{ y: [0, 10, 0], rotate: [0, 10, 0] }}
+                              transition={{
+                                delay: 0.2,
+                                duration: 3,
+                                repeat: Infinity,
+                              }}
+                            >
+                              <img
+                                alt="Musiknot"
+                                src="/note1.png"
+                                className="h-[15px] max-w-[10px] md:h-[30px] md:max-w-[20px]"
+                              />
+                            </motion.li>
+                            <motion.li
+                              initial={{ y: 0 }}
+                              animate={{ y: [0, 6, 0], rotate: [0, -15, 0] }}
+                              transition={{ duration: 2.8, repeat: Infinity }}
+                            >
+                              <img
+                                alt="Musiknot"
+                                src="/note3.png"
+                                className="ml-[15px] h-[15px] max-w-[10px] md:ml-[30px] md:h-[30px] md:max-w-[20px]"
+                              />
+                            </motion.li>
+                          </ul>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+
+                      {character.name === "Liam" ? (
+                        <div className="absolute top-0 left-0 h-full w-full">
+                          <motion.div
+                            className="relative top-[75px] right-0 sm:top-[70px] sm:right-[20px] md:top-[100px] md:right-[5px] lg:top-[50px] lg:right-[70px]"
+                            animate={{ rotate: [0, -5, 0] }}
                             transition={{
-                              duration: 3.2,
-                              repeat: Infinity,
-                              delay: 0.5,
-                            }}
-                          >
-                            <img
-                              alt="Musiknot"
-                              src="/note2.png"
-                              className="ml-auto h-[15px] max-w-[10px] md:h-[30px] md:max-w-[20px]"
-                            />
-                          </motion.li>
-                          <motion.li
-                            initial={{ y: 0 }}
-                            animate={{ y: [0, 10, 0], rotate: [0, 10, 0] }}
-                            transition={{
-                              delay: 0.2,
                               duration: 3,
                               repeat: Infinity,
                             }}
                           >
                             <img
-                              alt="Musiknot"
-                              src="/note1.png"
-                              className="h-[15px] max-w-[10px] md:h-[30px] md:max-w-[20px]"
+                              alt="Pratbubbla"
+                              src="/bubble.png"
+                              className="h-[50px] w-[50px] sm:h-[80px] sm:w-[80px] lg:h-[130px] lg:w-[130px]"
                             />
-                          </motion.li>
-                          <motion.li
-                            initial={{ y: 0 }}
-                            animate={{ y: [0, 6, 0], rotate: [0, -15, 0] }}
-                            transition={{ duration: 2.8, repeat: Infinity }}
+                          </motion.div>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+
+                      {character.name === "Polka" ? (
+                        <div className="absolute top-0 left-0 h-full w-full overflow-hidden sm:overflow-visible">
+                          <motion.div
+                            className="relative top-[335px] left-[220px] z-10 inline-block sm:top-[385px] sm:left-[250px] md:top-[470px] md:left-[80%]"
+                            animate={{ rotate: [0, 10, 0] }}
+                            transition={{ duration: 4, repeat: Infinity }}
                           >
                             <img
-                              alt="Musiknot"
-                              src="/note3.png"
-                              className="ml-[15px] h-[15px] max-w-[10px] md:ml-[30px] md:h-[30px] md:max-w-[20px]"
+                              alt="Nallebjörn"
+                              src="/teddy.png"
+                              className="h-[50px] w-[50px] md:h-[70px] md:w-[70px]"
                             />
-                          </motion.li>
-                        </ul>
-                      </div>
-                    ) : (
-                      ""
-                    )}
+                          </motion.div>
+                        </div>
+                      ) : (
+                        ""
+                      )}
 
-                    {character.name === "Liam" ? (
-                      <div className="absolute top-0 left-0 h-full w-full">
-                        <motion.div
-                          className="relative top-[75px] right-0 sm:top-[70px] sm:right-[20px] md:top-[100px] md:right-[5px] lg:top-[50px] lg:right-[70px]"
-                          animate={{ rotate: [0, -5, 0] }}
-                          transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                          }}
-                        >
-                          <img
-                            alt="Pratbubbla"
-                            src="/bubble.png"
-                            className="h-[50px] w-[50px] sm:h-[80px] sm:w-[80px] lg:h-[130px] lg:w-[130px]"
-                          />
-                        </motion.div>
-                      </div>
-                    ) : (
-                      ""
-                    )}
+                      <motion.div
+                        initial={{ opacity: 1 }}
+                        whileHover={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="relative h-full w-full"
+                      >
+                        <img
+                          className="absolute bottom-0 max-w-full"
+                          src={character.door}
+                          alt={`Gå till ${character}s rum`}
+                        />
+                      </motion.div>
 
-                    {character.name === "Polka" ? (
-                      <div className="absolute top-0 left-0 h-full w-full overflow-hidden sm:overflow-visible">
-                        <motion.div
-                          className="relative top-[335px] left-[220px] z-10 inline-block sm:top-[385px] sm:left-[250px] md:top-[470px] md:left-[80%]"
-                          animate={{ rotate: [0, 10, 0] }}
-                          transition={{ duration: 4, repeat: Infinity }}
-                        >
-                          <img
-                            alt="Nallebjörn"
-                            src="/teddy.png"
-                            className="h-[50px] w-[50px] md:h-[70px] md:w-[70px]"
-                          />
-                        </motion.div>
-                      </div>
-                    ) : (
-                      ""
-                    )}
-
-                    <motion.div
-                      initial={{ opacity: 1 }}
-                      whileHover={{ opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="relative h-full w-full"
-                    >
                       <img
-                        className="absolute bottom-0 max-w-full"
-                        src={character.door}
+                        className="absolute bottom-0 -z-50 max-w-full"
+                        src={character.openDoor}
                         alt={`Gå till ${character}s rum`}
                       />
-                    </motion.div>
-
-                    <img
-                      className="absolute bottom-0 -z-50 max-w-full"
-                      src={character.openDoor}
-                      alt={`Gå till ${character}s rum`}
-                    />
-                  </div>
-
-                  <div className="relative mt-4 mr-1 min-h-[40px] w-[95%] rounded-full outline outline-1 outline-offset-[1px] outline-black">
-                    <div className="absolute -top-[6px] right-[6px] -z-10 flex w-full items-center justify-center rounded-full bg-accent px-2 py-2">
-                      <p className="mr-2 text-lg font-bold text-white ">
-                        Gå till {character.name}s rum
-                      </p>
-                      <motion.div
-                        initial={{ x: 0 }}
-                        animate={{ x: [0, 15, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                        className="pr-[15px] pl-[5px]"
-                      >
-                        <BsArrowRight className="stroke-[2] text-white" />
-                      </motion.div>
                     </div>
-                  </div>
-                </Link>
+
+                    <div className="relative mt-4 mr-1 min-h-[40px] w-[95%] rounded-full outline outline-1 outline-offset-[1px] outline-black">
+                      <div className="absolute -top-[6px] right-[6px] -z-10 flex w-full items-center justify-center rounded-full bg-accent px-2 py-2">
+                        <p className="mr-2 text-lg font-bold text-white ">
+                          Gå till {character.name}s rum
+                        </p>
+                        <motion.div
+                          initial={{ x: 0 }}
+                          animate={{ x: [0, 15, 0] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                          className="pr-[15px] pl-[5px]"
+                        >
+                          <BsArrowRight className="stroke-[2] text-white" />
+                        </motion.div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
               </nav>
             </li>
           );
