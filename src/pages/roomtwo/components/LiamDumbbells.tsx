@@ -60,7 +60,7 @@ function LiamDumbbells({ showObject, setShowObject }: Props) {
         object: "Hantlar",
         message: userMessage,
       };
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:4000/messages",
         newMessage
       );

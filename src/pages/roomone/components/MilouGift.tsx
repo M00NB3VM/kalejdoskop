@@ -60,7 +60,7 @@ function MilouGift({ showObject, setShowObject }: Props) {
         object: "gift",
         message: userMessage,
       };
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:4000/messages",
         newMessage
       );

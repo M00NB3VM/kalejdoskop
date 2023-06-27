@@ -60,7 +60,7 @@ function LiamEnvelope({ showObject, setShowObject }: Props) {
         object: "envelope",
         message: userMessage,
       };
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:4000/messages",
         newMessage
       );

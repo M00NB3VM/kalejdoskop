@@ -62,7 +62,7 @@ function MilouBed({ showObject, setShowObject }: Props) {
         object: "Säng",
         message: userMessage,
       };
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:4000/messages",
         newMessage
       );

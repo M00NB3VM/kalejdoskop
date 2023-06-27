@@ -60,7 +60,7 @@ function PolkaGameConsole({ showObject, setShowObject }: Props) {
         object: "Spelkonsol",
         message: userMessage,
       };
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:4000/messages",
         newMessage
       );

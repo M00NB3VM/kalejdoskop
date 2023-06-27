@@ -60,7 +60,7 @@ function PolkaComputer({ showObject, setShowObject }: Props) {
         object: "Dator",
         message: userMessage,
       };
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:4000/messages",
         newMessage
       );
