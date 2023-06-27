@@ -64,7 +64,7 @@ function OrganizationInfoModal({ closeModal }: Props) {
   ];
 
   return (
-    <div className="fixed left-0 top-0 right-0 z-50 min-h-screen bg-secondary md:hidden">
+    <div className="fixed left-0 top-0 right-0 bottom-0 z-40 overflow-auto bg-secondary md:hidden">
       <div className="flex">
         <div
           onClick={() => {

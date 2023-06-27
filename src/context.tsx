@@ -1,11 +1,15 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
+import axios from "axios";
 import type { ReactNode } from "react";
+import type Statistics from "./types/requests";
 
 interface ProviderValue {
   darkTheme: boolean;
   setDarkTheme: (arg0: boolean) => void;
+  statistics: Statistics[];
+  fetchStatistics: () => void;
 }
 
 interface PropsChildren {
@@ -68,9 +72,27 @@ export function StoreProvider({ children }: PropsChildren) {
     }
   }, [darkTheme]);
 
+  // Fetch statistics
+  const [statistics, setStatistics] = useState<Statistics[]>([]);
+
+  async function fetchStatistics() {
+    try {
+      const res = await axios.get("http://localhost:4000/statistics");
+      setStatistics(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchStatistics();
+  }, []);
+
   const providerValue = {
     darkTheme: darkTheme,
     setDarkTheme: setDarkTheme,
+    statistics: statistics,
+    fetchStatistics: fetchStatistics,
   };
 
   return (
