@@ -41,8 +41,9 @@ function PolkaGameConsole({ showObject, setShowObject }: Props) {
   useEffect(() => {
     async function fetchMessages() {
       try {
+        const URL = process.env["API_URL"];
         const response = await axios.get(
-          "http://localhost:4000/messages/three-random/Polkas/Spelkonsol"
+          `${URL}/messages/three-random/Polkas/Spelkonsol`
         );
         setMessages(response.data);
       } catch (error) {
@@ -60,10 +61,8 @@ function PolkaGameConsole({ showObject, setShowObject }: Props) {
         object: "Spelkonsol",
         message: userMessage,
       };
-      await axios.post(
-        "http://localhost:4000/messages",
-        newMessage
-      );
+      const URL = process.env["API_URL"];
+      await axios.post(`${URL}/messages`, newMessage);
       setShowMessageResponse(true);
     } catch (error) {
       console.log(error);

@@ -77,7 +77,8 @@ export function StoreProvider({ children }: PropsChildren) {
 
   async function fetchStatistics() {
     try {
-      const res = await axios.get("http://localhost:4000/statistics");
+      const URL = process.env["API_URL"];
+      const res = await axios.get(`${URL}/statistics`);
       setStatistics(res.data);
     } catch (error) {
       console.log(error);
