@@ -9,11 +9,19 @@ function CallToAction() {
   return (
     <div className="relative">
       <div className="max-w-screen relative max-h-screen overflow-hidden">
-        <img
-          src="/logo_layout_v5_no_text.png"
-          alt="Kalejdoskops tre karaktärer"
-          className="-z-10 h-[100%] w-[100%]"
-        />
+        {darkTheme ? (
+          <img
+            src="/logo_layout_v5_no_text_dark.png"
+            alt="Kalejdoskops tre karaktärer"
+            className="-z-10 h-[100%] w-[100%]"
+          />
+        ) : (
+          <img
+            src="/logo_layout_v5_no_text.png"
+            alt="Kalejdoskops tre karaktärer"
+            className="-z-10 h-[100%] w-[100%]"
+          />
+        )}
         <motion.div
           className="absolute bottom-4 left-[50%] hidden 2xl:inline-block"
           transition={{ duration: 2, repeat: Infinity }}
