@@ -8,9 +8,9 @@ import OrganizationInfoTab from "~/components/OrganizationInfoTab";
 import OrganizationInfoModal from "~/components/OrganizationInfoModal";
 
 import { SlGameController } from "react-icons/sl";
-import { GiMirrorMirror } from "react-icons/Gi";
-import { RiBearSmileLine } from "react-icons/Ri";
-import { GiDoor } from "react-icons/Gi";
+import { GiMirrorMirror } from "react-icons/gi";
+import { RiBearSmileLine } from "react-icons/ri";
+import { GiDoor } from "react-icons/gi";
 import { FiMonitor } from "react-icons/fi";
 
 import PolkaComputer from "./components/PolkaComputer";

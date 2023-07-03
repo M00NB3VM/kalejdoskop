@@ -8,8 +8,8 @@ import OrganizationInfoTab from "~/components/OrganizationInfoTab";
 import OrganizationInfoModal from "~/components/OrganizationInfoModal";
 
 import { SlPicture } from "react-icons/sl";
-import { CiDumbbell } from "react-icons/Ci";
-import { RxEnvelopeClosed } from "react-icons/Rx";
+import { CiDumbbell } from "react-icons/ci";
+import { RxEnvelopeClosed } from "react-icons/rx";
 import { FiMonitor } from "react-icons/fi";
 
 import LiamComputer from "./components/LiamComputer";

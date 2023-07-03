@@ -41,8 +41,9 @@ function PolkaComputer({ showObject, setShowObject }: Props) {
   useEffect(() => {
     async function fetchMessages() {
       try {
+        const URL = process.env["API_URL"];
         const response = await axios.get(
-          "http://localhost:4000/messages/three-random-messages"
+          `${URL}/messages/three-random/Polkas/Dator`
         );
         setMessages(response.data);
       } catch (error) {
@@ -56,14 +57,12 @@ function PolkaComputer({ showObject, setShowObject }: Props) {
   async function postMessage() {
     try {
       const newMessage = {
-        room: "polka",
-        object: "computer",
+        room: "Polka",
+        object: "Dator",
         message: userMessage,
       };
-      const response = await axios.post(
-        "http://localhost:4000/messages",
-        newMessage
-      );
+      const URL = process.env["API_URL"];
+      await axios.post(`${URL}/messages`, newMessage);
       setShowMessageResponse(true);
     } catch (error) {
       console.log(error);
