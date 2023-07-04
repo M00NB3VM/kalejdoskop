@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -19,54 +19,20 @@ import MilouBed from "./components/MilouBed";
 import MilouPoster from "./components/MilouPoster";
 import MilouComputer from "./components/MilouComputer";
 
-interface WelcomeMessage {
-  icon: string;
-  text: string;
-}
-
 function Roomone() {
   const [showOrganizationModal, setShowOrganizationModal] =
     useState<boolean>(false);
 
-  const welcomeMessages: WelcomeMessage[] = [
-    { icon: "milou-console-icon", text: "Välkommen att kolla runt!" },
-    {
-      icon: "milou-gift-icon",
-      text: "Jag har förberett en present till Polka.",
-    },
-    {
-      icon: "milou-poster-icon",
-      text: "Jag driver spelföreningen Digitala Drakar, kolla in vår poster!",
-    },
+  const welcomeMessages: string[] = [
+    "Välkommen att kolla runt!",
+    "Jag har förberett en present till Naomi.",
+    "Jag driver spelföreningen Digitala Drakar, kolla in vår poster!",
   ];
-  const message = welcomeMessages.sort(
-    () => 0.5 - Math.random()
-  )[0] as WelcomeMessage;
-
-  const [welcomeMessage, setWelcomeMessage] = useState<WelcomeMessage>(message);
-  const consoleIconRef = useRef<HTMLDivElement>();
-  const giftIconRef = useRef<HTMLDivElement>();
-  const posterIconRef = useRef<HTMLDivElement>();
+  const message = welcomeMessages.sort(() => 0.5 - Math.random())[0] as string;
+  const [welcomeMessage, setWelcomeMessage] = useState<string>(message);
 
   useEffect(() => {
-    if (welcomeMessage.icon === "milou-console-icon") {
-      consoleIconRef.current.scrollIntoView({
-        inline: "center",
-        behavior: "smooth",
-      });
-    }
-    if (welcomeMessage.icon === "milou-gift-icon") {
-      giftIconRef.current.scrollIntoView({
-        inline: "center",
-        behavior: "smooth",
-      });
-    }
-    if (welcomeMessage.icon === "milou-poster-icon") {
-      posterIconRef.current.scrollIntoView({
-        inline: "center",
-        behavior: "smooth",
-      });
-    }
+    console.log("Hello");
   }, []);
 
   const [showGiftModal, setShowGiftModal] = useState<boolean>(false);
@@ -154,7 +120,7 @@ function Roomone() {
             className="absolute top-[50%] left-[30%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("console")}
           >
-            <div ref={consoleIconRef}>
+            <div>
               <SlGameController
                 color="yellow"
                 size={60}
@@ -189,7 +155,7 @@ function Roomone() {
             className="absolute top-[12%] left-[58%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("poster")}
           >
-            <div ref={posterIconRef}>
+            <div>
               <FiImage
                 color="yellow"
                 size={70}
@@ -202,7 +168,7 @@ function Roomone() {
             className="absolute top-[19%] left-[70%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("gift")}
           >
-            <div ref={giftIconRef}>
+            <div>
               <FiGift
                 color="yellow"
                 size={50}
@@ -239,18 +205,21 @@ function Roomone() {
             setShowObject={setShowComputerModal}
           />
 
-          <div className="absolute right-0 top-[45%] z-40 md:hidden">
-            <p
-              onClick={() => {
-                openModal("organization");
-              }}
-              className="inline-block origin-bottom-right -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
-            >
-              Läs&nbsp;mig
-            </p>
-          </div>
+          {showOrganizationModal ? (
+            <></>
+          ) : (
+            <div className="absolute right-0 top-[45%] z-40 md:hidden">
+              <p
+                onClick={() => {
+                  openModal("organization");
+                }}
+                className="inline-block origin-bottom-right -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
+              >
+                Läs&nbsp;mig
+              </p>
+            </div>
+          )}
         </div>
-
         {showOrganizationModal ? (
           <OrganizationInfoModal closeModal={closeModal} />
         ) : (
@@ -293,7 +262,7 @@ function Roomone() {
       >
         <div className="min-h-[60px] min-w-[110px] max-w-[150px] rounded-lg bg-accent">
           <p className="p-2 text-center text-sm text-white">
-            {!welcomeMessage ? "" : welcomeMessage.text}
+            {!welcomeMessage ? "" : welcomeMessage}
           </p>
         </div>
         <div

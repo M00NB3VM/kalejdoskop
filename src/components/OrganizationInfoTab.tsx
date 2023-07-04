@@ -23,13 +23,12 @@ function OrganizationInfoTab() {
     open: { x: "25%" },
   };
   const [showTab, setShowTab] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
   const organizations: OrganizationShort[] = [
     {
       name: "Killar.se",
-      img: "/Killar.se_liggande_lila.png",
-      imgDark: "/Killar.se_liggande_ljuslila.png",
+      img: "/Killar.se_liggande_svart.png",
+      imgDark: "/Killar.se_liggande_vit.png",
       link: "https://killar.se/",
       description:
         "För alla som identifierar sig som kille eller ung man mellan 10-25 år.",
@@ -41,8 +40,8 @@ function OrganizationInfoTab() {
     },
     {
       name: "MÄN",
-      img: "/MAN_logotyp_lila.png",
-      imgDark: "/MAN_logotyp_ljuslila.png",
+      img: "/MAN_logotyp_svart.png",
+      imgDark: "/MAN_logotyp_vit.png",
       link: "https://mfj.se/",
       description: "MÄN arbetar för jämställdhet och mot mäns våld.",
       points: [
@@ -53,8 +52,8 @@ function OrganizationInfoTab() {
     },
     {
       name: "Sverok",
-      img: "/Sverok_logotyp_gul.png",
-      imgDark: "/Sverok_logotyp_lila.png",
+      img: "/Sverok_logo_blk.png",
+      imgDark: "/Sverok_logo_white.png",
       link: "https://sverok.se/",
       description:
         "Sverok är en idéell organisation och ett av Sveriges största ungdomsförbund.",
@@ -121,18 +120,23 @@ function OrganizationInfoTab() {
                         alt={`${organization.name} Logotyp`}
                       />
                     )}
-
-                    {organization.name === "Sverok" ? (
-                      <h6 className="ml-4 text-2xl">{organization.name}</h6>
-                    ) : (
-                      ""
-                    )}
                   </div>
-                  <p className="py-2 text-sm">{organization.description}</p>
+                  <p
+                    className={`text-sm, py-2
+                      ${darkTheme ? "text-secondary" : "text-primary"}
+                      `}
+                  >
+                    {organization.description}
+                  </p>
                   <ul className="mb-14 lg:mb-20">
                     {organization.points.map((point) => {
                       return (
-                        <li className="flex text-sm" key={point}>
+                        <li
+                          className={`flex text-sm ${
+                            darkTheme ? "text-secondary" : "text-primary"
+                          }`}
+                          key={point}
+                        >
                           <BsHash className="mr-1 mt-1" />
                           {point}
                         </li>

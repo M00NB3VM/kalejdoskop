@@ -25,8 +25,8 @@ function OrganizationInfoModal({ closeModal }: Props) {
   const organizations: OrganizationShort[] = [
     {
       name: "Killar.se",
-      img: "/Killar.se_liggande_lila.png",
-      imgDark: "/Killar.se_liggande_ljuslila.png",
+      img: "/Killar.se_liggande_svart.png",
+      imgDark: "/Killar.se_liggande_vit.png",
       link: "https://killar.se/",
       description:
         "För alla som identifierar sig som kille eller ung man mellan 10-25 år.",
@@ -38,8 +38,8 @@ function OrganizationInfoModal({ closeModal }: Props) {
     },
     {
       name: "MÄN",
-      img: "/MAN_logotyp_lila.png",
-      imgDark: "/MAN_logotyp_ljuslila.png",
+      img: "/MAN_logotyp_svart.png",
+      imgDark: "/MAN_logotyp_vit.png",
       link: "https://mfj.se/",
       description: "MÄN arbetar för jämställdhet och mot mäns våld.",
       points: [
@@ -50,8 +50,8 @@ function OrganizationInfoModal({ closeModal }: Props) {
     },
     {
       name: "Sverok",
-      img: "/Sverok_logotyp_gul.png",
-      imgDark: "/Sverok_logotyp_lila.png",
+      img: "/Sverok_logo_blk.png",
+      imgDark: "/Sverok_logo_white.png",
       link: "https://sverok.se/",
       description:
         "Sverok är en idéell organisation och ett av Sveriges största ungdomsförbund.",
@@ -65,19 +65,17 @@ function OrganizationInfoModal({ closeModal }: Props) {
 
   return (
     <div className="fixed left-0 top-0 right-0 bottom-0 z-40 overflow-auto bg-secondary md:hidden">
-      <div className="flex">
-        <div
-          onClick={() => {
-            closeModal();
-          }}
-          className="absolute top-1 right-2"
-        >
-          <p className="cursor-pointer px-2 text-2xl font-black text-accent">
-            X
-          </p>
-        </div>
+      <button
+        className="mt-1 ml-auto mr-1 mb-1 block rounded-full bg-accent py-2 px-4 font-['Documan_heavy'] text-sm text-white"
+        onClick={() => {
+          closeModal();
+        }}
+      >
+        STÄNG
+      </button>
 
-        <ul className="mx-auto my-8 flex flex-col">
+      <div className="flex">
+        <ul className="mx-auto my-4 flex flex-col">
           {organizations.map((organization) => {
             return (
               <li
@@ -100,18 +98,23 @@ function OrganizationInfoModal({ closeModal }: Props) {
                       alt={`${organization.name} Logotyp`}
                     />
                   )}
-
-                  {organization.name === "Sverok" ? (
-                    <h6 className="ml-4 text-2xl">{organization.name}</h6>
-                  ) : (
-                    ""
-                  )}
                 </div>
-                <p className="py-2 text-sm">{organization.description}</p>
+                <p
+                  className={`py-2 text-sm  ${
+                    darkTheme ? "text-secondary" : "text-primary"
+                  }`}
+                >
+                  {organization.description}
+                </p>
                 <ul className="mb-14 lg:mb-20">
                   {organization.points.map((point) => {
                     return (
-                      <li className="flex text-sm" key={point}>
+                      <li
+                        className={`flex text-sm  ${
+                          darkTheme ? "text-secondary" : "text-primary"
+                        }`}
+                        key={point}
+                      >
                         <BsHash className="mr-1 mt-1" />
                         {point}
                       </li>

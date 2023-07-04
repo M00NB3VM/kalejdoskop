@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -17,43 +17,17 @@ import LiamDumbbells from "./components/LiamDumbbells";
 import LiamEnvelope from "./components/LiamEnvelope";
 import LiamPicture from "./components/LiamPicture";
 
-interface WelcomeMessage {
-  icon: string;
-  text: string;
-}
-
 function Roomtwo() {
   const [showOrganizationModal, setShowOrganizationModal] =
     useState<boolean>(false);
 
-  const welcomeMessages: WelcomeMessage[] = [
-    { icon: "liam-picture-icon", text: "Välkommen att kolla runt!" },
-    {
-      icon: "liam-dumbbells-icon",
-      text: "Min favorithobby är att styrketräna.",
-    },
-    {
-      icon: "liam-envelope-icon",
-      text: "Brev från arbetsförmedlingen.",
-    },
+  const welcomeMessages: string[] = [
+    "Välkommen att kolla runt!",
+    "Min favorithobby är att styrketräna.",
+    "Brev från arbetsförmedlingen.",
   ];
-  const [welcomeMessage, setWelcomeMessage] = useState<WelcomeMessage>({
-    icon: "",
-    text: "",
-  });
-  const elementRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (welcomeMessage.icon === "") {
-      const message = welcomeMessages.sort(
-        () => 0.5 - Math.random()
-      )[0] as WelcomeMessage;
-
-      setWelcomeMessage(message);
-    } else {
-      elementRef.current?.scrollIntoView({ inline: "center" });
-    }
-  }, [welcomeMessage]);
+  const message = welcomeMessages.sort(() => 0.5 - Math.random())[0] as string;
+  const [welcomeMessage, setWelcomeMessage] = useState<string>(message);
 
   const [showDumbbellsModal, setShowDumbbellsModal] = useState<boolean>(false);
   const [showEnvelopeModal, setShowEnvelopeModal] = useState<boolean>(false);
@@ -116,9 +90,6 @@ function Roomtwo() {
       <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#000]">
         <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">
           <div
-            ref={
-              welcomeMessage.icon === "liam-dumbbells-icon" ? elementRef : null
-            }
             className="absolute bottom-[26%] left-[39%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("dumbbells")}
           >
@@ -131,9 +102,6 @@ function Roomtwo() {
           </div>
 
           <div
-            ref={
-              welcomeMessage.icon === "liam-envelope-icon" ? elementRef : null
-            }
             className="absolute bottom-[23%] right-[47%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("envelope")}
           >
@@ -146,9 +114,6 @@ function Roomtwo() {
           </div>
 
           <div
-            ref={
-              welcomeMessage.icon === "liam-picture-icon" ? elementRef : null
-            }
             className="absolute top-[22%] right-[29%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("picture")}
           >
@@ -194,16 +159,21 @@ function Roomtwo() {
             setShowObject={setShowPictureModal}
           />
 
-          <div className="absolute right-0 top-[45%] z-50 md:hidden">
-            <p
-              onClick={() => openModal("organization")}
-              className="inline-block origin-bottom-right -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
-            >
-              Läs&nbsp;mig
-            </p>
-          </div>
+          {showOrganizationModal ? (
+            <></>
+          ) : (
+            <div className="absolute right-0 top-[45%] z-40 md:hidden">
+              <p
+                onClick={() => {
+                  openModal("organization");
+                }}
+                className="inline-block origin-bottom-right -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
+              >
+                Läs&nbsp;mig
+              </p>
+            </div>
+          )}
         </div>
-
         {showOrganizationModal ? (
           <OrganizationInfoModal closeModal={closeModal} />
         ) : (
@@ -245,7 +215,7 @@ function Roomtwo() {
         >
           <div className="min-h-[60px] min-w-[110px] max-w-[150px] rounded-lg bg-accent">
             <p className="p-2 text-center text-sm text-white">
-              {!welcomeMessage ? "" : welcomeMessage.text}
+              {!welcomeMessage ? "" : welcomeMessage}
             </p>
           </div>
           <div

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -19,43 +19,17 @@ import PolkaMirror from "./components/PolkaMirror";
 import PolkaPlushy from "./components/PolkaPlushy";
 import PolkaWardrobe from "./components/PolkaWardrobe";
 
-interface WelcomeMessage {
-  icon: string;
-  text: string;
-}
-
 function Roomthree() {
   const [showOrganizationModal, setShowOrganizationModal] =
     useState<boolean>(false);
 
-  const welcomeMessages: WelcomeMessage[] = [
-    { icon: "polka-mirror-icon", text: "Välkommen att kolla runt!" },
-    {
-      icon: "polka-monitor-icon",
-      text: "Jag streamar mina favoritspel.",
-    },
-    {
-      icon: "polka-plushy-icon",
-      text: "Jag samlar på plushys, kan du hitta en?",
-    },
+  const welcomeMessages: string[] = [
+    "Välkommen att kolla runt!",
+    "Jag streamar mina favoritspel.",
+    "Jag samlar på plushys, kan du hitta en?",
   ];
-  const [welcomeMessage, setWelcomeMessage] = useState<WelcomeMessage>({
-    icon: "",
-    text: "",
-  });
-  const elementRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (welcomeMessage.icon === "") {
-      const message = welcomeMessages.sort(
-        () => 0.5 - Math.random()
-      )[0] as WelcomeMessage;
-
-      setWelcomeMessage(message);
-    } else {
-      elementRef.current?.scrollIntoView({ inline: "center" });
-    }
-  }, [welcomeMessage]);
+  const message = welcomeMessages.sort(() => 0.5 - Math.random())[0] as string;
+  const [welcomeMessage, setWelcomeMessage] = useState<string>(message);
 
   const [showGameConsoleModal, setShowGameConsoleModal] =
     useState<boolean>(false);
@@ -123,9 +97,6 @@ function Roomthree() {
       <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#000]">
         <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">
           <div
-            ref={
-              welcomeMessage.icon === "polka-mirror-icon" ? elementRef : null
-            }
             className="absolute top-[28%] left-[35%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("mirror")}
           >
@@ -150,9 +121,6 @@ function Roomthree() {
           </div>
 
           <div
-            ref={
-              welcomeMessage.icon === "polka-plushy-icon" ? elementRef : null
-            }
             className="absolute bottom-[22%] left-[44%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("plushy")}
           >
@@ -177,9 +145,6 @@ function Roomthree() {
           </div>
 
           <div
-            ref={
-              welcomeMessage.icon === "polka-monitor-icon" ? elementRef : null
-            }
             className="absolute top-[32%] right-[30%] z-40 inline-block cursor-pointer"
             onClick={() => openModal("computer")}
           >
@@ -217,16 +182,20 @@ function Roomthree() {
             setShowObject={setShowWardrobeModal}
           />
 
-          <div className="absolute right-0 top-[45%] z-40 md:hidden">
-            <p
-              onClick={() => {
-                openModal("organization");
-              }}
-              className="inline-block origin-bottom-right -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
-            >
-              Läs&nbsp;mig
-            </p>
-          </div>
+          {showOrganizationModal ? (
+            <></>
+          ) : (
+            <div className="absolute right-0 top-[45%] z-40 md:hidden">
+              <p
+                onClick={() => {
+                  openModal("organization");
+                }}
+                className="inline-block origin-bottom-right -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
+              >
+                Läs&nbsp;mig
+              </p>
+            </div>
+          )}
         </div>
 
         {showOrganizationModal ? (
@@ -271,7 +240,7 @@ function Roomthree() {
       >
         <div className="min-h-[60px] min-w-[110px] max-w-[150px] rounded-lg bg-accent">
           <p className="p-2 text-center text-sm text-white">
-            {!welcomeMessage ? "" : welcomeMessage.text}
+            {!welcomeMessage ? "" : welcomeMessage}
           </p>
         </div>
         <div
