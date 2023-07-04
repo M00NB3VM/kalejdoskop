@@ -170,7 +170,7 @@ function EnterRoom() {
                   >
                     <div className="relative h-full w-full">
                       {character.name === "Milou" ? (
-                        <div className="absolute top-[80px] left-[10px] w-[25px] md:top-[60px] md:-left-[20px] md:w-[50px]">
+                        <div className="absolute top-[50px] left-[10px] w-[25px] md:top-[60px] md:-left-[20px] md:w-[50px]">
                           <ul className="flex flex-col bg-[url('/swirl.png')] bg-cover bg-no-repeat">
                             <motion.li
                               initial={{ y: 0 }}
@@ -222,7 +222,7 @@ function EnterRoom() {
                       {character.name === "Liam" ? (
                         <div className="absolute top-0 left-0 h-full w-full">
                           <motion.div
-                            className="relative top-[30px] left-0 inline-block sm:-left-[40px] sm:top-[60px] md:top-[30px] md:-left-0 lg:-left-[80px] lg:top-[45px] xl:-left-[100px]"
+                            className="relative top-[50px] -left-[5px] inline-block sm:-left-[50px] sm:top-[55px] md:top-[60px] md:-left-[55px] lg:-left-[90px] lg:top-[30px] xl:top-[10px] xl:-left-[110px]"
                             animate={{ rotate: [0, -5, 0] }}
                             transition={{
                               duration: 3,
@@ -243,7 +243,7 @@ function EnterRoom() {
                       {character.name === "Naomi" ? (
                         <div className="absolute top-0 left-0 h-full w-full overflow-hidden sm:overflow-visible">
                           <motion.div
-                            className="relative top-[330px] left-[220px] z-10 inline-block sm:top-[420px] sm:left-[265px] md:top-[470px] md:left-[84%]"
+                            className="relative top-[280px] left-[220px] z-10 inline-block sm:top-[370px] sm:left-[265px] md:top-[420px] md:left-[80%]"
                             animate={{ rotate: [0, 10, 0] }}
                             transition={{ duration: 4, repeat: Infinity }}
                           >
@@ -265,14 +265,14 @@ function EnterRoom() {
                         className="relative h-full w-full"
                       >
                         <img
-                          className="absolute bottom-0 left-0 mx-auto mt-4 max-h-[85%] max-w-full"
+                          className="absolute bottom-0 left-[8%] mx-auto mt-4 max-h-[85%] max-w-full md:left-0"
                           src={character.img}
                           alt={`${character.name}`}
                         />
                       </motion.div>
 
                       <img
-                        className="absolute bottom-6 right-4 -z-10 mx-auto mt-6 max-h-[90%] max-w-full sm:-right-2 md:bottom-10 md:right-2 lg:right-6"
+                        className="absolute bottom-[25px] right-4 -z-10 mx-auto mt-6 max-h-[90%] max-w-full sm:bottom-[35px] sm:-right-2 md:bottom-10 md:right-2 lg:right-6"
                         src={character.door}
                         alt={`Dörr till ${character.name}s rum`}
                       />
