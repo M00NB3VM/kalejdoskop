@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { BrowserView, MobileView } from "react-device-detect";
+import axios from "axios";
 
 import { BsDownload } from "react-icons/bs";
 
@@ -8,6 +9,15 @@ import { useStoreContext } from "~/context";
 
 function CallToAction() {
   const { darkTheme } = useStoreContext();
+
+  async function postDownload() {
+    try {
+      const URL = process.env.NEXT_PUBLIC_API_URL;
+      await axios.post(`${URL}/statistics/downloads`);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className="relative">
@@ -53,7 +63,10 @@ function CallToAction() {
 
         <BrowserView>
           <div className="flex justify-center">
-            <button className="m-4 transform rounded-full bg-accent px-6 py-2 text-lg text-white shadow-md transition duration-500 hover:scale-110 hover:bg-accentHover">
+            <button
+              onClick={postDownload}
+              className="m-4 transform rounded-full bg-accent px-6 py-2 text-lg text-white shadow-md transition duration-500 hover:scale-110 hover:bg-accentHover"
+            >
               <a
                 href=""
                 download="Namn_på_spel.exe"

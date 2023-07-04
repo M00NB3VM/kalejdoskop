@@ -41,7 +41,7 @@ function LiamDumbbells({ showObject, setShowObject }: Props) {
   useEffect(() => {
     async function fetchMessages() {
       try {
-        const URL = process.env["API_URL"];
+        const URL = process.env.NEXT_PUBLIC_API_URL;
         const response = await axios.get(
           `${URL}/messages/three-random/Liams/Hantlar`
         );
@@ -61,7 +61,7 @@ function LiamDumbbells({ showObject, setShowObject }: Props) {
         object: "Hantlar",
         message: userMessage,
       };
-      const URL = process.env["API_URL"];
+      const URL = process.env.NEXT_PUBLIC_API_URL;
       await axios.post(`${URL}/messages`, newMessage);
       setShowMessageResponse(true);
     } catch (error) {
