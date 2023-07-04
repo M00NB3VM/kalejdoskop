@@ -18,33 +18,33 @@ function EnterRoom() {
   const characters: Character[] = [
     {
       name: "Milou",
-      nameImg: "/milou.png",
+      nameImg: "/milou_name.png",
       description:
         "Milou, 17 år, älskar alla typer av spel och har startat en spelförening med sina vänner. Hans dröm vore att träffa en tjej med samma intressen men trots hans försök har han inte lyckats charma någon. Lika mycket energi lägger han inte på sitt skolarbete, vilket hans lärare och föräldrar ofta påpekar.",
       path: "/roomone",
-      img: "/Char1_FBody.png",
-      door: "/char1_w_door.png",
-      openDoor: "/char1_w_door_open.png",
+      img: "/milou_fb_v2.png",
+      door: "/milou_door_v1.png",
+      openDoor: "",
     },
     {
       name: "Liam",
-      nameImg: "/liam.png",
+      nameImg: "/liam_name.png",
       description:
         "Sedan Liam, 20 år, hoppade av gymnasiet har det varit svårt för honom att hamna rätt. Alla chefer han har haft är dumma i huvudet och att flytta hemifrån verkar vara omöjligt. Han har en flickvän men även hon har börjat vända sig emot honom.",
       path: "/roomtwo",
-      img: "/Char2_FBody.png",
-      door: "/char2_w_door.png",
-      openDoor: "/char2_w_door_open.png",
+      img: "/liam_fb_v2.png",
+      door: "/liam_door_v1.png",
+      openDoor: "",
     },
     {
-      name: "Polka",
-      nameImg: "/polka.png",
+      name: "Naomi",
+      nameImg: "/naomi_name.png",
       description:
-        "Polka, 18 år, är stolt samlare av limited edition plushies och japanska rollspel. Hon har alltid gillat spelkultur och följer flera cosplayers på sociala medier. Hon hade gärna cosplayat själv men har aldrig haft några nära vänner och inte vågat åka på konvent ensam. Nu har hon dock bestämt sig för att börja våga mer och börja streama hennes favoritspel.",
+        "Naomi, 18 år, är stolt samlare av limited edition plushies och japanska rollspel. Hon har alltid gillat spelkultur och följer flera cosplayers på sociala medier. Hon hade gärna cosplayat själv men har aldrig haft några nära vänner och inte vågat åka på konvent ensam. Nu har hon dock bestämt sig för att börja våga mer och börja streama hennes favoritspel.",
       path: "/roomthree",
-      img: "/Char3_FBody.png",
-      door: "/char3_w_door.png",
-      openDoor: "/char3_w_door_open.png",
+      img: "/naomi_fb_v2.png",
+      door: "/naomi_door_v1.png",
+      openDoor: "",
     },
   ];
 
@@ -58,7 +58,7 @@ function EnterRoom() {
           return (
             <li
               key={character.name}
-              className={`mb-14 flex flex-col flex-wrap  items-center justify-center ${
+              className={`mb-14 mt-4 flex flex-col-reverse flex-wrap items-center justify-center md:mt-14 ${
                 character.name === "Liam"
                   ? "md:flex-row-reverse"
                   : "md:flex-row"
@@ -67,7 +67,7 @@ function EnterRoom() {
               <div
                 className={`${
                   character.name === "Liam" ? "md:ml-[80px]" : "md:mr-20"
-                }  mt-8 max-w-[90%] sm:max-w-[70%] md:max-w-[40%] xl:max-w-[25%]`}
+                }  mt-4 max-w-[90%] sm:max-w-[70%] md:max-w-[40%] xl:max-w-[25%]`}
               >
                 <div className="relative">
                   <img
@@ -75,10 +75,10 @@ function EnterRoom() {
                     src={character.nameImg}
                     alt={character.name}
                   />
-                  {character.name === "Polka" ? (
+                  {character.name === "Naomi" ? (
                     <div className="absolute top-0 left-0 h-full w-full">
                       <motion.div
-                        className="relative top-0 -left-[10px] inline-block"
+                        className="relative top-[-5px] -left-[10px] inline-block"
                         initial={{ x: 0, y: 0 }}
                         animate={{
                           x: [0, 10, 0],
@@ -113,13 +113,14 @@ function EnterRoom() {
                       </motion.div>
                       <motion.div
                         className="relative -top-[10%] left-[75%] inline-block md:-top-[20%] md:left-[80%]"
-                        initial={{ y: 0 }}
+                        initial={{ y: 0, x: 0 }}
                         animate={{
-                          y: [0, 15, 0],
+                          y: [0, -5, 0, -5, 0],
+                          x: [0, -10, 0],
                           rotate: [0, -5, 0],
                         }}
                         transition={{
-                          duration: 4,
+                          duration: 6,
                           repeat: Infinity,
                         }}
                       >
@@ -165,11 +166,11 @@ function EnterRoom() {
                 >
                   <Link
                     href={character.path}
-                    className="relative flex h-[450px] w-[270px] flex-col items-end sm:h-[500px] sm:w-[300px]  md:h-[600px] md:w-[370px]"
+                    className="relative flex h-[400px] w-[270px] flex-col items-end sm:h-[500px] sm:w-[300px] md:h-[580px] md:w-[380px]"
                   >
                     <div className="relative h-full w-full">
                       {character.name === "Milou" ? (
-                        <div className="absolute top-[100px] left-[15px] w-[25px] md:top-[120px] md:left-0 md:w-[50px]">
+                        <div className="absolute top-[50px] left-[10px] w-[25px] md:top-[60px] md:-left-[20px] md:w-[50px]">
                           <ul className="flex flex-col bg-[url('/swirl.png')] bg-cover bg-no-repeat">
                             <motion.li
                               initial={{ y: 0 }}
@@ -221,7 +222,7 @@ function EnterRoom() {
                       {character.name === "Liam" ? (
                         <div className="absolute top-0 left-0 h-full w-full">
                           <motion.div
-                            className="relative top-[75px] right-0 sm:top-[70px] sm:right-[20px] md:top-[100px] md:right-[5px] lg:top-[50px] lg:right-[70px]"
+                            className="relative top-[50px] -left-[5px] inline-block sm:-left-[50px] sm:top-[55px] md:top-[60px] md:-left-[55px] lg:-left-[90px] lg:top-[30px] xl:top-[10px] xl:-left-[110px]"
                             animate={{ rotate: [0, -5, 0] }}
                             transition={{
                               duration: 3,
@@ -239,10 +240,10 @@ function EnterRoom() {
                         ""
                       )}
 
-                      {character.name === "Polka" ? (
+                      {character.name === "Naomi" ? (
                         <div className="absolute top-0 left-0 h-full w-full overflow-hidden sm:overflow-visible">
                           <motion.div
-                            className="relative top-[335px] left-[220px] z-10 inline-block sm:top-[385px] sm:left-[250px] md:top-[470px] md:left-[80%]"
+                            className="relative top-[280px] left-[220px] z-10 inline-block sm:top-[370px] sm:left-[265px] md:top-[420px] md:left-[80%]"
                             animate={{ rotate: [0, 10, 0] }}
                             transition={{ duration: 4, repeat: Infinity }}
                           >
@@ -259,25 +260,25 @@ function EnterRoom() {
 
                       <motion.div
                         initial={{ opacity: 1 }}
-                        whileHover={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
                         transition={{ duration: 0.3 }}
                         className="relative h-full w-full"
                       >
                         <img
-                          className="absolute bottom-0 max-w-full"
-                          src={character.door}
-                          alt={`Gå till ${character.name}s rum`}
+                          className="absolute bottom-0 left-[8%] mx-auto mt-4 max-h-[85%] max-w-full md:left-0"
+                          src={character.img}
+                          alt={`${character.name}`}
                         />
                       </motion.div>
 
                       <img
-                        className="absolute bottom-0 -z-50 max-w-full"
-                        src={character.openDoor}
-                        alt={`Gå till ${character.name}s rum`}
+                        className="absolute bottom-[25px] right-4 -z-10 mx-auto mt-6 max-h-[90%] max-w-full sm:bottom-[35px] sm:-right-2 md:bottom-10 md:right-2 lg:right-6"
+                        src={character.door}
+                        alt={`Dörr till ${character.name}s rum`}
                       />
                     </div>
 
-                    <div className="relative mt-4 mr-1 min-h-[40px] w-[95%] rounded-full outline outline-1 outline-offset-[1px] outline-black">
+                    <div className="relative mt-4 mr-1 min-h-[40px] w-[98%] rounded-full outline outline-1 outline-offset-[1px] outline-black">
                       <div className="absolute -top-[6px] right-[6px] -z-10 flex w-full items-center justify-center rounded-full bg-accent px-2 py-2">
                         <p className="mr-2 text-lg font-bold text-white ">
                           Gå till {character.name}s rum

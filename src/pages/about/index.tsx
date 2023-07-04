@@ -122,7 +122,7 @@ function About() {
               tanken med spelet, att man ska få fler perspektiv.
             </p>
             <p className="my-4 text-sm md:text-base">
-              När du spelar kommer du träffa tre karaktärer, Milo, Liam och
+              När du spelar kommer du träffa tre karaktärer, Milou, Liam och
               Polka. De är tre unga vars liv sammanlänkas via sitt intresse för
               datorspel och spelkulturen. Onlinekulturen kan vara underbar och
               ge oss vänner för livet, men vi vet samtidigt att våld och
