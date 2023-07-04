@@ -77,7 +77,7 @@ export function StoreProvider({ children }: PropsChildren) {
 
   async function fetchStatistics() {
     try {
-      const URL = process.env["API_URL"];
+      const URL = process.env.API_URL;
       const res = await axios.get(`${URL}/statistics`);
       setStatistics(res.data);
     } catch (error) {

@@ -41,7 +41,7 @@ function MilouGift({ showObject, setShowObject }: Props) {
   useEffect(() => {
     async function fetchMessages() {
       try {
-        const URL = process.env["API_URL"];
+        const URL = process.env.API_URL;
         const response = await axios.get(
           `${URL}/messages/three-random/Milous/Present`
         );
@@ -61,7 +61,7 @@ function MilouGift({ showObject, setShowObject }: Props) {
         object: "gift",
         message: userMessage,
       };
-      const URL = process.env["API_URL"];
+      const URL = process.env.API_URL;
       await axios.post(`${URL}/messages`, newMessage);
       setShowMessageResponse(true);
     } catch (error) {
