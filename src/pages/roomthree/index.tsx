@@ -82,7 +82,7 @@ function Roomthree() {
     >
       <Link
         href="/"
-        className="absolute top-0 left-0 z-30 mt-2 ml-4 h-[80px] w-[40px] cursor-pointer text-center text-white"
+        className="absolute top-0 left-0 z-30 mt-2 ml-2 h-[80px] w-[40px] cursor-pointer text-center text-white"
       >
         <img
           src="/Char3_Door_mini.png"
@@ -91,6 +91,81 @@ function Roomthree() {
         />
         <p>Exit</p>
       </Link>
+
+      {showOrganizationModal ? (
+        <></>
+      ) : (
+        <div className="absolute right-2 top-0 z-40 md:hidden">
+          <div className="relative h-full w-full">
+            <motion.div
+              initial={{ y: "-40px" }}
+              animate={{ y: 0 }}
+              transition={{
+                duration: 0.7,
+                type: "spring",
+                stiffness: 100,
+                delay: 3.1,
+              }}
+              viewport={{ once: true }}
+              className="absolute -top-[10px] left-0 -z-50 h-[40px] w-[40px] rounded-full bg-secondary"
+            ></motion.div>
+            <motion.div
+              initial={{ y: "-40px" }}
+              animate={{ y: 0 }}
+              transition={{
+                duration: 0.7,
+                type: "spring",
+                stiffness: 100,
+                delay: 3,
+              }}
+              viewport={{ once: true }}
+              className="absolute top-[13px] left-[20px] -z-50 h-[25px] w-[25px] rounded-full bg-secondary"
+            ></motion.div>
+            <motion.div
+              initial={{ y: "-40px" }}
+              animate={{ y: 0 }}
+              transition={{
+                duration: 0.7,
+                type: "spring",
+                stiffness: 100,
+                delay: 3.2,
+              }}
+              viewport={{ once: true }}
+              className="absolute -top-[10px] left-[30px] -z-50 h-[45px] w-[45px] rounded-full bg-secondary"
+            ></motion.div>
+            <motion.div
+              initial={{ y: "-50px" }}
+              animate={{ y: 0 }}
+              transition={{
+                duration: 0.7,
+                type: "spring",
+                stiffness: 100,
+                delay: 3,
+              }}
+              viewport={{ once: true }}
+              className="absolute -top-[14px] right-[4px] -z-50 h-[55px] w-[55px] rounded-full bg-secondary"
+            ></motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: 3.2,
+              }}
+              viewport={{ once: true }}
+            >
+              <button
+                onClick={() => {
+                  openModal("organization");
+                }}
+                className="cursor-pointer px-[20px] text-xl font-bold tracking-wider"
+              >
+                Läs&nbsp;mig
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      )}
 
       <OrganizationInfoTab />
 
@@ -181,21 +256,6 @@ function Roomthree() {
             showObject={showWardrobeModal}
             setShowObject={setShowWardrobeModal}
           />
-
-          {showOrganizationModal ? (
-            <></>
-          ) : (
-            <div className="absolute right-0 top-[45%] z-40 md:hidden">
-              <p
-                onClick={() => {
-                  openModal("organization");
-                }}
-                className="inline-block origin-bottom-right -rotate-90 cursor-pointer rounded-t-lg bg-secondary px-[20px] py-1 text-xl font-bold tracking-wider text-accent"
-              >
-                Läs&nbsp;mig
-              </p>
-            </div>
-          )}
         </div>
 
         {showOrganizationModal ? (
