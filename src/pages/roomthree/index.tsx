@@ -285,7 +285,7 @@ function Roomthree() {
         <nav className="flex items-end">
           <Link
             href="/roomthree"
-            className="mr-3 h-[100px] w-[100px] bg-[url('/polka_room_nav_active.png')] bg-contain bg-no-repeat md:h-[150px] md:w-[150px]"
+            className="mr-3 h-[100px] w-[100px] bg-[url('/naomi_room_nav_active.png')] bg-contain bg-no-repeat md:h-[150px] md:w-[150px]"
           ></Link>
           <Link
             href="/roomone"

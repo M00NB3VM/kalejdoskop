@@ -315,7 +315,7 @@ function Roomone() {
           ></Link>
           <Link
             href="/roomthree"
-            className="mr-1 h-[72px] w-[72px] bg-[url('/polka_room_nav_mini.png')] bg-contain bg-no-repeat md:h-[80px] md:w-[80px]"
+            className="mr-1 h-[72px] w-[72px] bg-[url('/naomi_room_nav_mini.png')] bg-contain bg-no-repeat md:h-[80px] md:w-[80px]"
           ></Link>
         </nav>
         <div className="absolute bottom-0 left-0 -z-30 h-[15px] w-full rounded-tr-lg bg-primary"></div>
