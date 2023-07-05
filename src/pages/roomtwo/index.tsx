@@ -112,7 +112,7 @@ function Roomtwo() {
                 duration: 0.7,
                 type: "spring",
                 stiffness: 100,
-                delay: 3.1,
+                delay: 4.1,
               }}
               viewport={{ once: true }}
               className="absolute -top-[10px] left-0 -z-50 h-[40px] w-[40px] rounded-full bg-secondary"
@@ -124,7 +124,7 @@ function Roomtwo() {
                 duration: 0.7,
                 type: "spring",
                 stiffness: 100,
-                delay: 3,
+                delay: 4,
               }}
               viewport={{ once: true }}
               className="absolute top-[13px] left-[20px] -z-50 h-[25px] w-[25px] rounded-full bg-secondary"
@@ -136,7 +136,7 @@ function Roomtwo() {
                 duration: 0.7,
                 type: "spring",
                 stiffness: 100,
-                delay: 3.2,
+                delay: 4.2,
               }}
               viewport={{ once: true }}
               className="absolute -top-[10px] left-[30px] -z-50 h-[45px] w-[45px] rounded-full bg-secondary"
@@ -148,7 +148,7 @@ function Roomtwo() {
                 duration: 0.7,
                 type: "spring",
                 stiffness: 100,
-                delay: 3,
+                delay: 4,
               }}
               viewport={{ once: true }}
               className="absolute -top-[14px] right-[4px] -z-50 h-[55px] w-[55px] rounded-full bg-secondary"
@@ -158,7 +158,7 @@ function Roomtwo() {
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.5,
-                delay: 3.2,
+                delay: 4.2,
               }}
               viewport={{ once: true }}
             >

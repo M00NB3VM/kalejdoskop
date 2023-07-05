@@ -114,7 +114,7 @@ function LiamDumbbells({ showObject, setShowObject }: Props) {
               <Link href="#">Länk till organisation</Link>
             </li>
             {!showMessageResponse ? (
-              <li>
+              <li className="mt-4">
                 <label>Dela dina tankar!</label>
                 <textarea
                   className="max-w-[270px] resize-none border-2 bg-secondary"
@@ -128,7 +128,14 @@ function LiamDumbbells({ showObject, setShowObject }: Props) {
                     setCharMax(280 - e.target.value.length);
                   }}
                 />
-                <p className="pt-1 text-xs">{charMax} / 280</p>
+                <p className="w-[270px] pt-1 text-right text-xs">
+                  {charMax} / 280
+                </p>
+                <p className="w-[270px] pt-1 text-xs">
+                  * Du är helt anonym när du skickar ett meddelande och vi
+                  lagrar ingenting som kan spåra ett meddelande tillbaka till
+                  dig. Dela ingen personlig information.
+                </p>
 
                 <button
                   className="mx-auto my-4 block w-3/6 transform rounded-full bg-accent px-6 py-2 text-lg text-white transition duration-500 hover:bg-accentHover"
@@ -144,9 +151,13 @@ function LiamDumbbells({ showObject, setShowObject }: Props) {
                 <p className="my-6 text-xl">
                   Tack för att du delade dina tankar!
                 </p>
+                <p className="pt-1 text-xs">
+                  Efter att ditt meddelande blivit godkänt kommer det att läggas
+                  till bland de slumpartade meddelande som visas på sidan.
+                </p>
               </li>
             )}
-            <li>
+            <li className="mt-8">
               <h6>Meddelanden från andra</h6>
               <div className="my-6">
                 {currentMessage === 0 ? (

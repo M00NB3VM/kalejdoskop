@@ -108,7 +108,7 @@ function MilouGift({ showObject, setShowObject }: Props) {
               <ChartOneMilou />
             </li>
             {!showMessageResponse ? (
-              <li className="mx-auto flex max-w-max flex-col">
+              <li className="mx-auto mt-4 flex max-w-max flex-col">
                 <label>Dela dina tankar!</label>
                 <textarea
                   className="max-w-[275px] resize-none border-2 bg-secondary"
@@ -122,7 +122,14 @@ function MilouGift({ showObject, setShowObject }: Props) {
                     setCharMax(280 - e.target.value.length);
                   }}
                 />
-                <p className="pt-1 text-xs">{charMax} / 280</p>
+                <p className="w-[270px] pt-1 text-right text-xs">
+                  {charMax} / 280
+                </p>
+                <p className="w-[270px] pt-1 text-xs">
+                  * Du är helt anonym när du skickar ett meddelande och vi
+                  lagrar ingenting som kan spåra ett meddelande tillbaka till
+                  dig. Dela ingen personlig information.
+                </p>
 
                 <button
                   className="mx-auto my-4 w-3/6 transform rounded-full bg-accent px-6 py-2 text-lg text-white transition duration-500 hover:bg-accentHover"
@@ -137,6 +144,10 @@ function MilouGift({ showObject, setShowObject }: Props) {
               <li>
                 <p className="my-6 text-xl">
                   Tack för att du delade dina tankar!
+                </p>
+                <p className="pt-1 text-xs">
+                  Efter att ditt meddelande blivit godkänt kommer det att läggas
+                  till bland de slumpartade meddelande som visas på sidan.
                 </p>
               </li>
             )}
