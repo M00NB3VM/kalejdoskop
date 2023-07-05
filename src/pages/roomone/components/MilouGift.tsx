@@ -146,8 +146,8 @@ function MilouGift({ showObject, setShowObject }: Props) {
                   Tack för att du delade dina tankar!
                 </p>
                 <p className="pt-1 text-xs">
-                  Efter att ditt meddelande blivit godkänt kommer det att läggas
-                  till bland de slumpartade meddelande som visas på sidan.
+                  När ditt meddelande har blivit godkänt kommer det att läggas
+                  till bland de slumpmässiga meddelanden som visas på sidan.
                 </p>
               </li>
             )}

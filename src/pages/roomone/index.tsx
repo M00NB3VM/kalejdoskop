@@ -105,9 +105,9 @@ function Roomone() {
         className="absolute top-0 left-0 z-30 mt-2 ml-2 h-[80px] w-[40px] cursor-pointer text-center text-white"
       >
         <img
-          src="/Char1_Door_mini.png"
+          src="/milou_door_mini.png"
           alt="Hem"
-          className="max-h-full max-w-full"
+          className="max-h-full max-w-full border-[1px]"
         />
         <p>Exit</p>
       </Link>
