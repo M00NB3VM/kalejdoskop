@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -28,11 +28,22 @@ function Roomone() {
     "Jag har förberett en present till Naomi.",
     "Jag driver spelföreningen Digitala Drakar, kolla in vår poster!",
   ];
-  const message = welcomeMessages.sort(() => 0.5 - Math.random())[0] as string;
-  const [welcomeMessage, setWelcomeMessage] = useState<string>(message);
+  const [welcomeMessage, setWelcomeMessage] = useState<string>("");
 
   useEffect(() => {
-    console.log("Hello");
+    const message = welcomeMessages.sort(
+      () => 0.5 - Math.random()
+    )[0] as string;
+    setWelcomeMessage(message);
+  }, []);
+
+  useEffect(() => {
+    const element = document.getElementById("milou-room");
+
+    element?.scrollIntoView({
+      block: "center",
+      inline: "center",
+    });
   }, []);
 
   const [showGiftModal, setShowGiftModal] = useState<boolean>(false);
@@ -253,6 +264,10 @@ function Roomone() {
             </div>
           </div>
 
+          <div
+            className="absolute top-[50%] left-[50%] h-1 w-1"
+            id="milou-room"
+          ></div>
           <img
             src="/Char1_Room.png"
             className="-z-50 mx-auto max-h-full max-w-none"

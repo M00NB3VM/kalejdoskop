@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -26,8 +26,23 @@ function Roomtwo() {
     "Min favorithobby är att styrketräna.",
     "Brev från arbetsförmedlingen.",
   ];
-  const message = welcomeMessages.sort(() => 0.5 - Math.random())[0] as string;
-  const [welcomeMessage, setWelcomeMessage] = useState<string>(message);
+  const [welcomeMessage, setWelcomeMessage] = useState<string>("");
+
+  useEffect(() => {
+    const message = welcomeMessages.sort(
+      () => 0.5 - Math.random()
+    )[0] as string;
+    setWelcomeMessage(message);
+  }, []);
+
+  useEffect(() => {
+    const element = document.getElementById("liam-room");
+
+    element?.scrollIntoView({
+      block: "center",
+      inline: "center",
+    });
+  }, []);
 
   const [showDumbbellsModal, setShowDumbbellsModal] = useState<boolean>(false);
   const [showEnvelopeModal, setShowEnvelopeModal] = useState<boolean>(false);
@@ -212,6 +227,10 @@ function Roomtwo() {
             />
           </div>
 
+          <div
+            className="absolute top-[50%] left-[50%] h-1 w-1"
+            id="liam-room"
+          ></div>
           <img
             src="/Char2_Room.png"
             className="-z-50 mx-auto max-h-full max-w-none"
