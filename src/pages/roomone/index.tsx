@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -21,6 +21,8 @@ import MilouComputer from "./components/MilouComputer";
 
 function Roomone() {
   const [showOrganizationModal, setShowOrganizationModal] =
+    useState<boolean>(false);
+  const [showOrganizationTab, setShowOrganizationTab] =
     useState<boolean>(false);
 
   const welcomeMessages: string[] = [
@@ -91,6 +93,7 @@ function Roomone() {
     setShowPosterModal(false);
     setShowComputerModal(false);
     setShowOrganizationModal(false);
+    setShowOrganizationTab(false);
   }
 
   return (
@@ -187,7 +190,11 @@ function Roomone() {
         </div>
       )}
 
-      <OrganizationInfoTab />
+      <OrganizationInfoTab
+        closeModal={closeModal}
+        showOrganizationTab={showOrganizationTab}
+        setShowOrganizationTab={setShowOrganizationTab}
+      />
 
       <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#000]">
         <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">

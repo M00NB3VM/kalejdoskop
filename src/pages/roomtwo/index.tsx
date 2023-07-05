@@ -20,6 +20,8 @@ import LiamPicture from "./components/LiamPicture";
 function Roomtwo() {
   const [showOrganizationModal, setShowOrganizationModal] =
     useState<boolean>(false);
+  const [showOrganizationTab, setShowOrganizationTab] =
+    useState<boolean>(false);
 
   const welcomeMessages: string[] = [
     "Välkommen att kolla runt!",
@@ -79,6 +81,7 @@ function Roomtwo() {
     setShowPictureModal(false);
     setShowComputerModal(false);
     setShowOrganizationModal(false);
+    setShowOrganizationTab(false);
   }
 
   return (
@@ -175,7 +178,11 @@ function Roomtwo() {
         </div>
       )}
 
-      <OrganizationInfoTab />
+      <OrganizationInfoTab
+        closeModal={closeModal}
+        showOrganizationTab={showOrganizationTab}
+        setShowOrganizationTab={setShowOrganizationTab}
+      />
 
       <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#000]">
         <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">

@@ -16,13 +16,22 @@ interface OrganizationShort {
   points: string[];
 }
 
-function OrganizationInfoTab() {
+interface Props {
+  showOrganizationTab: boolean;
+  setShowOrganizationTab: (arg0: boolean) => void;
+  closeModal: () => void;
+}
+
+function OrganizationInfoTab({
+  showOrganizationTab,
+  setShowOrganizationTab,
+  closeModal,
+}: Props) {
   const { darkTheme } = useStoreContext();
 
   const variants = {
     open: { x: "25%" },
   };
-  const [showTab, setShowTab] = useState(false);
 
   const organizations: OrganizationShort[] = [
     {
@@ -69,7 +78,7 @@ function OrganizationInfoTab() {
     <motion.div
       className="fixed top-[30%] right-0 z-50 m-0 p-0"
       initial={{ x: "calc(100% - 40px)" }}
-      animate={showTab ? "open" : ""}
+      animate={showOrganizationTab ? "open" : ""}
       variants={variants}
       transition={{ ease: "easeInOut", duration: 0.8 }}
     >
@@ -77,13 +86,14 @@ function OrganizationInfoTab() {
         <div className="flex">
           <div
             onClick={() => {
-              setShowTab(!showTab);
+              closeModal();
+              setShowOrganizationTab(!showOrganizationTab);
             }}
             className="relative min-w-[40px] cursor-pointer"
             key="tab"
           >
             <div className="absolute bottom-2 -left-2 flex -rotate-90 items-center justify-center font-bold text-accent">
-              {showTab ? (
+              {showOrganizationTab ? (
                 <BsChevronDown
                   className="ml-2 w-10 pl-2"
                   style={{ strokeWidth: 2 }}
