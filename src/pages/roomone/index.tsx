@@ -105,14 +105,18 @@ function Roomone() {
     >
       <Link
         href="/"
-        className="absolute top-0 left-0 z-30 mt-2 ml-2 h-[80px] w-[40px] cursor-pointer text-center text-white"
+        className="absolute top-0 left-0 z-30 mt-1 ml-2 h-auto cursor-pointer md:mt-2"
       >
         <img
           src="/milou_door_mini.png"
           alt="Hem"
-          className="max-h-full max-w-full border-[1px]"
+          className="mx-auto h-auto max-w-[27px] border-[1px] md:max-w-[40px]"
         />
-        <p>Exit</p>
+        <img
+          alt="Exit"
+          src="/exit_sign.png"
+          className="mt-1 h-auto max-w-[27px] md:max-w-[40px]"
+        />
       </Link>
 
       {showOrganizationModal ? (
@@ -276,7 +280,7 @@ function Roomone() {
             id="milou-room"
           ></div>
           <img
-            src="/room_one.png"
+            src="/milou_room.png"
             className="-z-50 mx-auto max-h-full max-w-none"
           />
 
