@@ -4,11 +4,6 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-import { FiMonitor, FiImage, FiGift } from "react-icons/fi";
-import { SlGameController } from "react-icons/sl";
-import { FaBook } from "react-icons/fa";
-import { BiBed } from "react-icons/bi";
-
 import OrganizationInfoTab from "~/components/OrganizationInfoTab";
 import OrganizationInfoModal from "~/components/OrganizationInfoModal";
 
@@ -202,6 +197,33 @@ function Roomone() {
 
       <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#000]">
         <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">
+          <div className="absolute left-0 top-[50%] ml-8 flex h-fit lg:hidden">
+            <motion.img
+              alt="pil"
+              src="/arrow_icon.png"
+              className="mr-2 h-4 w-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+            />
+            <motion.img
+              alt="pil"
+              src="/arrow_icon.png"
+              className="mr-2 h-4 w-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 0.7, delay: 0.7 }}
+            />
+            <motion.img
+              alt="pil"
+              src="/arrow_icon.png"
+              className="h-4 w-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 0.7, delay: 0.9 }}
+            />
+          </div>
+
           <div
             className="absolute top-[28.5%] left-[36.5%] z-40 inline-block max-h-[10.4%] max-w-[9%] cursor-pointer"
             onClick={() => openModal("computer")}
@@ -311,7 +333,7 @@ function Roomone() {
           ></div>
           <img
             src="/milou_room.png"
-            className="-z-50 mx-auto max-h-full max-w-none"
+            className="-z-50 mx-auto h-full max-w-none"
           />
 
           <MilouGift
@@ -342,33 +364,6 @@ function Roomone() {
         ) : (
           <></>
         )}
-      </div>
-
-      <div className="fixed left-0 bottom-[50%] ml-4 flex h-fit lg:hidden">
-        <motion.img
-          alt="pil"
-          src="/arrow_icon.png"
-          className="mr-2 h-8 w-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1, 0] }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-        />
-        <motion.img
-          alt="pil"
-          src="/arrow_icon.png"
-          className="mr-2 h-8 w-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1, 0] }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-        />
-        <motion.img
-          alt="pil"
-          src="/arrow_icon.png"
-          className="h-8 w-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1, 0] }}
-          transition={{ duration: 0.7, delay: 0.9 }}
-        />
       </div>
 
       <motion.div
