@@ -213,7 +213,7 @@ function Roomtwo() {
           </div>
 
           <div
-            className="absolute top-[31%] left-[41%] z-40 inline-block max-h-[10%] max-w-[5.7%] cursor-pointer"
+            className="absolute top-[31%] left-[41%] z-40 inline-block max-h-[10%] max-w-[5.7%] transition-transform duration-300 transform hover:scale-110 cursor-pointer"
             onClick={() => openModal("dumbbells")}
           >
             <div className="relative h-full w-full">
@@ -231,7 +231,7 @@ function Roomtwo() {
           </div>
 
           <div
-            className="absolute top-[42%] left-[25.7%] z-40 inline-block max-h-[4.6%] max-w-[4%] cursor-pointer"
+            className="absolute top-[42%] left-[25.7%] z-40 inline-block max-h-[4.6%] max-w-[4%] transition-transform duration-300 transform hover:scale-125 cursor-pointer"
             onClick={() => openModal("envelope")}
           >
             <div className="relative h-full w-full">
@@ -249,7 +249,7 @@ function Roomtwo() {
           </div>
 
           <div
-            className="absolute top-[20.5%] left-[72.5%] z-40 inline-block max-h-[6%] max-w-[4%] cursor-pointer"
+            className="absolute top-[20.5%] left-[72.5%] z-40 inline-block max-h-[6%] max-w-[4%] transition-transform duration-300 transform hover:scale-125 cursor-pointer"
             onClick={() => openModal("picture")}
           >
             <div className="relative h-full w-full">
@@ -267,7 +267,7 @@ function Roomtwo() {
           </div>
 
           <div
-            className="absolute top-[68%] left-[51%] z-40 inline-block max-h-[13.3%] max-w-[11%] cursor-pointer"
+            className="absolute top-[68%] left-[51%] z-40 inline-block max-h-[13.3%] max-w-[11%] transition-transform duration-300 transform hover:scale-110 cursor-pointer"
             onClick={() => openModal("computer")}
           >
             <div className="relative h-full w-full">
@@ -288,7 +288,7 @@ function Roomtwo() {
             className="absolute top-[50%] left-[50%] h-1 w-1"
             id="liam-room"
           ></div>
-          <img
+          <img alt="Room"
             src="/liam_room.png"
             className="-z-50 mx-auto h-full max-w-none"
           />

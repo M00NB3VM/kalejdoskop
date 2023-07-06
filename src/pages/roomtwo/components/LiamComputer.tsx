@@ -23,7 +23,7 @@ function LiamComputer({ showObject, setShowObject }: Props) {
       {showObject ? (
         <div
           id="liam-computer"
-          className="fixed top-0 left-0 right-0 bottom-0 z-50 overflow-auto md:absolute md:top-[50%] md:left-[10%] md:min-h-0 md:max-w-[290px]"
+          className="fixed top-0 left-0 right-0 bottom-0 z-50 overflow-auto md:absolute md:top-[50%] md:left-[63%] md:min-h-0 md:max-w-[290px]"
         >
           <ul className="min-h-full bg-secondary p-4 md:h-auto md:min-h-0 md:rounded-2xl md:border-b-[6px] md:border-b-accent">
             <li>

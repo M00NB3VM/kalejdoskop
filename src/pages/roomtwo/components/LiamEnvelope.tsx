@@ -90,7 +90,7 @@ function LiamEnvelope({ showObject, setShowObject }: Props) {
       {showObject ? (
         <div
           id="liam-envelope"
-          className="fixed top-0 left-0 right-0 bottom-0 z-50 overflow-auto md:absolute md:top-[25%] md:left-[70%] md:min-h-0 md:max-w-fit"
+          className="fixed top-0 left-0 right-0 bottom-0 md:bottom-[110px] z-50 overflow-auto md:absolute md:top-[2%] md:left-[30%] md:min-h-0 md:max-w-fit"
         >
           <ul className="min-h-full bg-secondary p-4 md:h-auto md:min-h-0 md:rounded-2xl md:border-b-[6px] md:border-b-accent">
             <li>

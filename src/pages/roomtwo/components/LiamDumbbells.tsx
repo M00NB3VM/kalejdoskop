@@ -90,7 +90,7 @@ function LiamDumbbells({ showObject, setShowObject }: Props) {
       {showObject ? (
         <div
           id="liam-dumbbells"
-          className="fixed top-0 left-0 right-0 bottom-0 z-50 overflow-auto md:absolute md:top-[55%] md:left-[53%] md:min-h-0 md:w-[320px]"
+          className="fixed top-0 left-0 right-0 bottom-0 md:bottom-[110px] z-50 overflow-auto md:absolute md:top-[2%] md:left-[11%] md:min-h-0 md:w-[320px]"
         >
           <ul className="min-h-full bg-secondary p-4 md:h-auto md:min-h-0 md:rounded-2xl md:border-b-[6px] md:border-b-accent">
             <li>

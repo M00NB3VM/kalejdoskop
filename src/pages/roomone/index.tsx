@@ -225,7 +225,7 @@ function Roomone() {
           </div>
 
           <div
-            className="absolute top-[28.5%] left-[36.5%] z-40 inline-block max-h-[10.4%] max-w-[9%] cursor-pointer"
+            className="absolute top-[28.5%] left-[36.5%] z-40 inline-block max-h-[10.4%] max-w-[9%] transition-transform duration-300 transform hover:scale-110 cursor-pointer"
             onClick={() => openModal("computer")}
           >
             <div className="relative h-full w-full">
@@ -242,7 +242,7 @@ function Roomone() {
             </div>
           </div>
           <div
-            className="absolute top-[47%] left-[27%] z-40 inline-block max-h-[6.7%] max-w-[2.7%] cursor-pointer"
+            className="absolute top-[47%] left-[27%] z-40 inline-block max-h-[6.7%] max-w-[2.7%] transition-transform duration-300 transform hover:scale-125 cursor-pointer"
             onClick={() => openModal("console")}
           >
             <div className="relative h-full w-full">
@@ -259,7 +259,7 @@ function Roomone() {
             </div>
           </div>
           <div
-            className="absolute top-[54.35%] left-[68.2%] z-40 inline-block max-h-[3.6%] max-w-[2.5%] cursor-pointer"
+            className="absolute top-[54.35%] left-[68.2%] z-40 inline-block max-h-[3.6%] max-w-[2.5%] transition-transform duration-300 transform hover:scale-125 cursor-pointer"
             onClick={() => openModal("book")}
           >
             <div className="relative h-full w-full">
@@ -276,7 +276,7 @@ function Roomone() {
             </div>
           </div>
           <div
-            className="absolute top-[22.8%] left-[50%] z-40 inline-block max-h-[23%%] max-w-[16%] cursor-pointer"
+            className="absolute top-[22.8%] left-[50%] z-40 inline-block max-h-[23%%] max-w-[16%] transition-transform duration-300 transform hover:scale-105 cursor-pointer"
             onClick={() => openModal("bed")}
           >
             <div className="relative h-full w-full">
@@ -293,7 +293,7 @@ function Roomone() {
             </div>
           </div>
           <div
-            className="absolute top-[13%] left-[60.7%] z-40 inline-block max-h-[17.6%] max-w-[6%] cursor-pointer"
+            className="absolute top-[13%] left-[60.7%] z-40 inline-block max-h-[17.6%] max-w-[6%] transition-transform duration-300 transform hover:scale-110 cursor-pointer"
             onClick={() => openModal("poster")}
           >
             <div className="relative h-full w-full">
@@ -310,7 +310,7 @@ function Roomone() {
             </div>
           </div>
           <div
-            className="absolute top-[57%] left-[35.3%] z-40 inline-block max-h-[6%] max-w-[4%] cursor-pointer"
+            className="absolute top-[57%] left-[35.3%] z-40 inline-block max-h-[6%] max-w-[4%] transition-transform duration-300 transform hover:scale-125 cursor-pointer"
             onClick={() => openModal("gift")}
           >
             <div className="relative h-full w-full">
@@ -331,7 +331,7 @@ function Roomone() {
             className="absolute top-[50%] left-[50%] h-1 w-1"
             id="milou-room"
           ></div>
-          <img
+          <img alt="Room"
             src="/milou_room.png"
             className="-z-50 mx-auto h-full max-w-none"
           />
