@@ -20,8 +20,8 @@ function Roomthree() {
     useState<boolean>(false);
 
   const welcomeMessages: string[] = [
-    "Välkommen att kolla runt!",
-    "Jag streamar mina favoritspel.",
+    "Välkommen till mitt rum!",
+    "Jag streamar mina favoritspel. Kolla in min setup.",
     "Jag samlar på plushys, kan du hitta en?",
   ];
   const [welcomeMessage, setWelcomeMessage] = useState<string>("");

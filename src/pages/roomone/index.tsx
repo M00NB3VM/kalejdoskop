@@ -21,8 +21,8 @@ function Roomone() {
     useState<boolean>(false);
 
   const welcomeMessages: string[] = [
-    "Välkommen att kolla runt!",
-    "Jag har förberett en present till Naomi.",
+    "Det här är mitt rum, känn dig som hemma!",
+    "Jag har förberett en plushy som present till Naomi.",
     "Jag driver spelföreningen Digitala Drakar, kolla in vår poster!",
   ];
   const [welcomeMessage, setWelcomeMessage] = useState<string>("");
@@ -225,7 +225,7 @@ function Roomone() {
           </div>
 
           <div
-            className="absolute top-[28.5%] left-[36.5%] z-40 inline-block max-h-[10.4%] max-w-[9%] transition-transform duration-300 transform hover:scale-110 cursor-pointer"
+            className="absolute top-[28.5%] left-[36.5%] z-40 inline-block max-h-[10.4%] max-w-[9%] transform cursor-pointer transition-transform duration-300 hover:scale-110"
             onClick={() => openModal("computer")}
           >
             <div className="relative h-full w-full">
@@ -242,7 +242,7 @@ function Roomone() {
             </div>
           </div>
           <div
-            className="absolute top-[47%] left-[27%] z-40 inline-block max-h-[6.7%] max-w-[2.7%] transition-transform duration-300 transform hover:scale-125 cursor-pointer"
+            className="absolute top-[47%] left-[27%] z-40 inline-block max-h-[6.7%] max-w-[2.7%] transform cursor-pointer transition-transform duration-300 hover:scale-125"
             onClick={() => openModal("console")}
           >
             <div className="relative h-full w-full">
@@ -259,7 +259,7 @@ function Roomone() {
             </div>
           </div>
           <div
-            className="absolute top-[54.35%] left-[68.2%] z-40 inline-block max-h-[3.6%] max-w-[2.5%] transition-transform duration-300 transform hover:scale-125 cursor-pointer"
+            className="absolute top-[54.35%] left-[68.2%] z-40 inline-block max-h-[3.6%] max-w-[2.5%] transform cursor-pointer transition-transform duration-300 hover:scale-125"
             onClick={() => openModal("book")}
           >
             <div className="relative h-full w-full">
@@ -276,7 +276,7 @@ function Roomone() {
             </div>
           </div>
           <div
-            className="absolute top-[22.8%] left-[50%] z-40 inline-block max-h-[23%%] max-w-[16%] transition-transform duration-300 transform hover:scale-105 cursor-pointer"
+            className="absolute top-[22.8%] left-[50%] z-40 inline-block max-h-[23%%] max-w-[16%] transform cursor-pointer transition-transform duration-300 hover:scale-105"
             onClick={() => openModal("bed")}
           >
             <div className="relative h-full w-full">
@@ -293,7 +293,7 @@ function Roomone() {
             </div>
           </div>
           <div
-            className="absolute top-[13%] left-[60.7%] z-40 inline-block max-h-[17.6%] max-w-[6%] transition-transform duration-300 transform hover:scale-110 cursor-pointer"
+            className="absolute top-[13%] left-[60.7%] z-40 inline-block max-h-[17.6%] max-w-[6%] transform cursor-pointer transition-transform duration-300 hover:scale-110"
             onClick={() => openModal("poster")}
           >
             <div className="relative h-full w-full">
@@ -310,7 +310,7 @@ function Roomone() {
             </div>
           </div>
           <div
-            className="absolute top-[57%] left-[35.3%] z-40 inline-block max-h-[6%] max-w-[4%] transition-transform duration-300 transform hover:scale-125 cursor-pointer"
+            className="absolute top-[57%] left-[35.3%] z-40 inline-block max-h-[6%] max-w-[4%] transform cursor-pointer transition-transform duration-300 hover:scale-125"
             onClick={() => openModal("gift")}
           >
             <div className="relative h-full w-full">
@@ -331,7 +331,8 @@ function Roomone() {
             className="absolute top-[50%] left-[50%] h-1 w-1"
             id="milou-room"
           ></div>
-          <img alt="Room"
+          <img
+            alt="Room"
             src="/milou_room.png"
             className="-z-50 mx-auto h-full max-w-none"
           />
