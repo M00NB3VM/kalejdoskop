@@ -80,3 +80,7 @@ h6 {
   background: var(--primary-color);
   border-radius: 10px;
 }
+
+.milou-bed {
+  clip-path: polygon(38% 0, 38% 18%, 100% 42%, 100% 100%, 0 100%, 0 0);
+}

@@ -110,7 +110,7 @@ function Roomone() {
         <img
           src="/milou_door_mini.png"
           alt="Hem"
-          className="mx-auto h-auto max-w-[27px] border-[1px] md:max-w-[40px]"
+          className="mx-auto h-auto max-w-[27px] md:max-w-[40px]"
         />
         <img
           alt="Exit"
@@ -203,74 +203,104 @@ function Roomone() {
       <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#000]">
         <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">
           <div
-            className="absolute top-[31%] left-[38%] z-40 inline-block cursor-pointer"
+            className="absolute top-[28.5%] left-[36.5%] z-40 inline-block max-h-[10.4%] max-w-[9%] cursor-pointer"
             onClick={() => openModal("computer")}
           >
-            <FiMonitor
-              color="yellow"
-              size={60}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/milou_monitor_bg.png"
+                className="absolute -top-1 left-0 -z-20 scale-105"
+              />
+              <img
+                alt="Monitors"
+                src="/milou_computer.png"
+                className="max-h-full max-w-full"
+              />
+            </div>
           </div>
           <div
-            className="absolute top-[50%] left-[30%] z-40 inline-block cursor-pointer"
+            className="absolute top-[47%] left-[27%] z-40 inline-block max-h-[6.7%] max-w-[2.7%] cursor-pointer"
             onClick={() => openModal("console")}
           >
-            <div>
-              <SlGameController
-                color="yellow"
-                size={60}
-                strokeWidth={2}
-                className="drop-shadow-[2px_-2px_4px_#00ffc8]"
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/milou_console_bg.png"
+                className="absolute bottom-0 -right-[2px] -z-20 scale-110"
+              />
+              <img
+                alt="Spelkonsol"
+                src="/milou_console.png"
+                className="max-h-full max-w-full"
               />
             </div>
           </div>
           <div
-            className="absolute top-[27%] left-[47%] z-40 inline-block cursor-pointer"
+            className="absolute top-[54.35%] left-[68.2%] z-40 inline-block max-h-[3.6%] max-w-[2.5%] cursor-pointer"
             onClick={() => openModal("book")}
           >
-            <FaBook
-              color="yellow"
-              size={50}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
-          </div>
-          <div
-            className="absolute top-[28%] left-[56%] z-40 inline-block cursor-pointer"
-            onClick={() => openModal("bed")}
-          >
-            <BiBed
-              color="yellow"
-              size={70}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
-          </div>
-          <div
-            className="absolute top-[12%] left-[58%] z-40 inline-block cursor-pointer"
-            onClick={() => openModal("poster")}
-          >
-            <div>
-              <FiImage
-                color="yellow"
-                size={70}
-                strokeWidth={2}
-                className="drop-shadow-[2px_-2px_4px_#00ffc8]"
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/milou_books_bg.png"
+                className="absolute top-0 left-[1px] -z-20 scale-125"
+              />
+              <img
+                alt="Anteckningsblock"
+                src="/milou_books.png"
+                className="max-h-full max-w-full"
               />
             </div>
           </div>
           <div
-            className="absolute top-[19%] left-[70%] z-40 inline-block cursor-pointer"
+            className="absolute top-[22.8%] left-[50%] z-40 inline-block max-h-[23%%] max-w-[16%] cursor-pointer"
+            onClick={() => openModal("bed")}
+          >
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/milou_bed_bg.png"
+                className="absolute -top-[4px] -left-[2px] -z-20 scale-105"
+              />
+              <img
+                alt="Säng"
+                src="/milou_bed.png"
+                className="milou-bed max-h-full max-w-full"
+              />
+            </div>
+          </div>
+          <div
+            className="absolute top-[13%] left-[60.7%] z-40 inline-block max-h-[17.6%] max-w-[6%] cursor-pointer"
+            onClick={() => openModal("poster")}
+          >
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/milou_poster_bg.png"
+                className="absolute -top-[1px] left-[2px] -z-20 scale-105"
+              />
+              <img
+                alt="Poster för spelföreningen Digitala Drakar"
+                src="/milou_poster.png"
+                className="max-h-full max-w-full"
+              />
+            </div>
+          </div>
+          <div
+            className="absolute top-[57%] left-[35.3%] z-40 inline-block max-h-[6%] max-w-[4%] cursor-pointer"
             onClick={() => openModal("gift")}
           >
-            <div>
-              <FiGift
-                color="yellow"
-                size={50}
-                strokeWidth={2}
-                className="drop-shadow-[2px_-2px_4px_#00ffc8]"
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/milou_gift_bg.png"
+                className="absolute -top-[4px] left-0 -z-20 scale-110"
+              />
+              <img
+                alt="Plushy"
+                src="/milou_gift.png"
+                className="max-h-full max-w-full"
               />
             </div>
           </div>
