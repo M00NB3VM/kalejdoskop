@@ -14,7 +14,7 @@ function ThemeToggleButton() {
   };
 
   return (
-    <div className="absolute top-[15px] right-[15px]">
+    <div className="md:right-[15px absolute top-[5px] right-[5px] z-50 md:top-[15px]">
       <button
         className="h-[22px] w-[42px] rounded-full bg-primary"
         onClick={() => {
