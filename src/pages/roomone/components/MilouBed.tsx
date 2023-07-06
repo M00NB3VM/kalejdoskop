@@ -105,8 +105,8 @@ function MilouBed({ showObject, setShowObject }: Props) {
             >
               STÄNG
             </button>
-            <ul className="object-modal relative mx-4 mt-20 max-h-[90%] overflow-y-scroll pr-4 md:mx-0 md:mt-10">
-              <li>
+            <ul className="object-modal relative mx-4 mt-20 max-h-[85%] overflow-y-scroll pr-4 md:mx-0 md:mt-10 md:max-h-[90%]">
+              <li className="mx-auto mt-8 w-full sm:w-[80%] md:w-full">
                 <p>Hello from object 4</p>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -117,10 +117,10 @@ function MilouBed({ showObject, setShowObject }: Props) {
                 <Link href="#">Länk till organisation</Link>
               </li>
               {!showMessageResponse ? (
-                <li className="mt-4">
+                <li className="mx-auto mt-8 flex max-w-[275px] flex-col sm:max-w-[80%]">
                   <label>Dela dina tankar!</label>
                   <textarea
-                    className="max-w-[270px] resize-none border-2 bg-secondary"
+                    className="resize-none border-2 bg-secondary"
                     placeholder="Skriv här..."
                     rows={4}
                     cols={56}
@@ -131,10 +131,8 @@ function MilouBed({ showObject, setShowObject }: Props) {
                       setCharMax(280 - e.target.value.length);
                     }}
                   />
-                  <p className="w-[270px] pt-1 text-right text-xs">
-                    {charMax} / 280
-                  </p>
-                  <p className="w-[270px] pt-1 text-xs">
+                  <p className="pt-1 text-right text-xs">{charMax} / 280</p>
+                  <p className="pt-1 text-xs">
                     * Du är helt anonym när du skickar ett meddelande och vi
                     lagrar ingenting som kan spåra ett meddelande tillbaka till
                     dig. Dela ingen personlig information.
@@ -150,7 +148,7 @@ function MilouBed({ showObject, setShowObject }: Props) {
                   </button>
                 </li>
               ) : (
-                <li>
+                <li className="mx-auto mt-8 w-full sm:w-[80%] md:w-full">
                   <p className="my-6 text-xl">
                     Tack för att du delade dina tankar!
                   </p>
@@ -161,9 +159,8 @@ function MilouBed({ showObject, setShowObject }: Props) {
                 </li>
               )}
 
-              <li className="mt-8">
+              <li className="mx-auto mt-8 w-full sm:w-[80%] md:w-full">
                 <h6>Meddelanden från andra</h6>
-
                 {messagesError ? (
                   <div className="mt-4 rounded bg-white p-6 shadow-lg">
                     <p>Ooops!</p>
@@ -201,7 +198,7 @@ function MilouBed({ showObject, setShowObject }: Props) {
               {messagesError ? (
                 <></>
               ) : (
-                <li className="mx-auto my-8 flex w-full max-w-[90%] items-center justify-between">
+                <li className="mx-auto mt-8 mb-4 flex w-full items-center justify-between sm:w-[80%] md:w-full">
                   <BsFillCaretLeftFill
                     className="h-auto w-[30px] cursor-pointer"
                     onClick={() => {
