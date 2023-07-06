@@ -7,12 +7,6 @@ import Link from "next/link";
 import OrganizationInfoTab from "~/components/OrganizationInfoTab";
 import OrganizationInfoModal from "~/components/OrganizationInfoModal";
 
-import { SlGameController } from "react-icons/sl";
-import { GiMirrorMirror } from "react-icons/gi";
-import { RiBearSmileLine } from "react-icons/ri";
-import { GiDoor } from "react-icons/gi";
-import { FiMonitor } from "react-icons/fi";
-
 import PolkaComputer from "./components/PolkaComputer";
 import PolkaGameConsole from "./components/PolkaGameConsole";
 import PolkaMirror from "./components/PolkaMirror";
@@ -93,7 +87,7 @@ function Roomthree() {
   }
   return (
     <motion.div
-      className="relative m-0 min-h-screen p-0"
+      className="relative m-0 min-h-screen overflow-hidden p-0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
@@ -117,7 +111,7 @@ function Roomthree() {
       {showOrganizationModal ? (
         <></>
       ) : (
-        <div className="absolute right-2 top-0 z-40 md:hidden">
+        <div className="absolute right-2 top-0 z-50 md:hidden">
           <div className="relative h-full w-full">
             <motion.div
               initial={{ y: "-40px" }}
@@ -225,63 +219,93 @@ function Roomthree() {
           </div>
 
           <div
-            className="absolute top-[28%] left-[35%] z-40 inline-block cursor-pointer"
+            className="absolute top-[10%] left-[32.7%] z-40 inline-block max-h-[27%] max-w-[7.8%] transform cursor-pointer transition-transform duration-300 hover:scale-110"
             onClick={() => openModal("mirror")}
           >
-            <GiMirrorMirror
-              color="yellow"
-              size={90}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/naomi_mirror_bg.png"
+                className="absolute top-[2px] left-0 -z-20 scale-105"
+              />
+              <img
+                alt="Spegel"
+                src="/naomi_mirror.png"
+                className="max-h-full max-w-full"
+              />
+            </div>
           </div>
 
           <div
-            className="absolute top-[48%] left-[32%] z-40 inline-block cursor-pointer"
+            className="absolute top-[39.6%] left-[30%] z-40 inline-block max-h-[29.6%] max-w-[1.6%] transform cursor-pointer transition-transform duration-300 hover:scale-125"
             onClick={() => openModal("gameconsole")}
           >
-            <SlGameController
-              color="yellow"
-              size={60}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/naomi_controller_bg.png"
+                className="absolute top-0 left-0 -z-20 scale-105"
+              />
+              <img
+                alt="Spelkontroll"
+                src="/naomi_controller.png"
+                className="max-h-full max-w-full"
+              />
+            </div>
           </div>
 
           <div
-            className="absolute bottom-[22%] left-[44%] z-40 inline-block cursor-pointer"
+            className="absolute top-[62%] left-[36.4%] z-40 inline-block max-h-[15%] max-w-[8.3%] transform cursor-pointer transition-transform duration-300 hover:scale-110"
             onClick={() => openModal("plushy")}
           >
-            <RiBearSmileLine
-              color="yellow"
-              size={50}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/naomi_plushy_bg.png"
+                className="absolute top-0 left-0 -z-20 scale-105"
+              />
+              <img
+                alt="Plushy"
+                src="/naomi_plushy.png"
+                className="max-h-full max-w-full"
+              />
+            </div>
           </div>
 
           <div
-            className="absolute top-[22%] right-[50%] z-40 inline-block cursor-pointer"
+            className="absolute top-0 left-[44.8%] z-40 inline-block max-h-[37%] max-w-[10.3%] transform cursor-pointer transition-transform duration-300 hover:scale-105"
             onClick={() => openModal("wardrobe")}
           >
-            <GiDoor
-              color="yellow"
-              size={60}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/naomi_wardrobe_bg.png"
+                className="absolute top-0 left-0 -z-20 scale-105"
+              />
+              <img
+                alt="Garderob"
+                src="/naomi_wardrobe.png"
+                className="max-h-full max-w-full"
+              />
+            </div>
           </div>
 
           <div
-            className="absolute top-[32%] right-[30%] z-40 inline-block cursor-pointer"
+            className="absolute top-[20.3%] left-[69.4%] z-40 inline-block max-h-[18%] max-w-[19.9%] transform cursor-pointer transition-transform duration-300 hover:scale-110"
             onClick={() => openModal("computer")}
           >
-            <FiMonitor
-              color="yellow"
-              size={60}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/naomi_monitor_bg.png"
+                className="absolute top-0 left-0 -z-20 scale-105"
+              />
+              <img
+                alt="Streaming setup"
+                src="/naomi_monitor.png"
+                className="max-h-full max-w-full"
+              />
+            </div>
           </div>
 
           <div
@@ -289,7 +313,7 @@ function Roomthree() {
             id="naomi-room"
           ></div>
           <img
-            src="/Char3_Room.png"
+            src="/naomi_room.png"
             className="-z-50 mx-auto h-full max-w-none"
           />
 
