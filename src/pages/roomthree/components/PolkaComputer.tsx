@@ -116,7 +116,7 @@ function PolkaComputer({ showObject, setShowObject }: Props) {
                 <Link href="#">Länk till organisation</Link>
               </li>
               {!showMessageResponse ? (
-                <li className="mt-4">
+                <li className="mx-auto mt-4 flex max-w-max flex-col">
                   <label>Dela dina tankar!</label>
                   <textarea
                     className="max-w-[270px] resize-none border-2 bg-secondary"
