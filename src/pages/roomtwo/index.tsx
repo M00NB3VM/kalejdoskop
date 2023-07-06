@@ -98,7 +98,7 @@ function Roomtwo() {
         <img
           src="/liam_door_mini.png"
           alt="Hem"
-          className="mx-auto h-auto max-w-[27px] border-[1px] md:max-w-[40px]"
+          className="mx-auto h-auto max-w-[27px] md:max-w-[40px]"
         />
         <img
           alt="Exit"
@@ -191,51 +191,75 @@ function Roomtwo() {
       <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#000]">
         <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">
           <div
-            className="absolute bottom-[26%] left-[39%] z-40 inline-block cursor-pointer"
+            className="absolute top-[31%] left-[41%] z-40 inline-block max-h-[10%] max-w-[5.7%] cursor-pointer"
             onClick={() => openModal("dumbbells")}
           >
-            <CiDumbbell
-              color="yellow"
-              size={62}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/liam_dumbbells_bg.png"
+                className="absolute top-0 left-0 -z-20 scale-110"
+              />
+              <img
+                alt="Hantlar"
+                src="/liam_dumbbells.png"
+                className="max-h-full max-w-full"
+              />
+            </div>
           </div>
 
           <div
-            className="absolute bottom-[23%] right-[47%] z-40 inline-block cursor-pointer"
+            className="absolute top-[42%] left-[25.7%] z-40 inline-block max-h-[4.6%] max-w-[4%] cursor-pointer"
             onClick={() => openModal("envelope")}
           >
-            <RxEnvelopeClosed
-              color="yellow"
-              size={50}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/liam_letter_bg.png"
+                className="absolute top-0 left-[2px] -z-20 scale-110"
+              />
+              <img
+                alt="Hantlar"
+                src="/liam_letter.png"
+                className="max-h-full max-w-full"
+              />
+            </div>
           </div>
 
           <div
-            className="absolute top-[22%] right-[29%] z-40 inline-block cursor-pointer"
+            className="absolute top-[20.5%] left-[72.5%] z-40 inline-block max-h-[6%] max-w-[4%] cursor-pointer"
             onClick={() => openModal("picture")}
           >
-            <SlPicture
-              color="yellow"
-              size={50}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/liam_photo_bg.png"
+                className="absolute top-[1px] left-[2px] -z-20 scale-110"
+              />
+              <img
+                alt="Foto på Liam och hans ex-flickvän"
+                src="/liam_photo.png"
+                className="max-h-full max-w-full"
+              />
+            </div>
           </div>
 
           <div
-            className="absolute bottom-[23%] right-[37%] z-40 inline-block cursor-pointer"
+            className="absolute top-[68%] left-[51%] z-40 inline-block max-h-[13.3%] max-w-[11%] cursor-pointer"
             onClick={() => openModal("computer")}
           >
-            <FiMonitor
-              color="yellow"
-              size={60}
-              strokeWidth={2}
-              className="drop-shadow-[2px_-2px_4px_#00ffc8]"
-            />
+            <div className="relative h-full w-full">
+              <img
+                alt="Klickbart object"
+                src="/liam_computer_bg.png"
+                className="absolute -top-[1px] left-[1px] -z-20 scale-105"
+              />
+              <img
+                alt="Monitor"
+                src="/liam_computer.png"
+                className="max-h-full max-w-full"
+              />
+            </div>
           </div>
 
           <div

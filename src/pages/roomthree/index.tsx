@@ -105,7 +105,7 @@ function Roomthree() {
         <img
           src="/naomi_door_mini.png"
           alt="Hem"
-          className="mx-auto h-auto max-w-[27px] border-[1px] md:max-w-[40px]"
+          className="mx-auto h-auto max-w-[27px] md:max-w-[40px]"
         />
         <img
           alt="Exit"
