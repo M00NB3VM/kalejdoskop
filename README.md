@@ -1,37 +1,103 @@
-# Sverok and MÄN project
+# Kalejdoskop website
+
+This is the website for promotion and user interactivity of the Kalejdoskop video game. It is made using Next.js, Tailwind and TypeScript.
 
 ## Getting Started
 
-1. Clone the repository
-2. Navigate to the directory of the repository
-3. Checkout the develop branch: `git switch develop`
-4. Run: `npm install`
-5. Create your own feature branch (preferably with a name matching a Trello card): `git switch -c <new_branch>`
-6. Push your new branch to origin: `git push --set-upstream origin <new_branch>`
-7. Make your changes and push them to your branch like this: `git add .` -> `git commit -m "your message"` -> `git push`
+These instructions will guide you through the process of setting up this Next.js application on your local machine for development and testing purposes.
 
-## Merging your branch with develop
+### Prerequisites
 
-1. Run all of the following: `git switch develop` -> `git pull` -> `git switch <your-branch-name>` -> `git merge develop`. This keeps your branch up to date with develop
-2. Solve any conflicts and make sure your application runs perfectly with preferably no console warnings
-3. Run all of the following: `git switch develop` -> `git merge <your-branch-name>` -> `git push origin develop`. This pushes your branch to develop
+Before you can run this project, you will need to have Node.js and npm installed on your computer. You can download Node.js from [here](https://nodejs.org/) and npm is included in the installation.
 
-## Dark mode styling
+You can check if Node.js and npm are installed correctly by running the following commands in your terminal:
 
-Global CSS-klass "dark-theme"
-const darkTheme === boolean
+```sh
+node --version
+npm --version
+```
 
-### På komponent-nivå
+If both commands return a version number, then the installation was successful.
 
-1. import { useStoreContext } from "~/context";
-2. Addera const { darkTheme } = useStoreContext(); i din huvudfunktion
-3. Styla med ternaries
+### Installation
 
-För att rendera ut olika element beroende på om darkTheme är truthy eller falsy:
-{ darkTheme ? (<img src="" />) : (<img src="" />) }
+1. **Clone the repository**
 
-Ternaries med tailwind:
-className={ darkTheme ? "w-4/5 bg-black" : "w-4/5 bg-white" }
+   Start by cloning the repository to your local machine. You can do this by running the following command in your terminal:
 
-eller
-className={`w-4/5 ${darkTheme ? "bg-black" : "bg-white"}`}
+   ```sh
+   git clone https://github.com/sverok-man-collaboration/kalejdoskop-website.git
+   ```
+
+2. **Install dependencies**
+
+   Navigate into the cloned repository directory and run the following command to install all necessary dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. **Configure environment variables**
+
+   You will need to create a `.env` file in the root of the project. You can use the provided `.env.example` file as a template. Simply copy the `.env.example` file and rename the copy to `.env`. Then fill in the required information.
+
+### Running the project
+
+Once you have completed the installation, you can now run the application in a development environment:
+
+```sh
+npm run dev
+```
+
+## Building the project
+
+To compile the application for a production environment, you can run:
+
+```sh
+npm run build
+```
+
+This command will create a `dist` directory containing the compiled application.
+
+## Execution
+
+To execute the compiled application, you can run:
+
+```sh
+npm run start
+```
+
+This will execute the compiled Vite application.
+
+## Dark Mode Styling Guide
+
+This guide outlines how to implement dark mode using a global CSS class and JavaScript's ternary operator.
+Overview
+
+Our approach employs a global CSS class called dark-theme to toggle dark mode. This is facilitated by a boolean variable, darkTheme.
+
+### Implementation at the Component Level
+
+Here are the steps to follow:
+
+1. **First, import the useStoreContext from our context file**
+
+```sh
+import { useStoreContext } from "~/context";
+```
+
+2. **In your main function, destructure darkTheme from the useStoreContext**
+
+```sh
+const { darkTheme } = useStoreContext();
+```
+
+3. **Use ternary expressions in your styling to switch between light and dark modes**
+
+The following is an example of how to render different elements based on the value of darkTheme:
+
+```sh
+{ darkTheme ? (<img src="dark_image_src" />) : (<img src="light_image_src" />) }
+```
+
+By following this guide, you should be able to implement a functional dark mode toggle across your components. Happy coding!
