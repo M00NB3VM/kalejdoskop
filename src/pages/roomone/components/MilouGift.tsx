@@ -32,6 +32,7 @@ function MilouGift({ showObject, setShowObject }: Props) {
   }, [showObject]);
 
   const [messages, setMessages] = useState<Message[]>([]);
+  const [messagesError, setMessagesError] = useState<boolean>(false);
   const [showMessageResponse, setShowMessageResponse] =
     useState<boolean>(false);
   const [userMessage, setUserMessage] = useState<string>("");
@@ -45,9 +46,11 @@ function MilouGift({ showObject, setShowObject }: Props) {
         const response = await axios.get(
           `${URL}/messages/three-random/Milous/Present`
         );
+        setMessagesError(false);
         setMessages(response.data);
       } catch (error) {
         console.log(error);
+        //setMessagesError(true);
       }
     }
 
@@ -157,61 +160,76 @@ function MilouGift({ showObject, setShowObject }: Props) {
             </li>
 
             <li className="mx-auto max-w-[90%]">
-              <div className="my-6">
-                {currentMessage === 0 ? (
-                  <p className="rounded bg-white p-6 shadow-lg">
-                    {messages[0]?.message ?? ""}
+              {messagesError ? (
+                <div className="mt-4 rounded bg-white p-6 shadow-lg">
+                  <p>Ooops!</p>
+                  <p>
+                    Det gick inte att hämta meddelanden just nu. Försök igen
+                    senare.
                   </p>
-                ) : (
-                  ""
-                )}
-                {currentMessage === 1 ? (
-                  <p className="rounded bg-white p-6 shadow-lg">
-                    {messages[1]?.message ?? ""}
-                  </p>
-                ) : (
-                  ""
-                )}
-                {currentMessage === 2 ? (
-                  <p className="rounded bg-white p-6 shadow-lg">
-                    {messages[2]?.message ?? ""}
-                  </p>
-                ) : (
-                  ""
-                )}
-              </div>
+                </div>
+              ) : (
+                <div className="my-6">
+                  {currentMessage === 0 ? (
+                    <p className="rounded bg-white p-6 shadow-lg">
+                      {messages[0]?.message ?? ""}
+                    </p>
+                  ) : (
+                    ""
+                  )}
+                  {currentMessage === 1 ? (
+                    <p className="rounded bg-white p-6 shadow-lg">
+                      {messages[1]?.message ?? ""}
+                    </p>
+                  ) : (
+                    ""
+                  )}
+                  {currentMessage === 2 ? (
+                    <p className="rounded bg-white p-6 shadow-lg">
+                      {messages[2]?.message ?? ""}
+                    </p>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              )}
             </li>
-            <li className="mx-auto my-8 flex w-full max-w-[90%] items-center justify-between">
-              <BsFillCaretLeftFill
-                className="h-auto w-[30px] cursor-pointer"
-                onClick={() => {
-                  prevMessage();
-                }}
-              />
-              <div className="flex">
-                {currentMessage === 0 ? (
-                  <div className="mx-1 h-[10px] w-[10px] rounded-full bg-primary"></div>
-                ) : (
-                  <div className="mx-1 h-[10px] w-[10px] rounded-full border-2"></div>
-                )}
-                {currentMessage === 1 ? (
-                  <div className="mx-1 h-[10px] w-[10px] rounded-full bg-primary"></div>
-                ) : (
-                  <div className="mx-1 h-[10px] w-[10px] rounded-full border-2"></div>
-                )}
-                {currentMessage === 2 ? (
-                  <div className="mx-1 h-[10px] w-[10px] rounded-full bg-primary"></div>
-                ) : (
-                  <div className="mx-1 h-[10px] w-[10px] rounded-full border-2"></div>
-                )}
-              </div>
-              <BsFillCaretRightFill
-                className="h-auto w-[30px] cursor-pointer"
-                onClick={() => {
-                  nextMessage();
-                }}
-              />
-            </li>
+
+            {messagesError ? (
+              <></>
+            ) : (
+              <li className="mx-auto my-8 flex w-full max-w-[90%] items-center justify-between">
+                <BsFillCaretLeftFill
+                  className="h-auto w-[30px] cursor-pointer"
+                  onClick={() => {
+                    prevMessage();
+                  }}
+                />
+                <div className="flex">
+                  {currentMessage === 0 ? (
+                    <div className="mx-1 h-[10px] w-[10px] rounded-full bg-primary"></div>
+                  ) : (
+                    <div className="mx-1 h-[10px] w-[10px] rounded-full border-2"></div>
+                  )}
+                  {currentMessage === 1 ? (
+                    <div className="mx-1 h-[10px] w-[10px] rounded-full bg-primary"></div>
+                  ) : (
+                    <div className="mx-1 h-[10px] w-[10px] rounded-full border-2"></div>
+                  )}
+                  {currentMessage === 2 ? (
+                    <div className="mx-1 h-[10px] w-[10px] rounded-full bg-primary"></div>
+                  ) : (
+                    <div className="mx-1 h-[10px] w-[10px] rounded-full border-2"></div>
+                  )}
+                </div>
+                <BsFillCaretRightFill
+                  className="h-auto w-[30px] cursor-pointer"
+                  onClick={() => {
+                    nextMessage();
+                  }}
+                />
+              </li>
+            )}
           </ul>
         </div>
       ) : (
