@@ -65,9 +65,6 @@ function Roomthree() {
       case "wardrobe":
         setShowWardrobeModal(true);
         break;
-      case "organization":
-        setShowOrganizationModal(true);
-        break;
       case "computer":
         setShowComputerModal(true);
         break;
@@ -87,7 +84,7 @@ function Roomthree() {
   }
   return (
     <motion.div
-      className="relative m-0 min-h-screen overflow-hidden p-0"
+      className="relative m-0 min-h-screen overflow-hidden p-0 text-primary"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
@@ -108,86 +105,87 @@ function Roomthree() {
         />
       </Link>
 
-      {showOrganizationModal ? (
-        <></>
-      ) : (
-        <div className="absolute right-2 top-0 z-50 md:hidden">
-          <div className="relative h-full w-full">
-            <motion.div
-              initial={{ y: "-40px" }}
-              animate={{ y: 0 }}
-              transition={{
-                duration: 0.7,
-                type: "spring",
-                stiffness: 100,
-                delay: 4.1,
+      <div className="absolute right-2 top-0 z-40">
+        <div className="relative h-full w-full">
+          <motion.div
+            initial={{ y: "-40px" }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 0.7,
+              type: "spring",
+              stiffness: 100,
+              delay: 4.1,
+            }}
+            viewport={{ once: true }}
+            className="absolute -top-[10px] left-0 -z-50 h-[40px] w-[40px] rounded-full bg-secondary"
+          ></motion.div>
+          <motion.div
+            initial={{ y: "-40px" }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 0.7,
+              type: "spring",
+              stiffness: 100,
+              delay: 4,
+            }}
+            viewport={{ once: true }}
+            className="absolute top-[13px] left-[20px] -z-50 h-[25px] w-[25px] rounded-full bg-secondary"
+          ></motion.div>
+          <motion.div
+            initial={{ y: "-40px" }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 0.7,
+              type: "spring",
+              stiffness: 100,
+              delay: 4.2,
+            }}
+            viewport={{ once: true }}
+            className="absolute -top-[10px] left-[30px] -z-50 h-[45px] w-[45px] rounded-full bg-secondary"
+          ></motion.div>
+          <motion.div
+            initial={{ y: "-50px" }}
+            animate={{ y: 0 }}
+            transition={{
+              duration: 0.7,
+              type: "spring",
+              stiffness: 100,
+              delay: 4,
+            }}
+            viewport={{ once: true }}
+            className="absolute -top-[14px] right-[4px] -z-50 h-[55px] w-[55px] rounded-full bg-secondary"
+          ></motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 4.2,
+            }}
+            viewport={{ once: true }}
+          >
+            <button
+              onClick={() => {
+                closeModal();
+                setShowOrganizationModal(true);
+                setShowOrganizationTab(true);
               }}
-              viewport={{ once: true }}
-              className="absolute -top-[10px] left-0 -z-50 h-[40px] w-[40px] rounded-full bg-secondary"
-            ></motion.div>
-            <motion.div
-              initial={{ y: "-40px" }}
-              animate={{ y: 0 }}
-              transition={{
-                duration: 0.7,
-                type: "spring",
-                stiffness: 100,
-                delay: 4,
-              }}
-              viewport={{ once: true }}
-              className="absolute top-[13px] left-[20px] -z-50 h-[25px] w-[25px] rounded-full bg-secondary"
-            ></motion.div>
-            <motion.div
-              initial={{ y: "-40px" }}
-              animate={{ y: 0 }}
-              transition={{
-                duration: 0.7,
-                type: "spring",
-                stiffness: 100,
-                delay: 4.2,
-              }}
-              viewport={{ once: true }}
-              className="absolute -top-[10px] left-[30px] -z-50 h-[45px] w-[45px] rounded-full bg-secondary"
-            ></motion.div>
-            <motion.div
-              initial={{ y: "-50px" }}
-              animate={{ y: 0 }}
-              transition={{
-                duration: 0.7,
-                type: "spring",
-                stiffness: 100,
-                delay: 4,
-              }}
-              viewport={{ once: true }}
-              className="absolute -top-[14px] right-[4px] -z-50 h-[55px] w-[55px] rounded-full bg-secondary"
-            ></motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{
-                duration: 0.5,
-                delay: 4.2,
-              }}
-              viewport={{ once: true }}
+              className="cursor-pointer px-[20px] text-xl font-bold tracking-wider"
             >
-              <button
-                onClick={() => {
-                  openModal("organization");
-                }}
-                className="cursor-pointer px-[20px] text-xl font-bold tracking-wider"
-              >
-                Läs&nbsp;mig
-              </button>
-            </motion.div>
-          </div>
+              Läs&nbsp;mig
+            </button>
+          </motion.div>
         </div>
-      )}
+      </div>
 
-      <OrganizationInfoTab
-        closeModal={closeModal}
-        showOrganizationTab={showOrganizationTab}
-        setShowOrganizationTab={setShowOrganizationTab}
-      />
+      {showOrganizationTab ? (
+        <OrganizationInfoTab
+          showOrganizationTab={showOrganizationTab}
+          closeModal={closeModal}
+        />
+      ) : (
+        ""
+      )}
 
       <div className="relative h-screen min-w-min overflow-visible overflow-x-auto bg-[#000]">
         <div className="absolute h-full min-w-min xl:left-[50%] xl:-translate-x-[50%] xl:transform">
@@ -273,7 +271,7 @@ function Roomthree() {
           </div>
 
           <div
-            className="absolute top-0 left-[44.8%] z-40 inline-block max-h-[37%] max-w-[10.3%] transform cursor-pointer transition-transform duration-300 hover:scale-105"
+            className="absolute top-0 left-[44.8%] z-30 inline-block max-h-[37%] max-w-[10.3%] transform cursor-pointer transition-transform duration-300 hover:scale-105"
             onClick={() => openModal("wardrobe")}
           >
             <div className="relative h-full w-full">
