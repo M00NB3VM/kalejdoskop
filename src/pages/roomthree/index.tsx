@@ -114,7 +114,7 @@ function Roomthree() {
               duration: 0.7,
               type: "spring",
               stiffness: 100,
-              delay: 4.1,
+              delay: 5.1,
             }}
             viewport={{ once: true }}
             className="absolute -top-[10px] left-0 -z-50 h-[40px] w-[40px] rounded-full bg-secondary"
@@ -126,7 +126,7 @@ function Roomthree() {
               duration: 0.7,
               type: "spring",
               stiffness: 100,
-              delay: 4,
+              delay: 5,
             }}
             viewport={{ once: true }}
             className="absolute top-[13px] left-[20px] -z-50 h-[25px] w-[25px] rounded-full bg-secondary"
@@ -138,7 +138,7 @@ function Roomthree() {
               duration: 0.7,
               type: "spring",
               stiffness: 100,
-              delay: 4.2,
+              delay: 5.2,
             }}
             viewport={{ once: true }}
             className="absolute -top-[10px] left-[30px] -z-50 h-[45px] w-[45px] rounded-full bg-secondary"
@@ -150,7 +150,7 @@ function Roomthree() {
               duration: 0.7,
               type: "spring",
               stiffness: 100,
-              delay: 4,
+              delay: 5,
             }}
             viewport={{ once: true }}
             className="absolute -top-[14px] right-[4px] -z-50 h-[55px] w-[55px] rounded-full bg-secondary"
@@ -160,7 +160,7 @@ function Roomthree() {
             animate={{ opacity: 1 }}
             transition={{
               duration: 0.5,
-              delay: 4.2,
+              delay: 5.2,
             }}
             viewport={{ once: true }}
           >
@@ -220,7 +220,16 @@ function Roomthree() {
             className="absolute top-[10%] left-[32.7%] z-40 inline-block max-h-[27%] max-w-[7.8%] transform cursor-pointer transition-transform duration-300 hover:scale-110"
             onClick={() => openModal("mirror")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.7 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/naomi_mirror_bg.png"
@@ -231,14 +240,23 @@ function Roomthree() {
                 src="/naomi_mirror.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div
             className="absolute top-[39.6%] left-[30%] z-40 inline-block max-h-[29.6%] max-w-[1.6%] transform cursor-pointer transition-transform duration-300 hover:scale-125"
             onClick={() => openModal("gameconsole")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/naomi_controller_bg.png"
@@ -249,14 +267,23 @@ function Roomthree() {
                 src="/naomi_controller.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div
             className="absolute top-[62%] left-[36.4%] z-40 inline-block max-h-[15%] max-w-[8.3%] transform cursor-pointer transition-transform duration-300 hover:scale-110"
             onClick={() => openModal("plushy")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 1.1 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/naomi_plushy_bg.png"
@@ -267,14 +294,23 @@ function Roomthree() {
                 src="/naomi_plushy.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div
             className="absolute top-0 left-[44.8%] z-30 inline-block max-h-[37%] max-w-[10.3%] transform cursor-pointer transition-transform duration-300 hover:scale-105"
             onClick={() => openModal("wardrobe")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.9 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/naomi_wardrobe_bg.png"
@@ -285,14 +321,23 @@ function Roomthree() {
                 src="/naomi_wardrobe.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div
             className="absolute top-[20.3%] left-[69.4%] z-40 inline-block max-h-[18%] max-w-[19.9%] transform cursor-pointer transition-transform duration-300 hover:scale-110"
             onClick={() => openModal("computer")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 1.3 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/naomi_monitor_bg.png"
@@ -303,7 +348,7 @@ function Roomthree() {
                 src="/naomi_monitor.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div
@@ -348,7 +393,7 @@ function Roomthree() {
         className="fixed left-[90px] bottom-[120px] md:bottom-[160px] md:left-[150px]"
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
-        transition={{ duration: 0.7, delay: 2.5 }}
+        transition={{ duration: 0.7, delay: 4 }}
       >
         <div className="min-h-[60px] min-w-[110px] max-w-[150px] rounded-lg bg-accent">
           <p className="p-2 text-center text-sm text-white">

@@ -120,7 +120,7 @@ function Roomone() {
               duration: 0.7,
               type: "spring",
               stiffness: 100,
-              delay: 4.1,
+              delay: 5.1,
             }}
             viewport={{ once: true }}
             className="absolute -top-[10px] left-0 -z-50 h-[40px] w-[40px] rounded-full bg-secondary"
@@ -132,7 +132,7 @@ function Roomone() {
               duration: 0.7,
               type: "spring",
               stiffness: 100,
-              delay: 4,
+              delay: 5,
             }}
             viewport={{ once: true }}
             className="absolute top-[13px] left-[20px] -z-50 h-[25px] w-[25px] rounded-full bg-secondary"
@@ -144,7 +144,7 @@ function Roomone() {
               duration: 0.7,
               type: "spring",
               stiffness: 100,
-              delay: 4.2,
+              delay: 5.2,
             }}
             viewport={{ once: true }}
             className="absolute -top-[10px] left-[30px] -z-50 h-[45px] w-[45px] rounded-full bg-secondary"
@@ -156,7 +156,7 @@ function Roomone() {
               duration: 0.7,
               type: "spring",
               stiffness: 100,
-              delay: 4,
+              delay: 5,
             }}
             viewport={{ once: true }}
             className="absolute -top-[14px] right-[4px] -z-50 h-[55px] w-[55px] rounded-full bg-secondary"
@@ -166,7 +166,7 @@ function Roomone() {
             animate={{ opacity: 1 }}
             transition={{
               duration: 0.5,
-              delay: 4.2,
+              delay: 5.2,
             }}
             viewport={{ once: true }}
           >
@@ -226,7 +226,16 @@ function Roomone() {
             className="absolute top-[28.5%] left-[36.5%] z-40 inline-block max-h-[10.4%] max-w-[9%] transform cursor-pointer transition-transform duration-300 hover:scale-110"
             onClick={() => openModal("computer")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.9 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/milou_monitor_bg.png"
@@ -237,13 +246,22 @@ function Roomone() {
                 src="/milou_computer.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
           <div
             className="absolute top-[47%] left-[27%] z-40 inline-block max-h-[6.7%] max-w-[2.7%] transform cursor-pointer transition-transform duration-300 hover:scale-125"
             onClick={() => openModal("console")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/milou_console_bg.png"
@@ -254,13 +272,22 @@ function Roomone() {
                 src="/milou_console.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
           <div
             className="absolute top-[54.35%] left-[68.2%] z-40 inline-block max-h-[3.6%] max-w-[2.5%] transform cursor-pointer transition-transform duration-300 hover:scale-125"
             onClick={() => openModal("book")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 1.5 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/milou_books_bg.png"
@@ -271,13 +298,22 @@ function Roomone() {
                 src="/milou_books.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
           <div
             className="absolute top-[22.8%] left-[50%] z-40 inline-block max-h-[23%%] max-w-[16%] transform cursor-pointer transition-transform duration-300 hover:scale-105"
             onClick={() => openModal("bed")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["0px", "1px", "-1px", "1px", "0px"],
+                rotate: [0, -0.3, 0.2, -0.2, 0.3, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 1.1 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/milou_bed_bg.png"
@@ -288,13 +324,22 @@ function Roomone() {
                 src="/milou_bed.png"
                 className="milou-bed max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
           <div
             className="absolute top-[13%] left-[60.7%] z-40 inline-block max-h-[17.6%] max-w-[6%] transform cursor-pointer transition-transform duration-300 hover:scale-110"
             onClick={() => openModal("poster")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 1.3 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/milou_poster_bg.png"
@@ -305,13 +350,22 @@ function Roomone() {
                 src="/milou_poster.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
           <div
             className="absolute top-[57%] left-[35.3%] z-40 inline-block max-h-[6%] max-w-[4%] transform cursor-pointer transition-transform duration-300 hover:scale-125"
             onClick={() => openModal("gift")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.7 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/milou_gift_bg.png"
@@ -322,7 +376,7 @@ function Roomone() {
                 src="/milou_gift.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div
@@ -369,7 +423,7 @@ function Roomone() {
         className="fixed left-[90px] bottom-[120px] md:bottom-[160px] md:left-[150px]"
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
-        transition={{ duration: 0.7, delay: 3 }}
+        transition={{ duration: 0.7, delay: 4 }}
       >
         <div className="min-h-[60px] min-w-[110px] max-w-[150px] rounded-lg bg-accent">
           <p className="p-2 text-center text-sm text-white">

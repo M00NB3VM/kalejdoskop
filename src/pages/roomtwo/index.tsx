@@ -108,7 +108,7 @@ function Roomtwo() {
               duration: 0.7,
               type: "spring",
               stiffness: 100,
-              delay: 4.1,
+              delay: 5.1,
             }}
             viewport={{ once: true }}
             className="absolute -top-[10px] left-0 -z-50 h-[40px] w-[40px] rounded-full bg-secondary"
@@ -120,7 +120,7 @@ function Roomtwo() {
               duration: 0.7,
               type: "spring",
               stiffness: 100,
-              delay: 4,
+              delay: 5,
             }}
             viewport={{ once: true }}
             className="absolute top-[13px] left-[20px] -z-50 h-[25px] w-[25px] rounded-full bg-secondary"
@@ -132,7 +132,7 @@ function Roomtwo() {
               duration: 0.7,
               type: "spring",
               stiffness: 100,
-              delay: 4.2,
+              delay: 5.2,
             }}
             viewport={{ once: true }}
             className="absolute -top-[10px] left-[30px] -z-50 h-[45px] w-[45px] rounded-full bg-secondary"
@@ -144,7 +144,7 @@ function Roomtwo() {
               duration: 0.7,
               type: "spring",
               stiffness: 100,
-              delay: 4,
+              delay: 5,
             }}
             viewport={{ once: true }}
             className="absolute -top-[14px] right-[4px] -z-50 h-[55px] w-[55px] rounded-full bg-secondary"
@@ -154,7 +154,7 @@ function Roomtwo() {
             animate={{ opacity: 1 }}
             transition={{
               duration: 0.5,
-              delay: 4.2,
+              delay: 5.2,
             }}
             viewport={{ once: true }}
           >
@@ -214,7 +214,16 @@ function Roomtwo() {
             className="absolute top-[31%] left-[41%] z-40 inline-block max-h-[10%] max-w-[5.7%] transform cursor-pointer transition-transform duration-300 hover:scale-110"
             onClick={() => openModal("dumbbells")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.7 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/liam_dumbbells_bg.png"
@@ -225,14 +234,23 @@ function Roomtwo() {
                 src="/liam_dumbbells.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div
             className="absolute top-[42%] left-[25.7%] z-40 inline-block max-h-[4.6%] max-w-[4%] transform cursor-pointer transition-transform duration-300 hover:scale-125"
             onClick={() => openModal("envelope")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/liam_letter_bg.png"
@@ -243,14 +261,23 @@ function Roomtwo() {
                 src="/liam_letter.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div
             className="absolute top-[20.5%] left-[72.5%] z-40 inline-block max-h-[6%] max-w-[4%] transform cursor-pointer transition-transform duration-300 hover:scale-125"
             onClick={() => openModal("picture")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 1.1 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/liam_photo_bg.png"
@@ -261,14 +288,23 @@ function Roomtwo() {
                 src="/liam_photo.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div
             className="absolute top-[68%] left-[51%] z-40 inline-block max-h-[13.3%] max-w-[11%] transform cursor-pointer transition-transform duration-300 hover:scale-110"
             onClick={() => openModal("computer")}
           >
-            <div className="relative h-full w-full">
+            <motion.div
+              className="relative h-full w-full"
+              initial={{ x: 0, rotate: 0 }}
+              whileInView={{
+                x: ["-2px", "1px", "-1px", "2px", "0px"],
+                rotate: [0, -0.5, 0.5, -0.5, 0.5, 0],
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.9 }}
+              viewport={{ once: true }}
+            >
               <img
                 alt="Klickbart object"
                 src="/liam_computer_bg.png"
@@ -279,7 +315,7 @@ function Roomtwo() {
                 src="/liam_computer.png"
                 className="max-h-full max-w-full"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div
@@ -320,7 +356,7 @@ function Roomtwo() {
           className="fixed left-[90px] bottom-[120px] md:bottom-[160px] md:left-[150px]"
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
-          transition={{ duration: 0.7, delay: 2.5 }}
+          transition={{ duration: 0.7, delay: 4 }}
         >
           <div className="min-h-[60px] min-w-[110px] max-w-[150px] rounded-lg bg-accent">
             <p className="p-2 text-center text-sm text-white">
