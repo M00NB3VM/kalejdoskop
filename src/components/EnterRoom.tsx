@@ -157,13 +157,7 @@ function EnterRoom() {
               </div>
 
               <nav className="relative flex h-[400px] w-[270px] flex-col items-end sm:h-[500px] sm:w-[300px] md:h-[580px] md:w-[380px]">
-                <motion.div
-                  className="relative h-full w-full"
-                  initial={{ opacity: 0, y: 50 }}
-                  viewport={{ once: true }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ type: "ease-out", bounce: 0.4, duration: 0.8 }}
-                >
+                <div className="relative h-full w-full">
                   <Link
                     href={character.path}
                     className="relative flex h-[400px] w-[270px] flex-col items-end sm:h-[500px] sm:w-[300px] md:h-[580px] md:w-[380px]"
@@ -259,9 +253,10 @@ function EnterRoom() {
                       )}
 
                       <motion.div
-                        initial={{ opacity: 1 }}
-                        whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.9, delay: 0.3 }}
+                        viewport={{ once: true }}
                         className="relative h-full w-full"
                       >
                         <img
@@ -271,11 +266,27 @@ function EnterRoom() {
                         />
                       </motion.div>
 
-                      <img
-                        className="absolute bottom-[25px] right-4 -z-10 mx-auto mt-6 max-h-[90%] max-w-full sm:bottom-[35px] sm:-right-2 md:bottom-10 md:right-2 lg:right-6"
-                        src={character.door}
-                        alt={`Dörr till ${character.name}s rum`}
-                      />
+                      <motion.div
+                        initial={{ opacity: 0, y: 5 }}
+                        viewport={{ once: true }}
+                        whileInView={{
+                          opacity: 1,
+                          y: 0,
+                        }}
+                        transition={{
+                          duration: 0.2,
+                          delay: 0.1,
+                          type: "spring",
+                          stiffness: 100,
+                        }}
+                        className="absolute bottom-[25px] right-4 -z-10 mx-auto mt-6 flex max-h-[90%] max-w-full justify-end sm:bottom-[35px] sm:-right-2 md:bottom-10 md:right-2 lg:right-6"
+                      >
+                        <img
+                          className="max-h-[100%] max-w-[75%] md:max-w-[78%]"
+                          src={character.door}
+                          alt={`Dörr till ${character.name}s rum`}
+                        />
+                      </motion.div>
                     </div>
 
                     <div className="relative mt-4 mr-1 min-h-[40px] w-[98%] rounded-full outline outline-1 outline-offset-[1px] outline-black">
@@ -294,7 +305,7 @@ function EnterRoom() {
                       </div>
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               </nav>
             </li>
           );
