@@ -353,7 +353,7 @@ function Roomtwo() {
         )}
 
         <motion.div
-          className="fixed left-[90px] bottom-[120px] md:bottom-[160px] md:left-[150px]"
+          className="fixed left-[90px] bottom-[120px] z-50 md:bottom-[160px] md:left-[150px]"
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           transition={{ duration: 0.7, delay: 4 }}
