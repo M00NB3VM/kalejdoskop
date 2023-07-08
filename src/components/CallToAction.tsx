@@ -133,7 +133,11 @@ function CallToAction() {
             </div>
           </div>
         </BrowserView>
-        <MobileView>Mobile</MobileView>
+        <MobileView className="mx-4 mb-10">
+          <p className="text-sm">
+            Ladda ner spelet via en dator eller hitta Kalejdoskop på Steam.
+          </p>
+        </MobileView>
       </div>
     </div>
   );
