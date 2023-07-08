@@ -275,7 +275,6 @@ function EnterRoom() {
                         }}
                         transition={{
                           duration: 0.2,
-                          delay: 0.1,
                           type: "spring",
                           stiffness: 100,
                         }}
