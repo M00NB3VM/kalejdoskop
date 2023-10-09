@@ -46,7 +46,7 @@ function CallToAction() {
       >
         <h3 className="mb-4 mt-10 px-4 text-lg md:text-3xl">
           I Kalejdoskop får du leva dig in i tre ungdomars vardag. Spelet släpps
-          i september!
+          inom kort!
         </h3>
         <p className="mb-10 text-xs md:text-base">
           Håll utkik här och på Steam.
